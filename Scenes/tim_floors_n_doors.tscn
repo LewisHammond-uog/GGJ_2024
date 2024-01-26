@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx2wlefd1e8ak"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_108en"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_v8elj"]
+sky_material = SubResource("ProceduralSkyMaterial_108en")
+
+[sub_resource type="Environment" id="Environment_arwhl"]
+background_mode = 2
+sky = SubResource("Sky_v8elj")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Tim_Floors_N_Doors" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_arwhl")
+
+[node name="Camera3D" type="Camera3D" parent="."]
