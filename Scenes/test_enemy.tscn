@@ -12,6 +12,7 @@
 albedo_color = Color(0, 1, 1, 1)
 
 [node name="Enemy" type="CharacterBody3D" node_paths=PackedStringArray("agent", "shootComp")]
+collision_mask = 7
 script = ExtResource("1_uo2fx")
 agent = NodePath("NavigationAgent3D")
 shootComp = NodePath("Shooter")
@@ -35,10 +36,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_oh7nt")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04766, -1.02672)
 script = ExtResource("3_v1wjf")
 MaxShootDist = 10.0
-shootInterval = 0.5
+shootInterval = 2.0
 bulletPrefab = ExtResource("4_qoah3")
 
-[node name="Health" type="Node3D" parent="."]
+[node name="Health" type="Node3D" parent="." node_paths=PackedStringArray("NavAgent")]
 script = ExtResource("5_64nib")
+NavAgent = NodePath("../NavigationAgent3D")
 
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="AgentVelocityComputed"]
