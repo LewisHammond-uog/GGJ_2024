@@ -1,16 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://dt67wbh0cngq0"]
+[gd_scene load_steps=6 format=3 uid="uid://dt67wbh0cngq0"]
 
 [ext_resource type="PackedScene" uid="uid://2533h4ku6n" path="res://Enviroment/Objects/door.tscn" id="1_h2yb5"]
+[ext_resource type="Script" path="res://Scripts/door.gd" id="1_igy3c"]
+[ext_resource type="Material" uid="uid://duouqfp7u0whu" path="res://Enviroment/Objects/Materials/strips/strip_green.tres" id="3_n2no8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nu58n"]
 size = Vector3(0.586182, 0.856323, 0.874756)
 
+[sub_resource type="BoxMesh" id="BoxMesh_lshgw"]
+material = ExtResource("3_n2no8")
+size = Vector3(0.2, 2.575, 0.4)
+
 [node name="better_door" type="Node3D"]
+script = ExtResource("1_igy3c")
 
 [node name="Door" parent="." instance=ExtResource("1_h2yb5")]
+transform = Transform3D(1.5, 0, 0, 0, 3, 0, 0, 0, 0.25, 0, 0, 0)
 
 [node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0.721041, 0)
+transform = Transform3D(13.25, 0, 0, 0, 13.25, 0, 0, 0, 13.25, 0, 0.721041, 0)
 collision_layer = 2
 collision_mask = 2
 
@@ -18,5 +26,9 @@ collision_mask = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0045166, 0.0231323, -0.00231934)
 shape = SubResource("BoxShape3D_nu58n")
 
-[connection signal="body_entered" from="Area3D" to="Door" method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="Area3D" to="Door" method="_on_area_3d_body_exited"]
+[node name="Colour Strip" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.471, 0, 0.00598494)
+mesh = SubResource("BoxMesh_lshgw")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

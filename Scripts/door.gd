@@ -1,52 +1,58 @@
-extends MeshInstance3D
+extends Node3D
 
-var opening :bool = false
-var queue : int = 0
+var mat_black : Material = preload("res://Enviroment/Objects/Materials/strips/strip_black.tres")
+var mat_green : Material = preload("res://Enviroment/Objects/Materials/strips/strip_green.tres")
+var mat_blue : Material = preload("res://Enviroment/Objects/Materials/strips/strip_blue.tres")
+var mat_red : Material = preload("res://Enviroment/Objects/Materials/strips/strip_red.tres")
+var mat_purple : Material = preload("res://Enviroment/Objects/Materials/strips/strip_purple.tres")
+var mat_gold : Material = preload("res://Enviroment/Objects/Materials/strips/strip_gold.tres")
 
-var current_amount
-var raise_amount = -3
+var strip_mats = [
+	mat_black,
+	mat_green,
+	mat_red, 
+	mat_blue,
+	mat_purple,
+	mat_gold
+]
+
+var opening : bool = false
+var want_open : bool = false
+
+var open_time : float = 1.0
+
+var raise_amount = 3
 var lower_amount = raise_amount * -1
 
 @export var locked : bool = false
 @export var security_level : Globals.SecurityLevel
 
-var raised : bool = false:
-	set(value): 
-		raised = value
-		if raised:
-			current_amount = raise_amount
-		if !raised:
-			current_amount = lower_amount
-
-func _ready():
-	current_amount = lower_amount
-
-func _input(event):
-	return
-	if Input.is_action_just_pressed("ui_accept"):
-		_door_toggle(!raised)
+var raised : bool = false
 	
-func _door_toggle(desired_state):
+func _ready():
+	_assign_strip_colour()
+	
+func _door_toggle():
 	_security_check()
-	if locked || desired_state == raised:
+	if locked:
 		return
 	
-	if opening:
-		await get_tree().create_timer(1).timeout
-	
-	var target = position
-	target.y += current_amount
+	if want_open:
+		var target = position
+		target.y += raise_amount
+		_move_door(target)
+
+	if !want_open:
+		var target = position
+		target.y += lower_amount
+		_move_door(target)
+
+func _move_door(target):
 	opening = true
-	
 	var tween = create_tween().set_trans(Tween.TRANS_ELASTIC)
-	tween.tween_property(self, "position", target, 1)
-	
+	tween.tween_property(self, "position", target, open_time)
 	await tween.finished
 	opening = false
-	if raised:
-		raised = false
-	else:
-		raised = true
 
 func _security_check():
 	if Globals.PlayerLevel >= security_level:
@@ -55,7 +61,25 @@ func _security_check():
 		locked = true
 	
 func _on_area_3d_body_entered(body):
-	_door_toggle(true)
+	if raised:
+		return
+	if opening:
+		await get_tree().create_timer(open_time + 0.2).timeout
+	raised = true
+	want_open = true
+	_door_toggle()
 
 func _on_area_3d_body_exited(body):
-	_door_toggle(false)
+	if !raised:
+		return
+	if opening:
+		await get_tree().create_timer(open_time + 0.2).timeout
+	raised = false
+	want_open = false
+	_door_toggle()
+
+func _assign_strip_colour():
+	var chosen_mat : Material
+	chosen_mat = strip_mats[security_level]
+	$"Colour Strip".set_surface_override_material(0, chosen_mat)
+	pass
