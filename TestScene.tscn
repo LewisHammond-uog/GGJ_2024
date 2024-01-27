@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cltewaypskoxv"]
+
+[ext_resource type="PackedScene" uid="uid://btf2gorc60e12" path="res://enemy/test_enemy.tscn" id="1_m7c8v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3n1kg"]
+
+[node name="TestScene" type="Node3D"]
+
+[node name="Enemy" parent="." node_paths=PackedStringArray("agent") instance=ExtResource("1_m7c8v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.44357, 0, 0)
+agent = NodePath("")
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("BoxShape3D_3n1kg")
