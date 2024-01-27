@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dqgasnwcclrpb"]
 
-[ext_resource type="Script" path="res://PlayerController.cs" id="1_3s0c1"]
-[ext_resource type="Script" path="res://Camera3D.cs" id="2_euouj"]
+[ext_resource type="Script" path="res://Scripts/PlayerController.cs" id="1_3s0c1"]
+[ext_resource type="Script" path="res://Scripts/Camera3D.cs" id="2_euouj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vd5mg"]
 

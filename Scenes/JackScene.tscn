@@ -1,21 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://cdsllfypk2dy2"]
 
-[ext_resource type="PackedScene" uid="uid://dqgasnwcclrpb" path="res://PlayerController.tscn" id="1_5sibs"]
-[ext_resource type="Shape3D" uid="uid://chi3n2xub54sb" path="res://JacksTestFloor.tres" id="2_5y7by"]
-[ext_resource type="BoxMesh" uid="uid://bm66ojtxtcoff" path="res://JackTestFloorBox.tres" id="2_8f2uh"]
+[ext_resource type="PackedScene" uid="uid://dqgasnwcclrpb" path="res://Scenes/PlayerController.tscn" id="1_jffcq"]
+[ext_resource type="BoxMesh" uid="uid://bm66ojtxtcoff" path="res://Enviroment/JackTestFloorBox.tres" id="2_fk3ih"]
+[ext_resource type="Shape3D" uid="uid://chi3n2xub54sb" path="res://Enviroment/JacksTestFloor.tres" id="3_efdhd"]
 
 [node name="Node3D" type="Node3D"]
 
-[node name="PlayerController" parent="." instance=ExtResource("1_5sibs")]
+[node name="PlayerController" parent="." instance=ExtResource("1_jffcq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.1, 2.08165e-12)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -0.5, 2.08165e-12)
-mesh = ExtResource("2_8f2uh")
+mesh = ExtResource("2_fk3ih")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
-shape = ExtResource("2_5y7by")
+shape = ExtResource("3_efdhd")
