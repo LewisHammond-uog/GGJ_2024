@@ -1,16 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://bhelwttiec7n5"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_c2hac"]
+[ext_resource type="Material" uid="uid://dpcke5x1wq87w" path="res://Enviroment/Objects/Materials/block.tres" id="1_8h8mh"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_66sbc"]
-albedo_color = Color(0.443137, 0.443137, 0.443137, 1)
+[sub_resource type="BoxMesh" id="BoxMesh_c2hac"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x7f5a"]
 
 [node name="Block" type="MeshInstance3D"]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 mesh = SubResource("BoxMesh_c2hac")
-surface_material_override/0 = SubResource("StandardMaterial3D_66sbc")
+surface_material_override/0 = ExtResource("1_8h8mh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
