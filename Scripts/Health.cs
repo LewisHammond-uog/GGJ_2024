@@ -2,10 +2,9 @@ using Godot;
 
 namespace GGJ24.Scripts;
 
-public partial class Health : Node3D, IDamageable
+public partial class Health : Node, IDamageable
 {
-	[Signal]
-	public delegate void OnDeathEventHandler();
+	[Signal] public delegate void OnDeathEventHandler();
 	
 	[Export] private float maxHealth = 100f;
 	private float _currentHealth;
