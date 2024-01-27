@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://Scripts/PlayerController.cs" id="1_3s0c1"]
 [ext_resource type="Script" path="res://Scripts/Camera3D.cs" id="2_euouj"]
-[ext_resource type="Script" path="res://Scripts/Health.cs" id="3_10q4q"]
 [ext_resource type="Script" path="res://Scripts/Inventory.cs" id="3_cm3au"]
 [ext_resource type="Script" path="res://Scripts/Weapon.cs" id="4_tad6i"]
+[ext_resource type="Script" path="res://Scripts/PlayerHealth.cs" id="5_8esql"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vd5mg"]
 
@@ -35,4 +35,4 @@ script = ExtResource("3_cm3au")
 script = ExtResource("4_tad6i")
 
 [node name="Health" type="Node" parent="."]
-script = ExtResource("3_10q4q")
+script = ExtResource("5_8esql")

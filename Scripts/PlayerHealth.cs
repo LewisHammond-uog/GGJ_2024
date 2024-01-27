@@ -20,8 +20,9 @@ public sealed partial class PlayerHealth : Health, IHealable, IArmorRepairable
     
     public override void TakeDamage(float damage)
     {
-        //
-        
+        var armorRemval = Mathf.Min(damage * 0.33f, Armor);
+        damage -= armorRemval;
+        Armor -= armorRemval;
         base.TakeDamage(damage);
     }
 
