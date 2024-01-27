@@ -12,6 +12,7 @@
 
 [node name="PlayerController" type="CharacterBody3D" node_paths=PackedStringArray("camera")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+collision_layer = 2
 script = ExtResource("1_3s0c1")
 SlideSlow = 10.0
 camera = NodePath("Camera3D")
@@ -28,11 +29,13 @@ script = ExtResource("2_euouj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, 2.08165e-12)
 mesh = SubResource("CapsuleMesh_mr3ly")
 
-[node name="PlayerShooting" type="Node" parent="."]
+[node name="PlayerShooting" type="Node" parent="." node_paths=PackedStringArray("inventory")]
 script = ExtResource("3_snru0")
+inventory = NodePath("../PlayerInventory")
 
-[node name="PlayerInventory" type="Node" parent="."]
+[node name="PlayerInventory" type="Node" parent="." node_paths=PackedStringArray("Player")]
 script = ExtResource("3_cm3au")
+Player = NodePath("..")
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("3_10q4q")
