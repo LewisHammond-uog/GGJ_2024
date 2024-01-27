@@ -41,7 +41,7 @@ public partial class PlayerController : CharacterBody3D
 			velocity.Y -= gravity * (float)delta;
 
 		// Handle Jump.
-		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
+		if (Input.IsActionJustPressed("movement_jump") && IsOnFloor())
 			velocity.Y = JumpVelocity;
 
 #region Movement
