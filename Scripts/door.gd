@@ -82,4 +82,3 @@ func _assign_strip_colour():
 	var chosen_mat : Material
 	chosen_mat = strip_mats[security_level]
 	%"Colour Strip".set_surface_override_material(0, chosen_mat)
-	pass
