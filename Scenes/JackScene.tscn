@@ -20,7 +20,7 @@ glow_enabled = true
 [node name="Node3D" type="Node3D"]
 
 [node name="PlayerController" parent="." instance=ExtResource("1_jffcq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.5, 2.08165e-12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.6, 2.08165e-12)
 SlideSlow = 7.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]

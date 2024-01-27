@@ -14,7 +14,7 @@ public partial class PlayerController : CharacterBody3D
 	public bool isSliding = false;
 	private bool isCrouching = false;
 	public Vector2 lookDirection;
-	private Vector3 scale = new Vector3(1,1,1);
+	private Vector3 scale = new Vector3(1,0.98f,1);
 
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
@@ -22,6 +22,7 @@ public partial class PlayerController : CharacterBody3D
 	public override void _Ready()
 	{
 		Input.MouseMode = Input.MouseModeEnum.Captured;
+		Scale = scale;
 	}
 
 	public override void _UnhandledInput(InputEvent @event)
