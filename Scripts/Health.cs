@@ -17,6 +17,7 @@ public partial class Health : Node, IDamageable
 			if(_currentHealth <= 0)
 			{
 				EmitSignal(nameof(OnDeathEventHandler));
+				GD.Print("DEAD");
 			}
 		}
 	}
