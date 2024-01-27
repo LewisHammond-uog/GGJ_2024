@@ -27,12 +27,17 @@ public partial class BasicEnemy : CharacterBody3D
 		movePos = Position;
 		this.TryFindNodeOfTypeInChildren<Health>().DeathEvent += DeathEvent;
 	}
-	
+
+	public void StartKnockback(Vector3 knockbackForce)
+	{
+		state = State.Stunned;
+		Velocity = knockbackForce;
+		MoveAndSlide();
+	}
+
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		UpdateState();
-		
 		//If dead then destroy, in future wait for an animation to finish
 		if (state == State.Dead)
 		{
@@ -43,11 +48,12 @@ public partial class BasicEnemy : CharacterBody3D
 	public override void _PhysicsProcess(double delta)
 	{
 		base._PhysicsProcess(delta);
-		if (state == State.Dead)
+		UpdateState();
+		canSeePlayer = CanSeePlayer();
+		if (state is State.Dead or State.Stunned)
 		{
 			return;
 		}
-		canSeePlayer = CanSeePlayer();
 		calculateMove(delta);
 	}
 
@@ -138,6 +144,9 @@ public partial class BasicEnemy : CharacterBody3D
 				shootComp.TryShoot();
 				break;
 			}
+			case State.Stunned:
+				ApplyKnockback();
+				break;
 			case State.Dead:
 				break;
 			default:
@@ -161,7 +170,25 @@ public partial class BasicEnemy : CharacterBody3D
 		LookAt(lookAt);
 		MoveAndSlide();
 	}
-	
+
+	private void ApplyKnockback()
+	{
+		Vector3 velocity = Velocity;
+		velocity.X = Mathf.MoveToward(Velocity.X, 0, 0.1f);
+		velocity.Y = Mathf.MoveToward(Velocity.Y, 0, 0.1f);
+		velocity.Z = Mathf.MoveToward(Velocity.Z, 0, 0.1f);
+		
+		Velocity = velocity;
+		Vector3 lookAt = player.Position;
+		lookAt.Y = Position.Y;
+		LookAt(lookAt);
+		MoveAndSlide();
+
+		if (velocity.Length() < 0.1f)
+		{
+			state = State.MoveToPlayer;
+		}
+	}
 
 	private void DeathEvent(object sender, EventArgs e)
 	{

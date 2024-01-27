@@ -36,9 +36,9 @@ public partial class Weapon : Node
 	public void SpawnBullet()
 	{
 		var bullet = Resource.Bullet.Instantiate<BaseProjectile>();
-		bullet.GlobalPosition = Player.GlobalPosition;
-		bullet.Rotation = Player.Rotation;
 		GetTree().Root.AddChild(bullet);
 		bullet.Setup(-Player.Transform.Basis.Z);
+		bullet.GlobalPosition = Player.GlobalPosition;
+		bullet.Rotation = Player.Rotation;
 	}
 }
