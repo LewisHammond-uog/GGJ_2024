@@ -1,7 +1,7 @@
 extends MeshInstance3D
 
 var current_amount
-var raise_amount = -2
+var raise_amount = -3
 var lower_amount = raise_amount * -1
 
 @export var locked : bool = false
