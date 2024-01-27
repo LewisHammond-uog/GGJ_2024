@@ -9,7 +9,7 @@ public partial class BasicEnemy : CharacterBody3D
 	[Export] private NavigationAgent3D agent;
 	[Export] private EnemyShooter shootComp;
 	[Export] private float seeDistance = 1000f;
-	[Export] private float idealDistanceToPlayer = 1f;
+	[Export] private float idealDistanceToPlayer;
 	[Export] private float standStillDistance = 0.2f;
 	[Export] private float moveSpeed = 2f;
 	[Export] private CharacterBody3D player;
@@ -145,6 +145,9 @@ public partial class BasicEnemy : CharacterBody3D
 	private void AgentVelocityComputed(Vector3 safe_velocity)
 	{
 		Velocity = Velocity.MoveToward(safe_velocity, 0.25f);
+		Vector3 lookAt = player.Position;
+		lookAt.Y = Position.Y;
+		LookAt(lookAt);
 		MoveAndSlide();
 	}
 	

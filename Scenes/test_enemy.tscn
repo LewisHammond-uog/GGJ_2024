@@ -1,18 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://btf2gorc60e12"]
+[gd_scene load_steps=8 format=3 uid="uid://btf2gorc60e12"]
 
-[ext_resource type="Shape3D" uid="uid://bx6cj3nc5gbkj" path="res://enemy_collision_shape.tres" id="1_0v4aw"]
-[ext_resource type="Script" path="res://enemy/BasicEnemy.cs" id="1_uo2fx"]
-[ext_resource type="Script" path="res://enemy/EnemyShooter.cs" id="3_v1wjf"]
+[ext_resource type="Shape3D" uid="uid://bx6cj3nc5gbkj" path="res://enemy/enemy_collision_shape.tres" id="1_0v4aw"]
+[ext_resource type="Script" path="res://Scripts/BasicEnemy.cs" id="1_uo2fx"]
+[ext_resource type="Script" path="res://Scripts/EnemyShooter.cs" id="3_v1wjf"]
+[ext_resource type="PackedScene" uid="uid://brhcdu621ely2" path="res://Scenes/EnemyBullet.tscn" id="4_qoah3"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ky8xh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oh7nt"]
 albedo_color = Color(0, 1, 1, 1)
 
+[sub_resource type="BoxMesh" id="BoxMesh_auw4h"]
+
 [node name="Enemy" type="CharacterBody3D" node_paths=PackedStringArray("agent", "shootComp")]
 script = ExtResource("1_uo2fx")
 agent = NodePath("NavigationAgent3D")
 shootComp = NodePath("Shooter")
+idealDistanceToPlayer = 5.0
+standStillDistance = 6.0
+moveSpeed = 5.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -27,7 +33,13 @@ mesh = SubResource("CapsuleMesh_ky8xh")
 surface_material_override/0 = SubResource("StandardMaterial3D_oh7nt")
 
 [node name="Shooter" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04766, 0.529132)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04766, -1.02672)
 script = ExtResource("3_v1wjf")
+MaxShootDist = 10.0
+bulletPrefab = ExtResource("4_qoah3")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0158233, 0, -0.497473, 0, 1, 0, 0.859247, 0, 0.00916113, -0.0219305, 1.22521, -0.746662)
+mesh = SubResource("BoxMesh_auw4h")
 
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="AgentVelocityComputed"]

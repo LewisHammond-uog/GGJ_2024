@@ -5,7 +5,7 @@ namespace GGJ24.enemy;
 public partial class EnemyShooter : Node3D
 {
     public bool CanShoot => shootTimer.IsStopped() || shootTimer.TimeLeft <= double.Epsilon;
-    public float MaxShootDist => 5f;
+    [Export] public float MaxShootDist;
 
     [Export] private double shootInterval = 5f;
     [Export] private PackedScene bulletPrefab;
@@ -29,9 +29,10 @@ public partial class EnemyShooter : Node3D
             return;
         }
         
-        // var spawnedBullet = bulletPrefab.Instantiate<Bullet>();
-        // GetTree().Root.AddChild(spawnedBullet);
+        var spawnedBullet = bulletPrefab.Instantiate<Bullet>();
+        GetTree().Root.AddChild(spawnedBullet);
+        spawnedBullet.GlobalPosition = GlobalPosition;
+        spawnedBullet.Setup(-Transform.Basis.Z);
         shootTimer.Start(shootInterval);
-        GD.Print("SHOOT NOW!");
     }
 }
