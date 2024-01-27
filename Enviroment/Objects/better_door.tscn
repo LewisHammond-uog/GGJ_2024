@@ -5,7 +5,6 @@
 [ext_resource type="Material" uid="uid://duouqfp7u0whu" path="res://Enviroment/Objects/Materials/strips/strip_green.tres" id="3_n2no8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nu58n"]
-size = Vector3(0.586182, 0.856323, 0.874756)
 
 [sub_resource type="BoxMesh" id="BoxMesh_lshgw"]
 material = ExtResource("3_n2no8")
@@ -23,7 +22,6 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0045166, 0.0231323, -0.00231934)
 shape = SubResource("BoxShape3D_nu58n")
 
 [node name="Colour Strip" type="MeshInstance3D" parent="."]
