@@ -1,23 +1,37 @@
-[gd_scene load_steps=6 format=3 uid="uid://0glqndtf0q58"]
+[gd_scene load_steps=12 format=3 uid="uid://0glqndtf0q58"]
 
-[ext_resource type="PackedScene" uid="uid://bhelwttiec7n5" path="res://Enviroment/Objects/block.tscn" id="1_06lfe"]
-[ext_resource type="PackedScene" uid="uid://cug8enbms5ifl" path="res://Enviroment/Objects/slab.tscn" id="2_srvvn"]
-[ext_resource type="PackedScene" uid="uid://bn8ft0uhjk18v" path="res://Enviroment/Objects/floor.tscn" id="3_njbrl"]
-[ext_resource type="PackedScene" uid="uid://ch3gc2mhpdwkn" path="res://Enviroment/Objects/slope.tscn" id="4_7pc8g"]
-[ext_resource type="PackedScene" uid="uid://d0j16fnjckjfc" path="res://Enviroment/Objects/slope_upsidedown.tscn" id="5_eyg4j"]
+[ext_resource type="PackedScene" uid="uid://oymkgchvpq5q" path="res://Enviroment/Objects/environment_library/carpet_1.tscn" id="2_uuoaq"]
+[ext_resource type="PackedScene" uid="uid://m5jekvev70xj" path="res://Enviroment/Objects/environment_library/carpet_2.tscn" id="3_h2vb3"]
+[ext_resource type="PackedScene" uid="uid://c44i4gg801vkb" path="res://Enviroment/Objects/environment_library/ceiling_1.tscn" id="4_ec0e3"]
+[ext_resource type="PackedScene" uid="uid://ck50442ckkv00" path="res://Enviroment/Objects/environment_library/ceiling_2.tscn" id="5_jh5ty"]
+[ext_resource type="PackedScene" uid="uid://cj4n1yumt71ds" path="res://Enviroment/Objects/environment_library/carpet.tscn" id="6_nhaab"]
+[ext_resource type="PackedScene" uid="uid://dj5iqo8haglmt" path="res://Enviroment/Objects/environment_library/ceiling_3.tscn" id="6_sos2e"]
+[ext_resource type="PackedScene" uid="uid://bxdtxyrdg2dch" path="res://Enviroment/Objects/environment_library/ceiling_4.tscn" id="7_6j0cm"]
+[ext_resource type="PackedScene" uid="uid://c6j7175kuwrsj" path="res://Enviroment/Objects/environment_library/ceiling_5.tscn" id="8_0d74u"]
+[ext_resource type="PackedScene" uid="uid://btb2p4878rvuh" path="res://Enviroment/Objects/environment_library/wall.tscn" id="9_g3hvl"]
+[ext_resource type="PackedScene" uid="uid://ddgmjkjbb0ilk" path="res://Enviroment/Objects/environment_library/wall_bottom.tscn" id="10_efh3d"]
+[ext_resource type="PackedScene" uid="uid://dkfdg8k4eddao" path="res://Enviroment/Objects/environment_library/wall_top.tscn" id="11_3ro6d"]
 
 [node name="Tiles" type="Node3D"]
 
-[node name="Block" parent="." instance=ExtResource("1_06lfe")]
-visible = false
+[node name="carpet" parent="." instance=ExtResource("6_nhaab")]
 
-[node name="Slab" parent="." instance=ExtResource("2_srvvn")]
-visible = false
+[node name="carpet_1" parent="." instance=ExtResource("2_uuoaq")]
 
-[node name="Floor" parent="." instance=ExtResource("3_njbrl")]
-visible = false
+[node name="carpet_2" parent="." instance=ExtResource("3_h2vb3")]
 
-[node name="Slope" parent="." instance=ExtResource("4_7pc8g")]
+[node name="ceiling_1" parent="." instance=ExtResource("4_ec0e3")]
 
-[node name="Slope_upsidedown" parent="." instance=ExtResource("5_eyg4j")]
-transform = Transform3D(-0.75, 6.55671e-08, 6.55671e-08, -6.55671e-08, -0.75, -6.55671e-08, 6.55671e-08, -6.55671e-08, 0.75, 0, -0.75, 0)
+[node name="ceiling_2" parent="." instance=ExtResource("5_jh5ty")]
+
+[node name="ceiling_3" parent="." instance=ExtResource("6_sos2e")]
+
+[node name="ceiling_4" parent="." instance=ExtResource("7_6j0cm")]
+
+[node name="ceiling_5" parent="." instance=ExtResource("8_0d74u")]
+
+[node name="wall" parent="." instance=ExtResource("9_g3hvl")]
+
+[node name="wall_bottom" parent="." instance=ExtResource("10_efh3d")]
+
+[node name="wall_top" parent="." instance=ExtResource("11_3ro6d")]

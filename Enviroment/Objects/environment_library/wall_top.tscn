@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkfdg8k4eddao"]
+
+[ext_resource type="Material" uid="uid://r8s2ljqm55gf" path="res://Enviroment/Objects/Materials/wall_top.tres" id="1_e0rdn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_cwstj"]
+
+[node name="wall_top" type="MeshInstance3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_cwstj")
+surface_material_override/0 = ExtResource("1_e0rdn")
