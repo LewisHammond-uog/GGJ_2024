@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b67k6c2dx66a"
-path="res://.godot/imported/ui-toolbar.png-8713b8a145a761a5e98b34d78d2803d3.ctex"
+uid="uid://glykv8ygra6v"
+path="res://.godot/imported/clownIconBIG.png-40519053efaa7f082c8d1b86685cf7f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://artAssets/UI/ui-toolbar.png"
-dest_files=["res://.godot/imported/ui-toolbar.png-8713b8a145a761a5e98b34d78d2803d3.ctex"]
+source_file="res://artAssets/clownIconBIG.png"
+dest_files=["res://.godot/imported/clownIconBIG.png-40519053efaa7f082c8d1b86685cf7f2.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

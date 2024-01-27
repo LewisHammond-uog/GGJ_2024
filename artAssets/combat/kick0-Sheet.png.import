@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://n2obcsmw54gp"
-path="res://.godot/imported/kick0-Sheet.png-bfec6783e288f7dc5f439c66e16f482f.ctex"
+path="res://.godot/imported/kick0-Sheet.png-a697eff279fc9f26491dd0b78b897f40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://artAssets/kick0-Sheet.png"
-dest_files=["res://.godot/imported/kick0-Sheet.png-bfec6783e288f7dc5f439c66e16f482f.ctex"]
+source_file="res://artAssets/combat/kick0-Sheet.png"
+dest_files=["res://.godot/imported/kick0-Sheet.png-a697eff279fc9f26491dd0b78b897f40.ctex"]
 
 [params]
 

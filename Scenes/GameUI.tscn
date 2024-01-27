@@ -1,0 +1,122 @@
+[gd_scene load_steps=7 format=3 uid="uid://d20go8plf3xs5"]
+
+[ext_resource type="Texture2D" uid="uid://b67k6c2dx66a" path="res://artAssets/UI/ui-toolbar.png" id="1_t7rhx"]
+[ext_resource type="Texture2D" uid="uid://glykv8ygra6v" path="res://artAssets/clownIconBIG.png" id="2_230t2"]
+[ext_resource type="FontFile" uid="uid://bi0py6h3kkpo7" path="res://Fonts/Daydream.ttf" id="3_mk67c"]
+[ext_resource type="Texture2D" uid="uid://b48m752xxx777" path="res://artAssets/UI/heartIcon.png" id="3_qm4wi"]
+[ext_resource type="Texture2D" uid="uid://dnhat3y8fttg4" path="res://artAssets/UI/clownyArmourIcon.png" id="4_ydjtk"]
+[ext_resource type="Script" path="res://Scripts/HealthDisplay.cs" id="5_m28g7"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -340.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_t7rhx")
+stretch_mode = 5
+
+[node name="DoomGuy" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 892.0
+offset_top = 170.0
+offset_right = 1055.0
+offset_bottom = 324.0
+texture = ExtResource("2_230t2")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="HealthDisplay2" type="Control" parent="TextureRect"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 631.0
+offset_top = 165.0
+offset_right = 814.0
+offset_bottom = 338.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/HealthDisplay2"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -92.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/normal_font = ExtResource("3_mk67c")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[center]100[/center]"
+scroll_active = false
+autowrap_mode = 0
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/HealthDisplay2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -52.5
+offset_top = 5.0
+offset_right = 52.5
+offset_bottom = 93.0
+grow_horizontal = 2
+texture = ExtResource("4_ydjtk")
+stretch_mode = 5
+
+[node name="HealthDisplay" type="Control" parent="TextureRect" node_paths=PackedStringArray("Label")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 387.0
+offset_top = 165.0
+offset_right = 570.0
+offset_bottom = 338.0
+script = ExtResource("5_m28g7")
+Label = NodePath("RichTextLabel")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/HealthDisplay"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -92.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/normal_font = ExtResource("3_mk67c")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[center]100[/center]"
+scroll_active = false
+autowrap_mode = 0
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/HealthDisplay"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -52.5
+offset_top = 5.0
+offset_right = 52.5
+offset_bottom = 93.0
+grow_horizontal = 2
+texture = ExtResource("3_qm4wi")
+stretch_mode = 5

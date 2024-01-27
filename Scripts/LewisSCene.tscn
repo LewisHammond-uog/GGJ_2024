@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cltewaypskoxv"]
+[gd_scene load_steps=5 format=3 uid="uid://esxoyk8lgadi"]
 
 [ext_resource type="PackedScene" uid="uid://btf2gorc60e12" path="res://Scenes/test_enemy.tscn" id="1_rfvbf"]
 [ext_resource type="PackedScene" uid="uid://dqgasnwcclrpb" path="res://Scenes/PlayerController.tscn" id="2_6l5vm"]
+[ext_resource type="PackedScene" uid="uid://d20go8plf3xs5" path="res://Scenes/GameUI.tscn" id="3_w5414"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_js1gq"]
 vertices = PackedVector3Array(0, 0.471085, -10.9521, 0, 0.471085, 0.0478516, 18.5, 0.471085, 0.0478516, 18.5, 0.471085, -10.9521)
@@ -11,10 +12,10 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 
 [node name="Enemy" parent="." instance=ExtResource("1_rfvbf")]
 transform = Transform3D(0.0126183, 0, 0.99992, 0, 1, 0, -0.99992, 0, 0.0126183, 5.25654, 0, -2.26886)
+visible = false
 
 [node name="Player" parent="." instance=ExtResource("2_6l5vm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8136, 1, -8.38916)
-SlideSlow = 1.0
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.855861, 0.517206, 0, -0.517206, 0.855861, 4.18168, 5.13951, 4.37766)
@@ -32,10 +33,7 @@ size = Vector3(19.5332, 8.6333, 11.9521)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.594823, 0.803857, 0, -0.803857, 0.594823, 0, 0, 0)
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1155.0
-offset_bottom = 650.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("3_w5414")]
+clip_contents = true
