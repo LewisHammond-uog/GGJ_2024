@@ -1,15 +1,44 @@
 using Godot;
 using System;
 
-public partial class Weapon : Node3D
+public partial class Weapon : Node
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
+	public PlayerController Player;
+	
+	public WeaponResource Resource;
+	public Timer FireTimer;
+	public Node AnimationNode;
+
+	public Weapon(WeaponResource resource)
 	{
+		Resource = resource;
+		FireTimer = new Timer();
+		FireTimer.Autostart = false;
+		FireTimer.OneShot = true;
+		FireTimer.Stop();
+		AddChild(FireTimer);
+		FireTimer.Timeout += SpawnBullet;
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+	public void FireWeapon()
 	{
+		if (Resource.Animation != null)
+		{
+			AnimationNode = Resource.Animation.Instantiate();
+			AddChild(AnimationNode);
+		}
+		if(Resource.WindUp > 0f)
+			FireTimer.Start(Resource.WindUp);
+		else
+			SpawnBullet();
+	}
+
+	public void SpawnBullet()
+	{
+		var bullet = Resource.Bullet.Instantiate<BaseProjectile>();
+		bullet.GlobalPosition = Player.GlobalPosition;
+		bullet.Rotation = Player.Rotation;
+		GetTree().Root.AddChild(bullet);
+		bullet.Setup(-Player.Transform.Basis.Z);
 	}
 }
