@@ -1,3 +1,4 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdsllfypk2dy2"]
 
 [ext_resource type="PackedScene" uid="uid://dqgasnwcclrpb" path="res://PlayerController.tscn" id="1_5sibs"]
 [ext_resource type="Shape3D" uid="uid://chi3n2xub54sb" path="res://JacksTestFloor.tres" id="2_5y7by"]
