@@ -1,6 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://2533h4ku6n"]
-
-[ext_resource type="Script" path="res://Scripts/door.gd" id="1_sqrxt"]
+[gd_scene load_steps=3 format=3 uid="uid://2533h4ku6n"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_x6fub"]
 
@@ -10,7 +8,6 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 [node name="Door" type="MeshInstance3D"]
 transform = Transform3D(1.5, 0, 0, 0, 3, 0, 0, 0, 0.25, 0, 0.75, 0)
 mesh = SubResource("BoxMesh_x6fub")
-script = ExtResource("1_sqrxt")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
