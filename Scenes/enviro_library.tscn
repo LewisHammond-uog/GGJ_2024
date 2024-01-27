@@ -1,13 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://0glqndtf0q58"]
+[gd_scene load_steps=6 format=3 uid="uid://0glqndtf0q58"]
 
 [ext_resource type="PackedScene" uid="uid://bhelwttiec7n5" path="res://Enviroment/Objects/block.tscn" id="1_06lfe"]
 [ext_resource type="PackedScene" uid="uid://cug8enbms5ifl" path="res://Enviroment/Objects/slab.tscn" id="2_srvvn"]
 [ext_resource type="PackedScene" uid="uid://bn8ft0uhjk18v" path="res://Enviroment/Objects/floor.tscn" id="3_njbrl"]
+[ext_resource type="PackedScene" uid="uid://ch3gc2mhpdwkn" path="res://Enviroment/Objects/slope.tscn" id="4_7pc8g"]
+[ext_resource type="PackedScene" uid="uid://d0j16fnjckjfc" path="res://Enviroment/Objects/slope_upsidedown.tscn" id="5_eyg4j"]
 
 [node name="Tiles" type="Node3D"]
 
 [node name="Block" parent="." instance=ExtResource("1_06lfe")]
+visible = false
 
 [node name="Slab" parent="." instance=ExtResource("2_srvvn")]
+visible = false
 
 [node name="Floor" parent="." instance=ExtResource("3_njbrl")]
+visible = false
+
+[node name="Slope" parent="." instance=ExtResource("4_7pc8g")]
+
+[node name="Slope_upsidedown" parent="." instance=ExtResource("5_eyg4j")]
+transform = Transform3D(-0.75, 6.55671e-08, 6.55671e-08, -6.55671e-08, -0.75, -6.55671e-08, 6.55671e-08, -6.55671e-08, 0.75, 0, -0.75, 0)

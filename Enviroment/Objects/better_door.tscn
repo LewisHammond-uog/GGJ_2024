@@ -3,17 +3,19 @@
 [ext_resource type="PackedScene" uid="uid://2533h4ku6n" path="res://Enviroment/Objects/door.tscn" id="1_h2yb5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nu58n"]
+size = Vector3(0.586182, 0.856323, 0.874756)
 
 [node name="better_door" type="Node3D"]
 
 [node name="Door" parent="." instance=ExtResource("1_h2yb5")]
 
 [node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(6.645, 0, 0, 0, 6.645, 0, 0, 0, 6.645, 0, 0.721041, 0)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0.721041, 0)
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0045166, 0.0231323, -0.00231934)
 shape = SubResource("BoxShape3D_nu58n")
 
 [connection signal="body_entered" from="Area3D" to="Door" method="_on_area_3d_body_entered"]

@@ -55,9 +55,7 @@ func _security_check():
 		locked = true
 	
 func _on_area_3d_body_entered(body):
-	print("hi")
 	_door_toggle(true)
 
 func _on_area_3d_body_exited(body):
-	print("bye")
 	_door_toggle(false)
