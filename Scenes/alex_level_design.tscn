@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b88ql72qniih1"]
+[gd_scene load_steps=9 format=3 uid="uid://b88ql72qniih1"]
 
 [ext_resource type="MeshLibrary" uid="uid://bxbexws8yi6yw" path="res://Enviroment/Libraries/BuildingBlocks.tres" id="1_7tfpk"]
 [ext_resource type="PackedScene" uid="uid://dqgasnwcclrpb" path="res://Scenes/PlayerController.tscn" id="2_bcqu3"]
 [ext_resource type="PackedScene" uid="uid://dt67wbh0cngq0" path="res://Enviroment/Objects/better_door.tscn" id="3_m4x5h"]
-[ext_resource type="PackedScene" uid="uid://b1o5ag11kdgs2" path="res://Enviroment/Objects/keycard.tscn" id="4_pfof2"]
+[ext_resource type="PackedScene" path="res://Enviroment/Objects/keycard.tscn" id="4_pfof2"]
+[ext_resource type="PackedScene" path="res://Scenes/pause_menu.tscn" id="5_lsxkg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_108en"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -237,22 +238,26 @@ distance_fade_enabled = true
 omni_range = 1902.07
 omni_attenuation = 1.07177
 
-[node name="Keycard" parent="." instance=ExtResource("4_pfof2")]
+[node name="Keycard_green" parent="." instance=ExtResource("4_pfof2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6875, 2.17051, 0)
 security_level = 1
 
-[node name="Keycard2" parent="." instance=ExtResource("4_pfof2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.0063, 2.17051, 27.8253)
+[node name="Keycard_red" parent="." instance=ExtResource("4_pfof2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.55823, 2.17051, 26.7303)
 security_level = 2
 
-[node name="Keycard3" parent="." instance=ExtResource("4_pfof2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.1531, 2.17051, 9.14963)
+[node name="Keycard_purple" parent="." instance=ExtResource("4_pfof2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.6155, 2.17051, 21.5862)
 security_level = 4
 
-[node name="Keycard4" parent="." instance=ExtResource("4_pfof2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5781, 2.17051, 21.522)
+[node name="Keycard_blue" parent="." instance=ExtResource("4_pfof2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9664, 2.17051, 23.341)
 security_level = 3
 
-[node name="Keycard5" parent="." instance=ExtResource("4_pfof2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.4609, 2.17051, 45.2872)
+[node name="Keycard_gold" parent="." instance=ExtResource("4_pfof2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.2347, 2.17051, 41.1182)
 security_level = 5
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("5_lsxkg")]
