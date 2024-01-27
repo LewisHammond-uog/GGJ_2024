@@ -1,8 +1,7 @@
-using Godot;
-using System;
 using System.Globalization;
-using GGJ24;
-using GGJ24.Scripts;
+using Godot;
+
+namespace GGJ24.Scripts;
 
 public partial class HealthDisplay : Control
 {
@@ -15,7 +14,6 @@ public partial class HealthDisplay : Control
 		Player = GetNode("/root/TestScene/Player").FindChild("PlayerHealth") as PlayerHealth;
 	}
 	
-
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
@@ -26,5 +24,4 @@ public partial class HealthDisplay : Control
 
 		Label.Text = $"[center]{Mathf.CeilToInt(Player.CurrentHealth).ToString(CultureInfo.InvariantCulture)}[/center]";
 	}
-	
 }

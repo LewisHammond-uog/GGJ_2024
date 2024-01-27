@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bvm4m3inco86b"]
+[gd_scene load_steps=8 format=3 uid="uid://dcpdw1n2l1ge0"]
 
 [ext_resource type="Texture2D" uid="uid://b67k6c2dx66a" path="res://artAssets/UI/ui-toolbar.png" id="1_t7rhx"]
 [ext_resource type="Texture2D" uid="uid://glykv8ygra6v" path="res://artAssets/clownIconBIG.png" id="2_230t2"]
 [ext_resource type="FontFile" uid="uid://bi0py6h3kkpo7" path="res://Fonts/Daydream.ttf" id="3_mk67c"]
 [ext_resource type="Texture2D" uid="uid://b48m752xxx777" path="res://artAssets/UI/heartIcon.png" id="3_qm4wi"]
+[ext_resource type="Script" path="res://Scripts/Projectiles/ArmorDisplay.cs" id="3_v6gag"]
 [ext_resource type="Texture2D" uid="uid://dnhat3y8fttg4" path="res://artAssets/UI/clownyArmourIcon.png" id="4_ydjtk"]
 [ext_resource type="Script" path="res://Scripts/HealthDisplay.cs" id="5_m28g7"]
 
@@ -39,13 +40,15 @@ texture = ExtResource("2_230t2")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="HealthDisplay2" type="Control" parent="TextureRect"]
+[node name="HealthDisplay2" type="Control" parent="TextureRect" node_paths=PackedStringArray("Label")]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 631.0
 offset_top = 165.0
 offset_right = 814.0
 offset_bottom = 338.0
+script = ExtResource("3_v6gag")
+Label = NodePath("RichTextLabel")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/HealthDisplay2"]
 layout_mode = 1
