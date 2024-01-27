@@ -31,3 +31,11 @@ size = Vector3(19.5332, 8.6333, 11.9521)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.594823, 0.803857, 0, -0.803857, 0.594823, 0, 0, 0)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1155.0
+offset_bottom = 650.0
+size_flags_horizontal = 3
+size_flags_vertical = 3

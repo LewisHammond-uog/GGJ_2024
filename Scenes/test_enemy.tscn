@@ -42,4 +42,3 @@ bulletPrefab = ExtResource("4_qoah3")
 script = ExtResource("5_64nib")
 
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="AgentVelocityComputed"]
-[connection signal="OnDeath" from="Health" to="." method="OnDeath"]
