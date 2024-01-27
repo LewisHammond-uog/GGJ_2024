@@ -1,3 +1,16 @@
-[gd_scene format=3 uid="uid://ditnpfrmr3wrj"]
+[gd_scene load_steps=3 format=3 uid="uid://ditnpfrmr3wrj"]
 
-[node name="Punch" type="Node3D"]
+[ext_resource type="Script" path="res://Scripts/Projectiles/Punch.cs" id="1_0efol"]
+[ext_resource type="Shape3D" uid="uid://qv3ec83widsw" path="res://Weapons/Projectiles/PunchColl.tres" id="3_ary28"]
+
+[node name="Punch" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, -0.2)
+collision_layer = 4
+gravity_scale = 1.66533e-16
+script = ExtResource("1_0efol")
+speed = 2.08165e-12
+lifeTime = 0.05
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, -0.4)
+shape = ExtResource("3_ary28")
