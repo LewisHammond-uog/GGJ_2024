@@ -51,6 +51,11 @@ public partial class BasicEnemy : CharacterBody3D
 
 	private bool CanSeePlayer()
 	{
+		if (player == null)
+		{
+			return false;
+		}
+		
 		var spaceState = GetWorld3D().DirectSpaceState;
 		var query = PhysicsRayQueryParameters3D.Create(Position, player.Position);
 		query.Exclude = new Array<Rid>(new Rid[] { GetRid(), player.GetRid() });
