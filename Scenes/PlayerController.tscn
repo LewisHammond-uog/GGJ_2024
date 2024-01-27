@@ -34,5 +34,5 @@ script = ExtResource("3_cm3au")
 [node name="Weapon" type="Node3D" parent="."]
 script = ExtResource("4_tad6i")
 
-[node name="Health" type="Node" parent="."]
+[node name="PlayerHealth" type="Node" parent="."]
 script = ExtResource("5_8esql")

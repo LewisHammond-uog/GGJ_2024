@@ -1,13 +1,16 @@
+using System;
 using Godot;
 
 namespace GGJ24.Scripts;
 
 public partial class Health : Node, IDamageable
 {
-	[Signal] public delegate void OnDeathEventHandler();
+	public EventHandler DeathEvent;
 	
 	[Export] private float maxHealth = 100f;
+	private bool processedDeath = false;
 	private float _currentHealth;
+	
 	public float CurrentHealth
 	{
 		get => _currentHealth;
@@ -16,8 +19,8 @@ public partial class Health : Node, IDamageable
 			_currentHealth = Mathf.Clamp(value, 0, maxHealth);
 			if(_currentHealth <= 0)
 			{
-				EmitSignal(nameof(OnDeathEventHandler));
-				GD.Print("DEAD");
+				DeathEvent?.Invoke(this, null!);
+				processedDeath = true;
 			}
 		}
 	}

@@ -1,5 +1,7 @@
 using Godot;
 using System;
+using GGJ24;
+using GGJ24.Scripts;
 
 public partial class PlayerController : CharacterBody3D
 {
@@ -25,8 +27,10 @@ public partial class PlayerController : CharacterBody3D
 	{
 		Input.MouseMode = Input.MouseModeEnum.Captured;
 		Scale = scale;
+		this.TryFindNodeOfTypeInChildren<PlayerHealth>().DeathEvent += OnDeath;
 	}
-
+	
+	
 	public override void _UnhandledInput(InputEvent @event)
 	{
 		if (@event is InputEventMouseMotion motion)
@@ -131,4 +135,19 @@ public partial class PlayerController : CharacterBody3D
 		playerRotation.Y -= lookDirection.X * Sensitivity;
 		Rotation = playerRotation;
 	}
+	
+	private void OnDeath(object sender, EventArgs e)
+	{
+		SetProcess(false);
+		SetPhysicsProcess(false);
+		SetProcessInput(false);
+		SetProcessUnhandledInput(false);
+		this.TryFindNodeOfTypeInChildren<PlayerHealth>().DeathEvent -= OnDeath;
+	}
 }
+
+
+
+
+
+

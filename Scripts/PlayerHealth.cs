@@ -16,14 +16,21 @@ public sealed partial class PlayerHealth : Health, IHealable, IArmorRepairable
         }
     }
     private float Armor01 => armor / maxAmour;
-    
-    
+
+    public override void _Ready()
+    {
+        base._Ready();
+        Armor = maxAmour;
+    }
+
     public override void TakeDamage(float damage)
     {
         var armorRemval = Mathf.Min(damage * 0.33f, Armor);
         damage -= armorRemval;
         Armor -= armorRemval;
         base.TakeDamage(damage);
+        
+        GD.Print($"{Armor} :: {CurrentHealth}");
     }
 
     public void Heal(float heal)
