@@ -39,3 +39,4 @@ transform = Transform3D(-0.967973, 0, 0.251056, 0, 1, 0, -0.251056, 0, -0.967973
 
 [node name="better_door" parent="." instance=ExtResource("3_j5o1c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 3, 8.25)
+security_level = 5
