@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dt67wbh0cngq0"]
+
+[ext_resource type="PackedScene" uid="uid://2533h4ku6n" path="res://Enviroment/Objects/door.tscn" id="1_h2yb5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nu58n"]
+
+[node name="better_door" type="Node3D"]
+
+[node name="Door" parent="." instance=ExtResource("1_h2yb5")]
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(6.645, 0, 0, 0, 6.645, 0, 0, 0, 6.645, 0, 0.721041, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_nu58n")
+
+[connection signal="body_entered" from="Area3D" to="Door" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="Door" method="_on_area_3d_body_exited"]
