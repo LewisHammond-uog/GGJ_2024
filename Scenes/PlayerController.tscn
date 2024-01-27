@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://dqgasnwcclrpb"]
+[gd_scene load_steps=7 format=3 uid="uid://dqgasnwcclrpb"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerController.cs" id="1_3s0c1"]
 [ext_resource type="Script" path="res://Scripts/Camera3D.cs" id="2_euouj"]
 [ext_resource type="Script" path="res://Scripts/Health.cs" id="3_10q4q"]
 [ext_resource type="Script" path="res://Scripts/Inventory.cs" id="3_cm3au"]
 [ext_resource type="Script" path="res://Scripts/PlayerShooting.cs" id="3_snru0"]
+
+[ext_resource type="Script" path="res://Scripts/PlayerHealth.cs" id="5_8esql"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vd5mg"]
 
@@ -34,5 +36,5 @@ script = ExtResource("3_snru0")
 [node name="PlayerInventory" type="Node" parent="."]
 script = ExtResource("3_cm3au")
 
-[node name="Health" type="Node" parent="."]
-script = ExtResource("3_10q4q")
+[node name="PlayerHealth" type="Node" parent="."]
+script = ExtResource("5_8esql")

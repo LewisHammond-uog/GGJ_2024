@@ -1,4 +1,5 @@
 using System;
+using GGJ24.Scripts;
 using Godot;
 using Godot.Collections;
 
@@ -25,7 +26,10 @@ public partial class BasicEnemy : CharacterBody3D
 		state = State.Idle;
 		player = GetNode<CharacterBody3D>("/root/TestScene/Player");
 		movePos = Position;
+		this.TryFindNodeOfTypeInChildren<Health>().DeathEvent += DeathEvent;
 	}
+
+
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
@@ -161,7 +165,8 @@ public partial class BasicEnemy : CharacterBody3D
 		MoveAndSlide();
 	}
 	
-	private void OnDeath()
+
+	private void DeathEvent(object sender, EventArgs e)
 	{
 		state = State.Dead;
 	}
