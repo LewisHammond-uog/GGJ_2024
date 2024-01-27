@@ -8,12 +8,12 @@
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
-[sub_resource type="Sky" id="Sky_v8elj"]
+[sub_resource type="Sky" id="Sky_042g7"]
 sky_material = SubResource("ProceduralSkyMaterial_108en")
 
 [sub_resource type="Environment" id="Environment_arwhl"]
 background_mode = 2
-sky = SubResource("Sky_v8elj")
+sky = SubResource("Sky_042g7")
 tonemap_mode = 2
 glow_enabled = true
 
@@ -39,3 +39,4 @@ transform = Transform3D(-0.967973, 0, 0.251056, 0, 1, 0, -0.251056, 0, -0.967973
 
 [node name="better_door" parent="." instance=ExtResource("3_j5o1c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 2.25, 8.25)
+SlideSlow = 7.0
