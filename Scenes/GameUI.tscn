@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d20go8plf3xs5"]
+[gd_scene load_steps=7 format=3 uid="uid://bvm4m3inco86b"]
 
 [ext_resource type="Texture2D" uid="uid://b67k6c2dx66a" path="res://artAssets/UI/ui-toolbar.png" id="1_t7rhx"]
 [ext_resource type="Texture2D" uid="uid://glykv8ygra6v" path="res://artAssets/clownIconBIG.png" id="2_230t2"]
