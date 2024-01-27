@@ -21,6 +21,7 @@ public partial class Health : Node, IDamageable
 			}
 		}
 	}
+	public float Health01 => _currentHealth / maxHealth;
 	
 	public override void _Ready()
 	{
@@ -28,7 +29,7 @@ public partial class Health : Node, IDamageable
 		_currentHealth = maxHealth;
 	}
 
-	public void TakeDamage(float damage)
+	public virtual void TakeDamage(float damage)
 	{
 		CurrentHealth -= damage;
 	}
