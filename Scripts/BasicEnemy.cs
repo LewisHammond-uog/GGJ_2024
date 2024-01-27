@@ -13,7 +13,7 @@ public partial class BasicEnemy : CharacterBody3D
 	[Export] private float idealDistanceToPlayer;
 	[Export] private float standStillDistance = 0.2f;
 	[Export] private float moveSpeed = 2f;
-	[Export] private CharacterBody3D player;
+	private CharacterBody3D player => GetNode<CharacterBody3D>(CSharpGlobals.pathToPlayer);
 
 	private bool canSeePlayer = false;
 	private Vector3? playerLastPos;
@@ -24,7 +24,6 @@ public partial class BasicEnemy : CharacterBody3D
 	public override void _Ready()
 	{
 		state = State.Idle;
-		player = GetNode<CharacterBody3D>("/root/TestScene/Player");
 		movePos = Position;
 		this.TryFindNodeOfTypeInChildren<Health>().DeathEvent += DeathEvent;
 	}

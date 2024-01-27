@@ -6,12 +6,12 @@ namespace GGJ24.Scripts;
 public partial class HealthDisplay : Control
 {
 	[Export] private RichTextLabel Label;
-	[Export] private PlayerHealth Player;
+	private PlayerHealth Player => GetNode(CSharpGlobals.pathToPlayer).FindChild("PlayerHealth") as PlayerHealth;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		Player = GetNode("/root/TestScene/Player").FindChild("PlayerHealth") as PlayerHealth;
+
 	}
 	
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

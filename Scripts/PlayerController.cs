@@ -27,6 +27,7 @@ public partial class PlayerController : CharacterBody3D
 	{
 		Input.MouseMode = Input.MouseModeEnum.Captured;
 		Scale = scale;
+		CSharpGlobals.pathToPlayer = GetPath();
 		this.TryFindNodeOfTypeInChildren<PlayerHealth>().DeathEvent += OnDeath;
 	}
 	
