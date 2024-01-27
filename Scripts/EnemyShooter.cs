@@ -32,7 +32,7 @@ public partial class EnemyShooter : Node3D
         var spawnedBullet = bulletPrefab.Instantiate<Bullet>();
         GetTree().Root.AddChild(spawnedBullet);
         spawnedBullet.GlobalPosition = GlobalPosition;
-        spawnedBullet.Setup(-Transform.Basis.Z);
+        spawnedBullet.Setup(-GlobalTransform.Basis.Z);
         shootTimer.Start(shootInterval);
     }
 }

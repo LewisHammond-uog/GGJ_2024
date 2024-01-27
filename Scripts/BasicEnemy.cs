@@ -1,4 +1,5 @@
 using System;
+using GGJ24.Scripts;
 using Godot;
 using Godot.Collections;
 
@@ -25,17 +26,30 @@ public partial class BasicEnemy : CharacterBody3D
 		state = State.Idle;
 		player = GetNode<CharacterBody3D>("/root/TestScene/Player");
 		movePos = Position;
+		this.TryFindNodeOfTypeInChildren<Health>().DeathEvent += DeathEvent;
 	}
+
+
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
 		UpdateState();
+		
+		//If dead then destroy, in future wait for an animation to finish
+		if (state == State.Dead)
+		{
+			QueueFree();
+		}
 	}
 
 	public override void _PhysicsProcess(double delta)
 	{
 		base._PhysicsProcess(delta);
+		if (state == State.Dead)
+		{
+			return;
+		}
 		canSeePlayer = CanSeePlayer();
 		calculateMove(delta);
 	}
@@ -151,6 +165,12 @@ public partial class BasicEnemy : CharacterBody3D
 		MoveAndSlide();
 	}
 	
+
+	private void DeathEvent(object sender, EventArgs e)
+	{
+		state = State.Dead;
+	}
+	
 	private enum State
 	{
 		Idle,
@@ -161,6 +181,3 @@ public partial class BasicEnemy : CharacterBody3D
 		Dead
 	}
 }
-
-
-

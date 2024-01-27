@@ -4,13 +4,12 @@
 [ext_resource type="Script" path="res://Scripts/BasicEnemy.cs" id="1_uo2fx"]
 [ext_resource type="Script" path="res://Scripts/EnemyShooter.cs" id="3_v1wjf"]
 [ext_resource type="PackedScene" uid="uid://brhcdu621ely2" path="res://Scenes/EnemyBullet.tscn" id="4_qoah3"]
+[ext_resource type="Script" path="res://Scripts/Health.cs" id="5_64nib"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ky8xh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oh7nt"]
 albedo_color = Color(0, 1, 1, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_auw4h"]
 
 [node name="Enemy" type="CharacterBody3D" node_paths=PackedStringArray("agent", "shootComp")]
 script = ExtResource("1_uo2fx")
@@ -36,10 +35,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_oh7nt")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04766, -1.02672)
 script = ExtResource("3_v1wjf")
 MaxShootDist = 10.0
+shootInterval = 0.5
 bulletPrefab = ExtResource("4_qoah3")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0158233, 0, -0.497473, 0, 1, 0, 0.859247, 0, 0.00916113, -0.0219305, 1.22521, -0.746662)
-mesh = SubResource("BoxMesh_auw4h")
+[node name="Health" type="Node3D" parent="."]
+script = ExtResource("5_64nib")
 
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="AgentVelocityComputed"]
