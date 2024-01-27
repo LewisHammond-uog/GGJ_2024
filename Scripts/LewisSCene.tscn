@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cltewaypskoxv"]
 
-[ext_resource type="PackedScene" uid="uid://btf2gorc60e12" path="res://enemy/test_enemy.tscn" id="1_m7c8v"]
-[ext_resource type="PackedScene" uid="uid://dqgasnwcclrpb" path="res://Scenes/PlayerController.tscn" id="2_8lsyr"]
+[ext_resource type="PackedScene" uid="uid://btf2gorc60e12" path="res://Scenes/test_enemy.tscn" id="1_rfvbf"]
+[ext_resource type="PackedScene" uid="uid://dqgasnwcclrpb" path="res://Scenes/PlayerController.tscn" id="2_6l5vm"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_js1gq"]
 vertices = PackedVector3Array(0, 0.471085, -10.9521, 0, 0.471085, 0.0478516, 18.5, 0.471085, 0.0478516, 18.5, 0.471085, -10.9521)
@@ -9,10 +9,10 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 
 [node name="TestScene" type="Node3D"]
 
-[node name="Enemy" parent="." instance=ExtResource("1_m7c8v")]
+[node name="Enemy" parent="." instance=ExtResource("1_rfvbf")]
 transform = Transform3D(0.0126183, 0, 0.99992, 0, 1, 0, -0.99992, 0, 0.0126183, 5.25654, 0, -2.26886)
 
-[node name="Player" parent="." instance=ExtResource("2_8lsyr")]
+[node name="Player" parent="." instance=ExtResource("2_6l5vm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8136, 1, -8.38916)
 
 [node name="Camera3D" type="Camera3D" parent="."]

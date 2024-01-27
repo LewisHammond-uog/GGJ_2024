@@ -10,6 +10,9 @@ radius = 0.1
 [node name="EnemyBullet" type="RigidBody3D"]
 mass = 0.01
 gravity_scale = 0.8
+continuous_cd = true
+max_contacts_reported = 5
+contact_monitor = true
 script = ExtResource("1_6r7nn")
 speed = 20.0
 
