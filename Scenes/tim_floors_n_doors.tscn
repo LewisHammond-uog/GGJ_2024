@@ -2,18 +2,18 @@
 
 [ext_resource type="MeshLibrary" uid="uid://bxbexws8yi6yw" path="res://Enviroment/Libraries/BuildingBlocks.tres" id="1_tyloc"]
 [ext_resource type="PackedScene" uid="uid://2533h4ku6n" path="res://Enviroment/Objects/door.tscn" id="2_snwh8"]
-[ext_resource type="PackedScene" path="res://Scenes/PlayerController.tscn" id="3_4a7d6"]
+[ext_resource type="PackedScene" uid="uid://dqgasnwcclrpb" path="res://Scenes/PlayerController.tscn" id="3_4a7d6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_108en"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
-[sub_resource type="Sky" id="Sky_v8elj"]
+[sub_resource type="Sky" id="Sky_042g7"]
 sky_material = SubResource("ProceduralSkyMaterial_108en")
 
 [sub_resource type="Environment" id="Environment_arwhl"]
 background_mode = 2
-sky = SubResource("Sky_v8elj")
+sky = SubResource("Sky_042g7")
 tonemap_mode = 2
 glow_enabled = true
 
