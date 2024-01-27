@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bx2wlefd1e8ak"]
 
 [ext_resource type="MeshLibrary" uid="uid://bxbexws8yi6yw" path="res://Enviroment/Libraries/BuildingBlocks.tres" id="1_tyloc"]
-[ext_resource type="PackedScene" uid="uid://d0oasq01ls0t3" path="res://Scenes/PlayerController.tscn" id="3_4a7d6"]
-[ext_resource type="PackedScene" uid="uid://dt67wbh0cngq0" path="res://Enviroment/Objects/better_door.tscn" id="3_j5o1c"]
+[ext_resource type="PackedScene" uid="uid://dqgasnwcclrpb" path="res://Scenes/PlayerController.tscn" id="3_4a7d6"]
+[ext_resource type="PackedScene" path="res://Enviroment/Objects/better_door.tscn" id="3_j5o1c"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_108en"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -36,7 +36,7 @@ metadata/_editor_floor_ = Vector3(0, 2, 0)
 
 [node name="PlayerController" parent="." instance=ExtResource("3_4a7d6")]
 transform = Transform3D(-0.967973, 0, 0.251056, 0, 1, 0, -0.251056, 0, -0.967973, 2.08165e-12, 3.41837, -4.54791)
+SlideSlow = 7.0
 
 [node name="better_door" parent="." instance=ExtResource("3_j5o1c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 2.25, 8.25)
-SlideSlow = 7.0
