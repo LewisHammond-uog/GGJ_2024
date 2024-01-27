@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdsllfypk2dy2"]
+
+[ext_resource type="PackedScene" uid="uid://dqgasnwcclrpb" path="res://PlayerController.tscn" id="1_5sibs"]
+[ext_resource type="Shape3D" uid="uid://chi3n2xub54sb" path="res://JacksTestFloor.tres" id="2_5y7by"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="PlayerController" parent="." instance=ExtResource("1_5sibs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.1, 2.08165e-12)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -0.5, 2.08165e-12)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+shape = ExtResource("2_5y7by")
