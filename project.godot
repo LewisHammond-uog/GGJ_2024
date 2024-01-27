@@ -98,6 +98,10 @@ pause={
 
 3d_physics/layer_2="Player Only"
 
+[physics]
+
+3d/default_gravity=16.0
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
