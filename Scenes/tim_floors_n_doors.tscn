@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bx2wlefd1e8ak"]
+[gd_scene load_steps=9 format=3 uid="uid://bx2wlefd1e8ak"]
 
 [ext_resource type="MeshLibrary" uid="uid://bxbexws8yi6yw" path="res://Enviroment/Libraries/BuildingBlocks.tres" id="1_tyloc"]
-[ext_resource type="PackedScene" uid="uid://d0oasq01ls0t3" path="res://Scenes/PlayerController.tscn" id="3_4a7d6"]
+[ext_resource type="PackedScene" uid="uid://dqgasnwcclrpb" path="res://Scenes/PlayerController.tscn" id="3_4a7d6"]
 [ext_resource type="PackedScene" uid="uid://dt67wbh0cngq0" path="res://Enviroment/Objects/better_door.tscn" id="3_j5o1c"]
 [ext_resource type="PackedScene" uid="uid://b1o5ag11kdgs2" path="res://Enviroment/Objects/keycard.tscn" id="4_had27"]
+[ext_resource type="PackedScene" uid="uid://cgutack3ct61t" path="res://Scenes/pause_menu.tscn" id="5_cn01j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_108en"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -45,3 +46,7 @@ security_level = 3
 [node name="Keycard" parent="." instance=ExtResource("4_had27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.25321, 1.75683, 5.38183)
 security_level = 3
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("5_cn01j")]
