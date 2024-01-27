@@ -1,13 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://btf2gorc60e12"]
+[gd_scene load_steps=5 format=3 uid="uid://btf2gorc60e12"]
 
 [ext_resource type="Shape3D" uid="uid://bx6cj3nc5gbkj" path="res://enemy_collision_shape.tres" id="1_0v4aw"]
 [ext_resource type="Script" path="res://enemy/BasicEnemy.cs" id="1_uo2fx"]
 
-[node name="Enemy" type="CharacterBody3D"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ky8xh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oh7nt"]
+albedo_color = Color(0, 1, 1, 1)
+
+[node name="Enemy" type="CharacterBody3D" node_paths=PackedStringArray("agent")]
 script = ExtResource("1_uo2fx")
+agent = NodePath("NavigationAgent3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = ExtResource("1_0v4aw")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+avoidance_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03993, 0)
+mesh = SubResource("CapsuleMesh_ky8xh")
+surface_material_override/0 = SubResource("StandardMaterial3D_oh7nt")
+
+[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="AgentVelocityComputed"]
