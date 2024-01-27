@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=2 format=3 uid="uid://cjxkiu6dn107m"]
+
+[ext_resource type="Script" path="res://Scripts/WeaponResource.cs" id="1_5o1e0"]
+
+[resource]
+script = ExtResource("1_5o1e0")
+PrettyName = "Cream Pie"
+WeaponType = 3
+Damage = 0.0
+MaximumAmmo = 5
+ClipSize = 1
+AmmoPerShot = 1

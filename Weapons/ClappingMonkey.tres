@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=2 format=3 uid="uid://bhd6yfuhdxhyu"]
+
+[ext_resource type="Script" path="res://Scripts/WeaponResource.cs" id="1_g38y2"]
+
+[resource]
+script = ExtResource("1_g38y2")
+PrettyName = "Monkey Bomb"
+WeaponType = 4
+Damage = 0.0
+MaximumAmmo = 2
+ClipSize = 1
+AmmoPerShot = 1
