@@ -14,7 +14,6 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 collision_layer = 2
 script = ExtResource("1_3s0c1")
-SlideSlow = 10.0
 camera = NodePath("Camera3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -23,12 +22,12 @@ shape = SubResource("CapsuleShape3D_vd5mg")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.6, 2.08165e-12)
+current = true
 script = ExtResource("2_euouj")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, 2.08165e-12)
 mesh = SubResource("CapsuleMesh_mr3ly")
-
 [node name="PlayerShooting" type="Node" parent="." node_paths=PackedStringArray("inventory")]
 script = ExtResource("3_snru0")
 inventory = NodePath("../PlayerInventory")
