@@ -19,7 +19,7 @@ var strip_mats = [
 var opening : bool = false
 var want_open : bool = false
 
-var open_time : float = 1.0
+var open_time : float = 0.95
 
 var raise_amount = 3
 var lower_amount = raise_amount * -1
@@ -38,19 +38,19 @@ func _door_toggle():
 		return
 	
 	if want_open:
-		var target = position
+		var target = $Door.position
 		target.y += raise_amount
 		_move_door(target)
 
 	if !want_open:
-		var target = position
+		var target = $Door.position
 		target.y += lower_amount
 		_move_door(target)
 
 func _move_door(target):
 	opening = true
 	var tween = create_tween().set_trans(Tween.TRANS_ELASTIC)
-	tween.tween_property(self, "position", target, open_time)
+	tween.tween_property($Door, "position", target, open_time)
 	await tween.finished
 	opening = false
 
@@ -81,5 +81,5 @@ func _on_area_3d_body_exited(body):
 func _assign_strip_colour():
 	var chosen_mat : Material
 	chosen_mat = strip_mats[security_level]
-	$"Colour Strip".set_surface_override_material(0, chosen_mat)
+	%"Colour Strip".set_surface_override_material(0, chosen_mat)
 	pass
