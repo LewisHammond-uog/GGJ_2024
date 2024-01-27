@@ -1,10 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://0glqndtf0q58"]
+[gd_scene load_steps=2 format=3 uid="uid://0glqndtf0q58"]
 
 [ext_resource type="PackedScene" uid="uid://bhelwttiec7n5" path="res://Enviroment/Objects/block.tscn" id="1_06lfe"]
-[ext_resource type="PackedScene" uid="uid://2533h4ku6n" path="res://Enviroment/Objects/door.tscn" id="2_827lh"]
 
 [node name="Tiles" type="Node3D"]
 
 [node name="Block" parent="." instance=ExtResource("1_06lfe")]
-
-[node name="Door" parent="." instance=ExtResource("2_827lh")]
