@@ -27,6 +27,18 @@ public partial class Inventory : Node
 		CurrentWeapon = Weapons[index];
 	}
 
+	public void AddWeaponToInventory(Weapon weaponToAdd)
+	{
+		weaponToAdd.Player = Player;
+		Reparent(weaponToAdd);
+		Weapons.Add(weaponToAdd);
+	}
+
+	public void AddAmmo(Weapon weapon)
+	{
+		
+	}
+
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
