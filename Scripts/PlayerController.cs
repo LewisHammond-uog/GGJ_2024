@@ -74,6 +74,9 @@ public partial class PlayerController : CharacterBody3D
 		{
 			isSliding = true;
 			speedMod *= 1.2f;
+			
+			velocity.X = direction.X * speedMod;
+			velocity.Z = direction.Z * speedMod;
 		}
 		
 		if (direction != Vector3.Zero && !isSliding)
