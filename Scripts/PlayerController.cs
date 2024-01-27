@@ -8,6 +8,8 @@ public partial class PlayerController : CharacterBody3D
 	[Export] public float JumpVelocity = 4.5f;
 	[Export] public float SlideSlow = 1f;
 
+	[Export] public bool CrouchToggle = true;
+
 	[Export] public float Sensitivity = 1.0f;
 	[Export] public Camera3D camera;
 
@@ -55,15 +57,20 @@ public partial class PlayerController : CharacterBody3D
 		Vector2 inputDir = Input.GetVector("movement_left", "movement_right", "movement_up", "movement_down");
 		Vector3 direction = (Transform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
 
-		if (Input.IsActionJustPressed("movement_crouch"))
+		if (CrouchToggle)
 		{
-			isCrouching = !isCrouching;
-			if (!isCrouching)
-			{
-				isSliding = false;
-			}
+			ToggledCrouch();
+		}
+		else
+		{
+			isCrouching = Input.IsActionPressed("movement_crouch");
 		}
 		
+		if (!isCrouching)
+		{
+			isSliding = false;
+		}
+
 		bool isSprinting = Input.IsActionPressed("movement_sprint");
 		float speedMod = isSprinting && !isCrouching ? Speed * SprintMod : Speed;
 		speedMod *= isCrouching ? 0.5f : 1;
@@ -104,6 +111,14 @@ public partial class PlayerController : CharacterBody3D
 		Velocity = velocity;
 		MoveAndSlide();
 #endregion
+	}
+
+	private void ToggledCrouch()
+	{
+		if (Input.IsActionJustPressed("movement_crouch"))
+		{
+			isCrouching = !isCrouching;
+		}
 	}
 
 	private void Look()
