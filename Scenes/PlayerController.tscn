@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dqgasnwcclrpb"]
+[gd_scene load_steps=9 format=3 uid="uid://dqgasnwcclrpb"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerController.cs" id="1_3s0c1"]
 [ext_resource type="Script" path="res://Scripts/Camera3D.cs" id="2_euouj"]
 [ext_resource type="Script" path="res://Scripts/Inventory.cs" id="3_cm3au"]
+[ext_resource type="Script" path="res://Scripts/PlayerShooting.cs" id="3_snru0"]
 [ext_resource type="Script" path="res://Scripts/Weapon.cs" id="4_tad6i"]
 [ext_resource type="Script" path="res://Scripts/PlayerHealth.cs" id="5_8esql"]
 
@@ -28,6 +29,7 @@ script = ExtResource("2_euouj")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, 2.08165e-12)
 mesh = SubResource("CapsuleMesh_mr3ly")
+
 [node name="PlayerShooting" type="Node" parent="." node_paths=PackedStringArray("inventory")]
 script = ExtResource("3_snru0")
 inventory = NodePath("../PlayerInventory")
