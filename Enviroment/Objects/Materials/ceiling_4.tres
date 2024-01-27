@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://shok3p7nr2rg"]
+
+[ext_resource type="Texture2D" uid="uid://cbmj6mddrnu8u" path="res://Enviroment/Objects/Textures/ceiling4.png" id="1_a5wxa"]
+
+[resource]
+albedo_color = Color(0.717647, 0.713726, 0.694118, 1)
+albedo_texture = ExtResource("1_a5wxa")
+uv1_scale = Vector3(2.04, 2.045, 1)

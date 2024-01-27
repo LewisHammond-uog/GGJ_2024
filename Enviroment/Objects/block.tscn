@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bhelwttiec7n5"]
 
-[ext_resource type="Material" uid="uid://dpcke5x1wq87w" path="res://Enviroment/Objects/Materials/block.tres" id="1_8h8mh"]
+[ext_resource type="Material" uid="uid://dpcke5x1wq87w" path="res://Enviroment/Objects/Materials/wall.tres" id="1_8h8mh"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_c2hac"]
 
