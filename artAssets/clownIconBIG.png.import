@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqjsq4pwhd2kj"
-path="res://.godot/imported/punch.png-14d5a278a5acabfc1566b798e76d1a94.ctex"
+uid="uid://br4ygi3f8ls6q"
+path="res://.godot/imported/clownIconBIG.png-40519053efaa7f082c8d1b86685cf7f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://artAssets/combat/punch.png"
-dest_files=["res://.godot/imported/punch.png-14d5a278a5acabfc1566b798e76d1a94.ctex"]
+source_file="res://artAssets/clownIconBIG.png"
+dest_files=["res://.godot/imported/clownIconBIG.png-40519053efaa7f082c8d1b86685cf7f2.ctex"]
 
 [params]
 
