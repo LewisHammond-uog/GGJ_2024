@@ -5,7 +5,7 @@ namespace GGJ24;
 public partial class Bullet : RigidBody3D
 {
 	[Export] private float speed = 5f;
-	[Export] private float damage;
+	[Export] private float damage = 3f;
 	
 	public void Setup(Vector3 direction)
 	{
@@ -15,7 +15,7 @@ public partial class Bullet : RigidBody3D
 	private void OnBodyEntered(Node body)
 	{
 		var damagable = body.TryFindNodeOfTypeInChildren<IDamageable>();
-		damagable?.TakeDamage(5f);
+		damagable?.TakeDamage(damage);
 		QueueFree();
 	}
 }
