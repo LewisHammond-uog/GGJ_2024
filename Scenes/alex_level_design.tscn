@@ -61,15 +61,19 @@ security_level = 1
 
 [node name="better_door4" parent="." instance=ExtResource("3_m4x5h")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -38.251, 3.00754, 6.75743)
+security_level = 3
 
 [node name="better_door5" parent="." instance=ExtResource("3_m4x5h")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -38.251, 3.00754, 15.7574)
+security_level = 3
 
 [node name="better_door6" parent="." instance=ExtResource("3_m4x5h")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -38.251, 3.00754, 24.7404)
+security_level = 3
 
 [node name="better_door7" parent="." instance=ExtResource("3_m4x5h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2514, 3.00754, 14.241)
+security_level = 2
 
 [node name="better_door8" parent="." instance=ExtResource("3_m4x5h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.7495, 3.00754, 14.241)
@@ -79,12 +83,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.7495, 3.00754, 35.2487)
 
 [node name="better_door10" parent="." instance=ExtResource("3_m4x5h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.7495, 3.00754, 39.7347)
+security_level = 4
 
 [node name="better_door11" parent="." instance=ExtResource("3_m4x5h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.2502, 3.00754, 39.7526)
+security_level = 2
 
 [node name="better_door12" parent="." instance=ExtResource("3_m4x5h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.2469, 3.00754, 35.25)
+security_level = 5
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.175195, 5.88533, 1.64801)
@@ -233,3 +240,19 @@ omni_attenuation = 1.07177
 [node name="Keycard" parent="." instance=ExtResource("4_pfof2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6875, 2.17051, 0)
 security_level = 1
+
+[node name="Keycard2" parent="." instance=ExtResource("4_pfof2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.0063, 2.17051, 27.8253)
+security_level = 2
+
+[node name="Keycard3" parent="." instance=ExtResource("4_pfof2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.1531, 2.17051, 9.14963)
+security_level = 4
+
+[node name="Keycard4" parent="." instance=ExtResource("4_pfof2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5781, 2.17051, 21.522)
+security_level = 3
+
+[node name="Keycard5" parent="." instance=ExtResource("4_pfof2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.4609, 2.17051, 45.2872)
+security_level = 5
