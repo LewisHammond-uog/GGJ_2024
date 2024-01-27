@@ -27,6 +27,7 @@ public partial class PlayerController : CharacterBody3D
 	{
 		Input.MouseMode = Input.MouseModeEnum.Captured;
 		Scale = scale;
+		CSharpGlobals.pathToPlayer = GetPath();
 		this.TryFindNodeOfTypeInChildren<PlayerHealth>().DeathEvent += OnDeath;
 	}
 	
@@ -44,10 +45,7 @@ public partial class PlayerController : CharacterBody3D
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector3 velocity = Velocity;
-
-		if (Input.IsActionPressed("escape_action"))
-			Input.MouseMode = Input.MouseModeEnum.Visible;
-
+	
 		// Add the gravity.
 		if (!IsOnFloor())
 			velocity.Y -= gravity * (float)delta;
