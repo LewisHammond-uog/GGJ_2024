@@ -3,13 +3,18 @@ using System;
 
 public partial class PlayerController : CharacterBody3D
 {
-	public const float Speed = 5.0f;
-	public const float JumpVelocity = 4.5f;
+	[Export] public float Speed = 5.0f;
+	[Export] public float SprintMod = 2f;
+	[Export] public float JumpVelocity = 4.5f;
+	[Export] public float SlideSlow = 1f;
 
 	[Export] public float Sensitivity = 1.0f;
-
-	public Vector2 lookDirection;
 	[Export] public Camera3D camera;
+
+	public bool isSliding = false;
+	private bool isCrouching = false;
+	public Vector2 lookDirection;
+	private Vector3 scale = new Vector3(1,1,1);
 
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
@@ -48,15 +53,48 @@ public partial class PlayerController : CharacterBody3D
 		// Get the input direction and handle the movement/deceleration.
 		Vector2 inputDir = Input.GetVector("movement_left", "movement_right", "movement_up", "movement_down");
 		Vector3 direction = (Transform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
-		if (direction != Vector3.Zero)
+
+		if (Input.IsActionJustPressed("movement_crouch"))
 		{
-			velocity.X = direction.X * Speed;
-			velocity.Z = direction.Z * Speed;
+			isCrouching = !isCrouching;
+			if (!isCrouching)
+			{
+				isSliding = false;
+			}
+		}
+		
+		bool isSprinting = Input.IsActionPressed("movement_sprint");
+		float speedMod = isSprinting && !isCrouching ? Speed * SprintMod : Speed;
+		speedMod *= isCrouching ? 0.5f : 1;
+
+		scale = scale.Slerp(new Vector3(1, isCrouching ? 0.5f : 1, 1), 0.4f);
+		Scale = scale;
+
+		if (isSprinting && isCrouching && Input.IsActionJustPressed("movement_crouch"))
+		{
+			isSliding = true;
+			speedMod *= 1.2f;
+		}
+		
+		if (direction != Vector3.Zero && !isSliding)
+		{
+			velocity.X = direction.X * speedMod;
+			velocity.Z = direction.Z * speedMod;
+		}
+		else if (isSliding)
+		{
+			velocity.X = Mathf.MoveToward(Velocity.X, 0, (float)(SlideSlow * delta));
+			velocity.Z = Mathf.MoveToward(Velocity.Z, 0, (float)(SlideSlow * delta));
 		}
 		else
 		{
 			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
 			velocity.Z = Mathf.MoveToward(Velocity.Z, 0, Speed);
+		}
+
+		if (velocity.Length() < 0.2f)
+		{
+			isSliding = false;
 		}
 
 		Velocity = velocity;
