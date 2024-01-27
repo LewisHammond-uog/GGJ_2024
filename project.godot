@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="GGJ24"
-run/main_scene="res://JackScene.tscn"
+run/main_scene="res://Scenes/tim_floors_n_doors.tscn"
 config/features=PackedStringArray("4.2", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
-[display]
+[autoload]
 
-window/size/mode=2
+EventBus="*res://Scripts/Autoloads/EventBus.gd"
+Globals="*res://Scripts/Autoloads/Globals.gd"
 
 [dotnet]
 
