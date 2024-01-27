@@ -12,7 +12,6 @@ public partial class BasicEnemy : CharacterBody3D
 	[Export] private float idealDistanceToPlayer = 1f;
 	[Export] private float standStillDistance = 0.2f;
 	[Export] private float moveSpeed = 2f;
-
 	[Export] private CharacterBody3D player;
 
 	private bool canSeePlayer = false;
@@ -99,7 +98,7 @@ public partial class BasicEnemy : CharacterBody3D
 				break;
 			case State.MoveAndShoot:
 			{
-				if (shootComp is { CanShoot: true } && Position.DistanceTo(player.Position) > shootComp.MaxShootDist)
+				if (shootComp is { CanShoot: false } || Position.DistanceTo(player.Position) > shootComp.MaxShootDist)
 				{
 					state = State.MoveToPlayer;
 					break;
@@ -113,6 +112,7 @@ public partial class BasicEnemy : CharacterBody3D
 					break;
 				}
 
+				shootComp.TryShoot();
 				movePos = new Vector3(intercept.X, player.Position.Y, intercept.Y);
 				break;
 			}
@@ -124,7 +124,7 @@ public partial class BasicEnemy : CharacterBody3D
 				{
 					state = State.MoveAndShoot;
 				}
-
+				shootComp.TryShoot();
 				break;
 			}
 			case State.Dead:
