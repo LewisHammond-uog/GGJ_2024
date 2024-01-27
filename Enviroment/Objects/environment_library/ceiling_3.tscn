@@ -1,18 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://cug8enbms5ifl"]
+[gd_scene load_steps=4 format=3 uid="uid://dj5iqo8haglmt"]
 
-[ext_resource type="Material" uid="uid://dpcke5x1wq87w" path="res://Enviroment/Objects/Materials/wall.tres" id="1_u8xpx"]
+[ext_resource type="Material" uid="uid://dsi7ermh46if3" path="res://Enviroment/Objects/Materials/ceiling_3.tres" id="1_s2mgt"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_toy81"]
+[sub_resource type="BoxMesh" id="BoxMesh_w3q54"]
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_8fuof"]
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yni3e"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
-[node name="Slab" type="MeshInstance3D"]
-transform = Transform3D(1.5, 0, 0, 0, 0.75, 0, 0, 0, 1.5, 0, -0.375, 0)
-mesh = SubResource("BoxMesh_toy81")
-surface_material_override/0 = ExtResource("1_u8xpx")
+[node name="ceiling_3" type="MeshInstance3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_w3q54")
+surface_material_override/0 = ExtResource("1_s2mgt")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_8fuof")
+shape = SubResource("ConcavePolygonShape3D_yni3e")
