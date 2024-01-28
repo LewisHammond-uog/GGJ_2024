@@ -1,7 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://cxx2nlipxgli"]
+[gd_scene load_steps=11 format=3 uid="uid://dcpdw1n2l1ge0"]
 
 [ext_resource type="Texture2D" uid="uid://b67k6c2dx66a" path="res://artAssets/UI/ui-toolbar.png" id="1_t7rhx"]
-[ext_resource type="Texture2D" uid="uid://br4ygi3f8ls6q" path="res://artAssets/clownIconBIG.png" id="2_230t2"]
+[ext_resource type="Texture2D" uid="uid://glykv8ygra6v" path="res://artAssets/clownIconBIG.png" id="2_230t2"]
 [ext_resource type="FontFile" uid="uid://bi0py6h3kkpo7" path="res://Fonts/Daydream.ttf" id="3_mk67c"]
 [ext_resource type="Texture2D" uid="uid://b48m752xxx777" path="res://artAssets/UI/heartIcon.png" id="3_qm4wi"]
 [ext_resource type="Script" path="res://Scripts/Projectiles/ArmorDisplay.cs" id="3_v6gag"]
@@ -10,12 +10,6 @@
 [ext_resource type="Script" path="res://Scripts/InventoryUIContainer.cs" id="8_cgulo"]
 [ext_resource type="PackedScene" uid="uid://bioj4qejlbb7d" path="res://Scenes/UI/item_ui.tscn" id="9_qnups"]
 [ext_resource type="Script" path="res://Scripts/AmmoUI.cs" id="10_cfoou"]
-[ext_resource type="Script" path="res://Scripts/KeycardUI.gd" id="11_80g3c"]
-[ext_resource type="Texture2D" uid="uid://c6v5qru0bgpdc" path="res://artAssets/Keys/keycard_Green.png" id="12_xcgqw"]
-[ext_resource type="Texture2D" uid="uid://bq8j4ai5smf2u" path="res://artAssets/Keys/keycard_Red.png" id="13_7g8dp"]
-[ext_resource type="Texture2D" uid="uid://c0rcwp782dsar" path="res://artAssets/Keys/keycard_Blue.png" id="14_53ois"]
-[ext_resource type="Texture2D" uid="uid://ecdsi4v7cem5" path="res://artAssets/Keys/keycard_Purple.png" id="15_lqetk"]
-[ext_resource type="Texture2D" uid="uid://dfxv5b8f47gt1" path="res://artAssets/Keys/keycard_Yellow.png" id="16_a4agc"]
 
 [node name="GameUI" type="Control"]
 layout_mode = 3
@@ -169,61 +163,3 @@ text = "[center]PUNCH[/center]"
 scroll_active = false
 autowrap_mode = 1
 script = ExtResource("10_cfoou")
-
-[node name="KeycardUI" type="GridContainer" parent="."]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -60.0
-offset_bottom = 96.0
-grow_horizontal = 0
-theme_override_constants/h_separation = 5
-theme_override_constants/v_separation = 5
-columns = 5
-script = ExtResource("11_80g3c")
-
-[node name="Green" type="TextureRect" parent="KeycardUI"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource("12_xcgqw")
-expand_mode = 2
-stretch_mode = 4
-
-[node name="Red" type="TextureRect" parent="KeycardUI"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource("13_7g8dp")
-expand_mode = 2
-stretch_mode = 4
-
-[node name="Blue" type="TextureRect" parent="KeycardUI"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource("14_53ois")
-expand_mode = 2
-stretch_mode = 4
-
-[node name="Purple" type="TextureRect" parent="KeycardUI"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource("15_lqetk")
-expand_mode = 2
-stretch_mode = 4
-
-[node name="Gold" type="TextureRect" parent="KeycardUI"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource("16_a4agc")
-expand_mode = 2
-stretch_mode = 4

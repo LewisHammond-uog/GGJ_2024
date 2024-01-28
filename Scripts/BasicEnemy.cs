@@ -13,6 +13,7 @@ public partial class BasicEnemy : CharacterBody3D
 	[Export] private float idealDistanceToPlayer;
 	[Export] private float standStillDistance = 0.2f;
 	[Export] private float moveSpeed = 2f;
+	[Export] private AnimatedSprite3D anim;
 	private CharacterBody3D player => GetNode<CharacterBody3D>(CSharpGlobals.pathToPlayer);
 
 	private bool canSeePlayer = false;
@@ -29,6 +30,7 @@ public partial class BasicEnemy : CharacterBody3D
 	{
 		state = State.Idle;
 		movePos = Position;
+		anim.Animation = "Idle";
 		this.TryFindNodeOfTypeInChildren<Health>().DeathEvent += DeathEvent;
 	}
 
@@ -36,22 +38,36 @@ public partial class BasicEnemy : CharacterBody3D
 	{
 		state = State.Stunned;
 		Velocity = knockbackForce;
+		anim.Animation = "GetHit";
+		anim.Play();
+		anim.AnimationFinished += RevertToIdle;
 		MoveAndSlide();
 	}
 
+	private void RevertToIdle()
+	{
+		anim.Animation = "Idle";
+	}
+	
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
 		//If dead then destroy, in future wait for an animation to finish
 		if (state == State.Dead)
 		{
-			QueueFree();
+			anim.Animation = "TakeDamage";
+			anim.Play();
+			anim.AnimationFinished += Destroy;
 		}
+	}
+
+	private void Destroy()
+	{
+		QueueFree();
 	}
 
 	public override void _PhysicsProcess(double delta)
 	{
-		
 		base._PhysicsProcess(delta);
 		UpdateState();
 

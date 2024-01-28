@@ -1,15 +1,93 @@
-[gd_scene load_steps=8 format=3 uid="uid://btf2gorc60e12"]
+[gd_scene load_steps=24 format=3 uid="uid://btf2gorc60e12"]
 
 [ext_resource type="Shape3D" uid="uid://bx6cj3nc5gbkj" path="res://enemy/enemy_collision_shape.tres" id="1_0v4aw"]
 [ext_resource type="Script" path="res://Scripts/BasicEnemy.cs" id="1_uo2fx"]
 [ext_resource type="Script" path="res://Scripts/EnemyShooter.cs" id="3_v1wjf"]
 [ext_resource type="PackedScene" uid="uid://blokpilyg2o4g" path="res://Scenes/EnemyBullet.tscn" id="4_qoah3"]
 [ext_resource type="Script" path="res://Scripts/Health.cs" id="5_64nib"]
+[ext_resource type="Texture2D" uid="uid://d7n5df5ottvl" path="res://artAssets/enemies/shooter/shooterGetHit.png" id="6_y4e6k"]
+[ext_resource type="Texture2D" uid="uid://6svao762dwyo" path="res://artAssets/enemies/shooter/shooter1.png" id="6_ygrjc"]
+[ext_resource type="Texture2D" uid="uid://nd8lfy81q2lx" path="res://artAssets/enemies/shooter/shooter2.png" id="7_klv61"]
+[ext_resource type="Texture2D" uid="uid://cpyfo3ij57r7" path="res://artAssets/enemies/shooter/shooter3.png" id="8_bcrq0"]
+[ext_resource type="Texture2D" uid="uid://chudbf0qibunp" path="res://artAssets/enemies/shooter/shooter4.png" id="9_4sloj"]
+[ext_resource type="Texture2D" uid="uid://ciojl3i72h0k6" path="res://artAssets/enemies/shooter/shooterTakeDamage1.png" id="11_o5ujp"]
+[ext_resource type="Texture2D" uid="uid://dsnnkoq6g4hdg" path="res://artAssets/enemies/shooter/shooterTakeDamage2.png" id="12_rditk"]
+[ext_resource type="Texture2D" uid="uid://dlpehc3fu13ti" path="res://artAssets/enemies/shooter/shooterTakeDamage3.png" id="13_ynq8c"]
+[ext_resource type="Texture2D" uid="uid://dqaj6rpwykop5" path="res://artAssets/enemies/shooter/shooterTakeDamage4.png" id="14_358rg"]
+[ext_resource type="Texture2D" uid="uid://dvb7tvpiqunll" path="res://artAssets/enemies/shooter/shooterTakeDamage5.png" id="15_tbvsl"]
+[ext_resource type="Texture2D" uid="uid://b4scr8bpr4vh6" path="res://artAssets/enemies/shooter/shooterTakeDamage6.png" id="16_pj6yv"]
+[ext_resource type="Texture2D" uid="uid://cbfqhyquwdder" path="res://artAssets/enemies/shooter/shooterTakeDamage7.png" id="17_whsef"]
+[ext_resource type="Texture2D" uid="uid://dcq1u1k4y26ya" path="res://artAssets/enemies/shooter/shooterTakeDamage8.png" id="18_hhacf"]
+[ext_resource type="Texture2D" uid="uid://ms3igd26y4u2" path="res://artAssets/enemies/shooter/shooterTakeDamage9.png" id="19_qfh0w"]
+[ext_resource type="Texture2D" uid="uid://btem75qj67pbq" path="res://artAssets/enemies/shooter/shooterTakeDamage10.png" id="20_i25rp"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ky8xh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oh7nt"]
 albedo_color = Color(0, 1, 1, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eir4a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_y4e6k")
+}],
+"loop": true,
+"name": &"GetHit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ygrjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_klv61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bcrq0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4sloj")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_o5ujp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_rditk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ynq8c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_358rg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_tbvsl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_pj6yv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_whsef")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_hhacf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_qfh0w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_i25rp")
+}],
+"loop": true,
+"name": &"TakeDamage",
+"speed": 5.0
+}]
 
 [node name="Enemy" type="CharacterBody3D" node_paths=PackedStringArray("agent", "shootComp")]
 collision_mask = 7
@@ -32,6 +110,7 @@ keep_y_velocity = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03993, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_ky8xh")
 surface_material_override/0 = SubResource("StandardMaterial3D_oh7nt")
 
@@ -44,5 +123,12 @@ bulletPrefab = ExtResource("4_qoah3")
 
 [node name="Health" type="Node3D" parent="."]
 script = ExtResource("5_64nib")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1.00921, 0)
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_eir4a")
+animation = &"TakeDamage"
+autoplay = "Idle"
 
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="AgentVelocityComputed"]
