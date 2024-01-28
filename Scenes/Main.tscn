@@ -12,7 +12,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.916543, 0)
 [node name="Alex\'s level design" parent="." instance=ExtResource("1_7d67p")]
 
 [node name="PlayerController" parent="." instance=ExtResource("2_5x5by")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.77102, 2.37209)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53795, 2.02742, 2.25649)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -21,5 +21,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.77102, 2.37209
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_wcsbw")]
 
 [node name="Enemy" parent="." instance=ExtResource("5_ixyhc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4208, 1.47698, 6.09623)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6194, 1.63321, 9.61386)
 axis_lock_angular_y = true

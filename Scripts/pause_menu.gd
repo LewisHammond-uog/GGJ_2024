@@ -29,3 +29,6 @@ func _on_toggle_fullscreen_toggled(button_pressed):
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
 	else: 
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+
+func _on_exit_to_menu_pressed():
+	EventBus.go_menu.emit()

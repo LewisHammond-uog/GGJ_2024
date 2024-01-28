@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dcpdw1n2l1ge0"]
+[gd_scene load_steps=11 format=3 uid="uid://dcpdw1n2l1ge0"]
 
 [ext_resource type="Texture2D" uid="uid://b67k6c2dx66a" path="res://artAssets/UI/ui-toolbar.png" id="1_t7rhx"]
 [ext_resource type="Texture2D" uid="uid://glykv8ygra6v" path="res://artAssets/clownIconBIG.png" id="2_230t2"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Scripts/HealthDisplay.cs" id="5_m28g7"]
 [ext_resource type="Script" path="res://Scripts/InventoryUIContainer.cs" id="8_cgulo"]
 [ext_resource type="PackedScene" uid="uid://bioj4qejlbb7d" path="res://Scenes/UI/item_ui.tscn" id="9_qnups"]
+[ext_resource type="Script" path="res://Scripts/AmmoUI.cs" id="10_cfoou"]
 
 [node name="GameUI" type="Control"]
 layout_mode = 3
@@ -142,7 +143,23 @@ uiElement = ExtResource("9_qnups")
 uiParent = NodePath(".")
 neededSlots = 5
 
-[node name="Panel" type="Panel" parent="TextureRect"]
+[node name="Control" type="Control" parent="TextureRect"]
+anchors_preset = 0
+offset_left = 1338.0
+offset_top = 175.0
+offset_right = 1601.0
+offset_bottom = 319.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/Control"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 1.0
+offset_top = 9.0
+offset_right = 259.0
+offset_bottom = 156.0
+theme_override_fonts/normal_font = ExtResource("3_mk67c")
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = "[center]PUNCH[/center]"
+scroll_active = false
+autowrap_mode = 1
+script = ExtResource("10_cfoou")

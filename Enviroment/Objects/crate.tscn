@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb40jhrrs8881"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_il2li"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ypfmx"]
+
+[node name="Crate" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.86231, 0)
+collision_layer = 9
+collision_mask = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_il2li")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_ypfmx")
