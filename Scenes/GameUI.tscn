@@ -7,8 +7,8 @@
 [ext_resource type="Script" path="res://Scripts/Projectiles/ArmorDisplay.cs" id="3_v6gag"]
 [ext_resource type="Texture2D" uid="uid://dnhat3y8fttg4" path="res://artAssets/UI/clownyArmourIcon.png" id="4_ydjtk"]
 [ext_resource type="Script" path="res://Scripts/HealthDisplay.cs" id="5_m28g7"]
+[ext_resource type="Texture2D" uid="uid://84ef6dcku62f" path="res://artAssets/UI/kick_UI.png" id="9_15qsx"]
 [ext_resource type="Texture2D" uid="uid://b44d0htdugjlm" path="res://artAssets/UI/punch_UI.png" id="9_x60a4"]
-[ext_resource type="Script" path="res://Scripts/AmmoUI.cs" id="10_cfoou"]
 
 [node name="GameUI" type="Control"]
 layout_mode = 3
@@ -135,21 +135,6 @@ offset_top = 175.0
 offset_right = 1601.0
 offset_bottom = 319.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/Control"]
-layout_mode = 0
-offset_left = 1.0
-offset_top = 14.0
-offset_right = 259.0
-offset_bottom = 161.0
-theme_override_fonts/normal_font = ExtResource("3_mk67c")
-theme_override_font_sizes/normal_font_size = 45
-bbcode_enabled = true
-text = "[center]PUNCH
-L Click[/center]"
-scroll_active = false
-autowrap_mode = 1
-script = ExtResource("10_cfoou")
-
 [node name="TextureRect" type="TextureRect" parent="TextureRect"]
 layout_mode = 0
 offset_left = 1114.0
@@ -158,3 +143,11 @@ offset_right = 1251.0
 offset_bottom = 319.0
 texture = ExtResource("9_x60a4")
 stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 1394.0
+offset_top = 182.0
+offset_right = 1531.0
+offset_bottom = 319.0
+texture = ExtResource("9_15qsx")
