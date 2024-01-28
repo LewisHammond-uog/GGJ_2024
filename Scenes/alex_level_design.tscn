@@ -1,11 +1,11 @@
 [gd_scene load_steps=22 format=3 uid="uid://b88ql72qniih1"]
 
 [ext_resource type="MeshLibrary" uid="uid://bxbexws8yi6yw" path="res://Enviroment/Libraries/BuildingBlocks.tres" id="1_7tfpk"]
-[ext_resource type="PackedScene" path="res://Enviroment/Objects/crate.tscn" id="1_8vm27"]
+[ext_resource type="PackedScene" uid="uid://dpj1w370ht7lc" path="res://Enviroment/Objects/crate.tscn" id="1_8vm27"]
 [ext_resource type="PackedScene" uid="uid://dt67wbh0cngq0" path="res://Enviroment/Objects/better_door.tscn" id="3_m4x5h"]
 [ext_resource type="PackedScene" uid="uid://b1o5ag11kdgs2" path="res://Enviroment/Objects/keycard.tscn" id="4_pfof2"]
-[ext_resource type="PackedScene" path="res://Enviroment/Objects/table.tscn" id="6_c11qr"]
-[ext_resource type="PackedScene" path="res://Enviroment/Objects/desk.tscn" id="6_f2n2i"]
+[ext_resource type="PackedScene" uid="uid://drcn30tyc3iet" path="res://Enviroment/Objects/table.tscn" id="6_c11qr"]
+[ext_resource type="PackedScene" uid="uid://bltvkwsacjjm2" path="res://Enviroment/Objects/desk.tscn" id="6_f2n2i"]
 [ext_resource type="PackedScene" uid="uid://evfncmdni4qm" path="res://Enviroment/Objects/the_kids.tscn" id="7_7yac3"]
 [ext_resource type="Texture2D" uid="uid://bwadhig3uthsk" path="res://Enviroment/Objects/walls/walL-DECOR5.png" id="8_y4oad"]
 [ext_resource type="Texture2D" uid="uid://doqg6x7nr68l1" path="res://Enviroment/Objects/walls/walL-DECOR4.png" id="9_5r018"]
@@ -57,7 +57,6 @@ data = {
 metadata/_editor_floor_ = Vector3(3, 1, 31)
 
 [node name="GridMap2" type="GridMap" parent="NavigationRegion3D"]
-visible = false
 mesh_library = ExtResource("1_7tfpk")
 cell_size = Vector3(1.5, 1.5, 1.5)
 cell_octant_size = 16
