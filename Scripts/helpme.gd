@@ -16,3 +16,7 @@ func _on_timer_timeout():
 		count = 0
 	option = dialogue[count]
 	text = option
+
+
+func _on_area_3d_body_entered(body):
+	EventBus.go_menu.emit()

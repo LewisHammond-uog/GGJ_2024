@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c0xkfipa3tbys"]
+[gd_scene load_steps=7 format=3 uid="uid://evfncmdni4qm"]
 
 [ext_resource type="Material" uid="uid://cvt0u4sl0lv3h" path="res://Enviroment/Objects/Materials/strips/strip_red.tres" id="1_6l6nc"]
 [ext_resource type="Texture2D" uid="uid://djtg6m6upwif4" path="res://artAssets/UI/clownIcon.png" id="1_m0pjj"]
@@ -8,6 +8,8 @@
 material = ExtResource("1_6l6nc")
 
 [sub_resource type="SphereMesh" id="SphereMesh_qn078"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q8oyr"]
 
 [node name="The Kids" type="Node3D"]
 
@@ -56,4 +58,13 @@ dialogue = Array[String](["Daddy! Daddy!", "Help me!", "Save me Daddy!"])
 wait_time = 2.0
 autostart = true
 
+[node name="Area3D" type="Area3D" parent="Timmy"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Timmy/Area3D"]
+transform = Transform3D(2.88893, 0, 0, 0, 2.88893, 0, 0, 0, 2.88893, 0, 0, 0)
+shape = SubResource("BoxShape3D_q8oyr")
+
 [connection signal="timeout" from="Timmy/Head/Label3D/Timer" to="Timmy/Head/Label3D" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Timmy/Area3D" to="Timmy/Head/Label3D" method="_on_area_3d_body_entered"]
