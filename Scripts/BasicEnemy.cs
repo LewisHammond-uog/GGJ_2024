@@ -74,6 +74,7 @@ public partial class BasicEnemy : CharacterBody3D
 		
 		var spaceState = GetWorld3D().DirectSpaceState;
 		var query = PhysicsRayQueryParameters3D.Create(Position, player.Position);
+		query.CollideWithAreas = true;
 		query.Exclude = new Array<Rid>(new Rid[] { GetRid(), player.GetRid() });
 		var result = spaceState.IntersectRay(query);
 

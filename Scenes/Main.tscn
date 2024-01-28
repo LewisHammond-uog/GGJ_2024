@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://47q3ugane80u"]
+[gd_scene load_steps=6 format=3 uid="uid://47q3ugane80u"]
 
 [ext_resource type="PackedScene" uid="uid://b88ql72qniih1" path="res://Scenes/alex_level_design.tscn" id="1_7d67p"]
 [ext_resource type="PackedScene" uid="uid://dqgasnwcclrpb" path="res://Scenes/PlayerController.tscn" id="2_5x5by"]
 [ext_resource type="PackedScene" uid="uid://dcpdw1n2l1ge0" path="res://Scenes/GameUI.tscn" id="3_7q34s"]
 [ext_resource type="PackedScene" path="res://Scenes/pause_menu.tscn" id="4_wcsbw"]
+[ext_resource type="PackedScene" uid="uid://btf2gorc60e12" path="res://Scenes/test_enemy.tscn" id="5_ixyhc"]
 
 [node name="Main" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.916543, 0)
@@ -18,3 +19,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.77102, 2.37209
 [node name="GameUI" parent="CanvasLayer" instance=ExtResource("3_7q34s")]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_wcsbw")]
+
+[node name="Enemy" parent="." instance=ExtResource("5_ixyhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4208, 1.47698, 6.09623)
+axis_lock_angular_y = true

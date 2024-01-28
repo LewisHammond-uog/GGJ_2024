@@ -141,3 +141,8 @@ script = ExtResource("8_cgulo")
 uiElement = ExtResource("9_qnups")
 uiParent = NodePath(".")
 neededSlots = 5
+
+[node name="Panel" type="Panel" parent="TextureRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
