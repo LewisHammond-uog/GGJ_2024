@@ -9,6 +9,7 @@ public partial class PlayerController : CharacterBody3D
 	[Export] public float SprintMod = 2f;
 	[Export] public float JumpVelocity = 4.5f;
 	[Export] public float SlideSlow = 1f;
+	[Export] public float KickForce = 4f;
 
 	[Export] public bool CrouchToggle = true;
 
@@ -17,6 +18,7 @@ public partial class PlayerController : CharacterBody3D
 
 	public bool isSliding = false;
 	private bool isCrouching = false;
+	private bool isKicking = false;
 	public Vector2 lookDirection;
 	private Vector3 scale = new Vector3(1,0.98f,1);
 
@@ -89,7 +91,7 @@ public partial class PlayerController : CharacterBody3D
 			velocity.Z = direction.Z * speedMod;
 		}
 		
-		if (direction != Vector3.Zero && !isSliding)
+		if (direction != Vector3.Zero && !isSliding && !isKicking)
 		{
 			velocity.X = direction.X * speedMod;
 			velocity.Z = direction.Z * speedMod;
@@ -108,6 +110,7 @@ public partial class PlayerController : CharacterBody3D
 		if (velocity.Length() < 0.2f)
 		{
 			isSliding = false;
+			isKicking = false;
 		}
 
 		Velocity = velocity;
@@ -141,6 +144,14 @@ public partial class PlayerController : CharacterBody3D
 		SetProcessInput(false);
 		SetProcessUnhandledInput(false);
 		this.TryFindNodeOfTypeInChildren<PlayerHealth>().DeathEvent -= OnDeath;
+	}
+
+	public void OnKick()
+	{
+		isKicking = true;
+		Vector3 direction = (Transform.Basis * Vector3.Forward).Normalized();
+		Velocity = direction * KickForce * 10;
+		MoveAndSlide();
 	}
 }
 
