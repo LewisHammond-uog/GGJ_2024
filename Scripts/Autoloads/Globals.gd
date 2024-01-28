@@ -10,3 +10,5 @@ enum SecurityLevel {
 }
 
 var PlayerLevel : SecurityLevel = 0
+
+var Player:Node3D

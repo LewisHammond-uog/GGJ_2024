@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://b88ql72qniih1"]
+[gd_scene load_steps=10 format=3 uid="uid://b88ql72qniih1"]
 
 [ext_resource type="MeshLibrary" uid="uid://bxbexws8yi6yw" path="res://Enviroment/Libraries/BuildingBlocks.tres" id="1_7tfpk"]
 [ext_resource type="PackedScene" uid="uid://dqgasnwcclrpb" path="res://Scenes/PlayerController.tscn" id="2_bcqu3"]
 [ext_resource type="PackedScene" uid="uid://dt67wbh0cngq0" path="res://Enviroment/Objects/better_door.tscn" id="3_m4x5h"]
 [ext_resource type="PackedScene" path="res://Enviroment/Objects/keycard.tscn" id="4_pfof2"]
 [ext_resource type="PackedScene" path="res://Scenes/pause_menu.tscn" id="5_lsxkg"]
+[ext_resource type="PackedScene" uid="uid://bltvkwsacjjm2" path="res://Enviroment/Objects/desk.tscn" id="6_f2n2i"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_108en"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -37,6 +38,7 @@ data = {
 metadata/_editor_floor_ = Vector3(3, 1, 31)
 
 [node name="GridMap2" type="GridMap" parent="."]
+visible = false
 mesh_library = ExtResource("1_7tfpk")
 cell_size = Vector3(1.5, 1.5, 1.5)
 data = {
@@ -243,7 +245,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6875, 2.17051, 0)
 security_level = 1
 
 [node name="Keycard_red" parent="." instance=ExtResource("4_pfof2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.55823, 2.17051, 26.7303)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.09545, 1.76408, 45.4907)
 security_level = 2
 
 [node name="Keycard_purple" parent="." instance=ExtResource("4_pfof2")]
@@ -261,3 +263,157 @@ security_level = 5
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("5_lsxkg")]
+
+[node name="Desk" parent="." instance=ExtResource("6_f2n2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.03551, 1.72392, 2.29573)
+
+[node name="deskcol_cell_001" parent="Desk/fractured" index="1"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.126875, -0.199147, 0.375467)
+
+[node name="deskcol_cell_003" parent="Desk/fractured" index="2"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.7498, 1.28766, 0.000835717)
+
+[node name="deskcol_cell_008" parent="Desk/fractured" index="4"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.291859, 2.67591, 0.651407)
+
+[node name="deskcol_cell_009" parent="Desk/fractured" index="5"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.1163, 1.56154, 0.0384125)
+
+[node name="deskcol_cell_010" parent="Desk/fractured" index="6"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 1.19839, 1.8461, 1.53962)
+
+[node name="deskcol_cell_011" parent="Desk/fractured" index="7"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.81019, 1.83458, -0.925752)
+
+[node name="deskcol_cell_013" parent="Desk/fractured" index="8"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.870609, 3.07484, 0.645854)
+
+[node name="deskcol_cell_017" parent="Desk/fractured" index="9"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.28479, 0.292716, -0.199525)
+
+[node name="deskcol_cell_019" parent="Desk/fractured" index="10"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.25335, 2.44942, 0.662034)
+
+[node name="deskcol_cell_020" parent="Desk/fractured" index="11"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.650671, -0.212483, 0.788934)
+
+[node name="deskcol_cell_021" parent="Desk/fractured" index="12"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 1.00557, 0.147102, 0.107111)
+
+[node name="deskcol_cell_022" parent="Desk/fractured" index="13"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.737366, 1.05731, -0.00150049)
+
+[node name="deskcol_cell_023" parent="Desk/fractured" index="14"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.97048, 2.63262, 0.647397)
+
+[node name="deskcol_cell_025" parent="Desk/fractured" index="15"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.01463, 0.420173, -0.0337245)
+
+[node name="deskcol_cell_026" parent="Desk/fractured" index="16"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.90981, -0.204053, -0.649766)
+
+[node name="deskcol_cell_027" parent="Desk/fractured" index="17"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.24241, 3.56071, 0.635861)
+
+[node name="deskcol_cell_028" parent="Desk/fractured" index="18"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.01443, 1.90769, 0.765993)
+
+[node name="deskcol_cell_031" parent="Desk/fractured" index="20"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.927041, 2.8266, 0.648245)
+
+[node name="deskcol_cell_032" parent="Desk/fractured" index="21"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.11816, 1.89324, -0.151916)
+
+[node name="deskcol_cell_033" parent="Desk/fractured" index="22"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.83969, 1.99108, -0.76032)
+
+[node name="deskcol_cell_036" parent="Desk/fractured" index="23"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.20977, 1.96275, -1.6609)
+
+[node name="deskcol_cell_038" parent="Desk/fractured" index="24"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.85042, -0.204053, -0.634958)
+
+[node name="deskcol_cell_041" parent="Desk/fractured" index="25"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.0651219, -0.197044, -0.543315)
+
+[node name="deskcol_cell_043" parent="Desk/fractured" index="26"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.0590876, 3.00983, -0.286302)
+
+[node name="deskcol_cell_044" parent="Desk/fractured" index="27"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 1.06666, 1.98994, 1.39676)
+
+[node name="deskcol_cell_045" parent="Desk/fractured" index="28"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.725579, -0.24058, -0.192295)
+
+[node name="deskcol_cell_046" parent="Desk/fractured" index="29"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.964365, 1.0332, 0.0399541)
+
+[node name="deskcol_cell_047" parent="Desk/fractured" index="30"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.74361, 1.92131, 0.94994)
+
+[node name="deskcol_cell_051" parent="Desk/fractured" index="32"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.22479, 3.54535, 0.688131)
+
+[node name="deskcol_cell_058" parent="Desk/fractured" index="35"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.64757, 0.905465, -0.00712729)
+
+[node name="deskcol_cell_060" parent="Desk/fractured" index="36"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.834092, 3.37683, 0.649913)
+
+[node name="deskcol_cell_061" parent="Desk/fractured" index="37"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.932233, 2.6881, 0.645367)
+
+[node name="deskcol_cell_065" parent="Desk/fractured" index="41"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.21563, -0.201397, 0.573233)
+
+[node name="deskcol_cell_002" parent="Desk/fractured" index="42"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.05155, 0.188136, 0.0407124)
+
+[node name="deskcol_cell_007" parent="Desk/fractured" index="44"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.723722, -0.236741, 0.0255945)
+
+[node name="deskcol_cell_012" parent="Desk/fractured" index="45"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.838931, 3.34461, 0.648645)
+
+[node name="deskcol_cell_014" parent="Desk/fractured" index="46"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.0317898, -0.194359, -0.825301)
+
+[node name="deskcol_cell_015" parent="Desk/fractured" index="47"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.244902, 3.54387, -0.250571)
+
+[node name="deskcol_cell_016" parent="Desk/fractured" index="48"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 1.15455, 3.30222, -0.453271)
+
+[node name="deskcol_cell_024" parent="Desk/fractured" index="49"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.83619, -0.204053, 0.621041)
+
+[node name="deskcol_cell_030" parent="Desk/fractured" index="50"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 2.05822, 1.89678, 0.589792)
+
+[node name="deskcol_cell_034" parent="Desk/fractured" index="51"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.659656, 1.85684, -0.82572)
+
+[node name="deskcol_cell_035" parent="Desk/fractured" index="52"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.1079, 1.16614, -0.0310984)
+
+[node name="deskcol_cell_037" parent="Desk/fractured" index="53"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.66817, 1.14427, -0.00323876)
+
+[node name="deskcol_cell_039" parent="Desk/fractured" index="54"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.29806, 1.84793, -1.62308)
+
+[node name="deskcol_cell_040" parent="Desk/fractured" index="55"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.09369, 1.88225, -0.669951)
+
+[node name="deskcol_cell_050" parent="Desk/fractured" index="56"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.897441, 0.114952, -0.0982912)
+
+[node name="deskcol_cell_052" parent="Desk/fractured" index="57"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.44873, 1.9964, 0.000309646)
+
+[node name="ExplodeOrigin" parent="Desk" index="2"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 1.95336, 0)
+
+[editable path="Desk"]
+[editable path="Desk/desk"]
+[editable path="Desk/fractured"]
