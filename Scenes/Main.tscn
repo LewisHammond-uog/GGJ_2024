@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cq5hebvgebt3t"]
+[gd_scene load_steps=7 format=3 uid="uid://cq5hebvgebt3t"]
 
-[ext_resource type="PackedScene" path="res://Scenes/alex_level_design.tscn" id="1_7d67p"]
+[ext_resource type="PackedScene" uid="uid://b88ql72qniih1" path="res://Scenes/alex_level_design.tscn" id="1_7d67p"]
 [ext_resource type="PackedScene" uid="uid://dqgasnwcclrpb" path="res://Scenes/PlayerController.tscn" id="2_5x5by"]
-[ext_resource type="PackedScene" path="res://Scenes/GameUI.tscn" id="3_7q34s"]
-[ext_resource type="PackedScene" path="res://Scenes/pause_menu.tscn" id="4_wcsbw"]
-[ext_resource type="PackedScene" uid="uid://btf2gorc60e12" path="res://Scenes/test_enemy.tscn" id="5_ixyhc"]
+[ext_resource type="PackedScene" uid="uid://cxx2nlipxgli" path="res://Scenes/GameUI.tscn" id="3_7q34s"]
+[ext_resource type="PackedScene" uid="uid://cff1kdcg0yoeu" path="res://Scenes/pause_menu.tscn" id="4_wcsbw"]
+[ext_resource type="PackedScene" path="res://Scenes/test_enemy.tscn" id="5_ixyhc"]
+[ext_resource type="AudioStream" uid="uid://cnoq2a2k8uoqq" path="res://Audio/Music/slapstick.mp3" id="6_s4164"]
 
 [node name="Main" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.916543, 0)
@@ -23,3 +24,9 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.6153
 [node name="Enemy" parent="." instance=ExtResource("5_ixyhc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6194, 1.63321, 9.61386)
 axis_lock_angular_y = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_s4164")
+volume_db = -20.0
+autoplay = true
+bus = &"Music"
