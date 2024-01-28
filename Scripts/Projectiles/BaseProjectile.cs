@@ -37,6 +37,8 @@ public partial class BaseProjectile : RigidBody3D
             knockbackDirection.Y = 0.2f;
             enemy.StartKnockback(knockbackDirection * knockBackForce);
         }
+
+        body.Call("explode");
         damagable?.TakeDamage(damage);
         Destroy();
     }

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjh2glexrsge0"]
+
+[ext_resource type="Script" path="res://Scripts/Projectiles/BaseProjectile.cs" id="1_naf8l"]
+[ext_resource type="Shape3D" uid="uid://qv3ec83widsw" path="res://Weapons/Projectiles/PunchColl.tres" id="1_p4owq"]
+
+[node name="RigidBody3D" type="RigidBody3D"]
+max_contacts_reported = 5
+contact_monitor = true
+script = ExtResource("1_naf8l")
+speed = 2.08165e-12
+knockBackForce = 8.0
+damage = 55.0
+lifeTime = 0.3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, -1.10767)
+shape = ExtResource("1_p4owq")

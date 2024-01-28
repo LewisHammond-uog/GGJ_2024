@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="WeaponResource" load_steps=4 format=3 uid="uid://wx2fkynw0075"]
 
 [ext_resource type="PackedScene" uid="uid://bi0xe7dkq7yvo" path="res://Weapons/Projectiles/KickAnimScene.tscn" id="1_eb580"]
-[ext_resource type="PackedScene" uid="uid://ditnpfrmr3wrj" path="res://Scenes/Punch.tscn" id="2_k6vxp"]
+[ext_resource type="PackedScene" uid="uid://bjh2glexrsge0" path="res://Scenes/Kick.tscn" id="2_bja73"]
 [ext_resource type="Script" path="res://Scripts/WeaponResource.cs" id="4_0qnff"]
 
 [resource]
@@ -13,5 +13,5 @@ ClipSize = -1
 AmmoPerShot = 0
 WindUp = 0.2
 Cooldown = 1.5
-Bullet = ExtResource("2_k6vxp")
+Bullet = ExtResource("2_bja73")
 Animation = ExtResource("1_eb580")
