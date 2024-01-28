@@ -30,24 +30,17 @@ public partial class BaseProjectile : RigidBody3D
     
     public void OnBodyEntered(Node body)
     {
-        try
+        var damagable = body.TryFindNodeOfTypeInChildren<IDamageable>();
+        if (body is BasicEnemy enemy)
         {
-            var damagable = body.TryFindNodeOfTypeInChildren<IDamageable>();
-            if (body is BasicEnemy enemy)
-            {
-                Vector3 knockbackDirection = LinearVelocity.Normalized();
-                knockbackDirection.Y = 0.2f;
-                enemy.StartKnockback(knockbackDirection * knockBackForce);
-            }
+            Vector3 knockbackDirection = LinearVelocity.Normalized();
+            knockbackDirection.Y = 0.2f;
+            enemy.StartKnockback(knockbackDirection * knockBackForce);
+        }
 
-            body.Call("explode");
-            damagable?.TakeDamage(damage);
-            Destroy();
-        }
-        catch
-        {
-            // ignored
-        }
+        body.Call("explode");
+        damagable?.TakeDamage(damage);
+        Destroy();
     }
 
     private void Destroy()
