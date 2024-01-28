@@ -4,6 +4,7 @@ namespace GGJ24.Scripts;
 
 public sealed partial class PlayerHealth : Health, IHealable, IArmorRepairable
 {
+    [Export] private PackedScene mainMenu;
     [Export] private float maxAmour = 100f;
     private float armor;
 
@@ -32,7 +33,8 @@ public sealed partial class PlayerHealth : Health, IHealable, IArmorRepairable
 
         if (CurrentHealth == 0)
         {
-            GetTree().ChangeSceneToFile("res://scenes/main_menu.tscn");
+            Input.MouseMode = Input.MouseModeEnum.Visible;
+            GetTree().ChangeSceneToPacked(mainMenu);
         }
     }
 

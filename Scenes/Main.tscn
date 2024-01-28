@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b88ql72qniih1" path="res://Scenes/alex_level_design.tscn" id="1_7d67p"]
 [ext_resource type="PackedScene" uid="uid://dqgasnwcclrpb" path="res://Scenes/PlayerController.tscn" id="2_5x5by"]
 [ext_resource type="PackedScene" uid="uid://dcpdw1n2l1ge0" path="res://Scenes/GameUI.tscn" id="3_7q34s"]
-[ext_resource type="PackedScene" path="res://Scenes/pause_menu.tscn" id="4_wcsbw"]
+[ext_resource type="PackedScene" uid="uid://cff1kdcg0yoeu" path="res://Scenes/pause_menu.tscn" id="4_wcsbw"]
 [ext_resource type="PackedScene" uid="uid://btf2gorc60e12" path="res://Scenes/test_enemy.tscn" id="5_ixyhc"]
 [ext_resource type="AudioStream" uid="uid://cnoq2a2k8uoqq" path="res://Audio/Music/slapstick.mp3" id="6_s4164"]
 
