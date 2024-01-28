@@ -19,6 +19,7 @@ var strip_mats = [
 @export var security_level : Globals.SecurityLevel
 
 func _ready():
+	_update_colour(security_level)
 	_assign_strip_colour()
 	$AnimationPlayer.play("bob_and_spin")
 
@@ -31,3 +32,6 @@ func _on_area_3d_body_entered(body):
 	if security_level > Globals.PlayerLevel:
 		Globals.PlayerLevel = security_level 
 	queue_free()
+	
+func _update_colour(num):
+	$MeshInstance3D.get_child(num - 1).show()

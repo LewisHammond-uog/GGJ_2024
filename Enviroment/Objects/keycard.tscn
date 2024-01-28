@@ -1,7 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1o5ag11kdgs2"]
+[gd_scene load_steps=10 format=3 uid="uid://b3qyw35n727t5"]
 
 [ext_resource type="Script" path="res://Scripts/keycard.gd" id="1_7tt25"]
-[ext_resource type="SphereMesh" uid="uid://cc21usjo4mhci" path="res://Enviroment/Objects/Meshes/keycard.tres" id="2_xyfjf"]
+[ext_resource type="Texture2D" uid="uid://c6v5qru0bgpdc" path="res://artAssets/Keys/keycard_Green.png" id="2_bs3xa"]
+[ext_resource type="Texture2D" uid="uid://bq8j4ai5smf2u" path="res://artAssets/Keys/keycard_Red.png" id="3_28xwe"]
+[ext_resource type="Texture2D" uid="uid://c0rcwp782dsar" path="res://artAssets/Keys/keycard_Blue.png" id="4_mbslo"]
+[ext_resource type="Texture2D" uid="uid://ecdsi4v7cem5" path="res://artAssets/Keys/keycard_Purple.png" id="5_rsdov"]
+[ext_resource type="Texture2D" uid="uid://dfxv5b8f47gt1" path="res://artAssets/Keys/keycard_Yellow.png" id="6_r8m86"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_t76oc"]
 
@@ -40,7 +44,46 @@ script = ExtResource("1_7tt25")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
-mesh = ExtResource("2_xyfjf")
+
+[node name="Green" type="Sprite3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.93205, 0, 0, 0)
+visible = false
+pixel_size = 0.08
+shaded = true
+texture_filter = 0
+texture = ExtResource("2_bs3xa")
+
+[node name="Red" type="Sprite3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.93205, 0, 0, 0)
+visible = false
+pixel_size = 0.08
+shaded = true
+texture_filter = 0
+texture = ExtResource("3_28xwe")
+
+[node name="Blue" type="Sprite3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.93205, 0, 0, 0)
+visible = false
+pixel_size = 0.08
+shaded = true
+texture_filter = 0
+texture = ExtResource("4_mbslo")
+
+[node name="Purple" type="Sprite3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.93205, 0, 0, 0)
+visible = false
+pixel_size = 0.08
+shaded = true
+texture_filter = 0
+texture = ExtResource("5_rsdov")
+
+[node name="Gold" type="Sprite3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.93205, 0, 0, 0)
+visible = false
+pixel_size = 0.08
+shaded = true
+texture_filter = 0
+texture = ExtResource("6_r8m86")
 
 [node name="Area3D" type="Area3D" parent="MeshInstance3D"]
 collision_layer = 2
