@@ -35,9 +35,8 @@ shadow_enabled = true
 [node name="Door" parent="." instance=ExtResource("3_k5gx3")]
 transform = Transform3D(1.5, 0, 0, 0, 3, 0, 0, 0, 0.25, -0.75, 3, 8.25)
 
-[node name="Enemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_f2g8m")]
+[node name="Enemy" parent="." instance=ExtResource("4_f2g8m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7377, 1.5, -2.19663)
-player = NodePath("../PlayerController")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_mbmrc")

@@ -3,7 +3,7 @@
 [ext_resource type="MeshLibrary" uid="uid://bxbexws8yi6yw" path="res://Enviroment/Libraries/BuildingBlocks.tres" id="1_7tfpk"]
 [ext_resource type="PackedScene" uid="uid://dqgasnwcclrpb" path="res://Scenes/PlayerController.tscn" id="2_bcqu3"]
 [ext_resource type="PackedScene" uid="uid://dt67wbh0cngq0" path="res://Enviroment/Objects/better_door.tscn" id="3_m4x5h"]
-[ext_resource type="PackedScene" path="res://Enviroment/Objects/keycard.tscn" id="4_pfof2"]
+[ext_resource type="PackedScene" uid="uid://b1o5ag11kdgs2" path="res://Enviroment/Objects/keycard.tscn" id="4_pfof2"]
 [ext_resource type="PackedScene" path="res://Scenes/pause_menu.tscn" id="5_lsxkg"]
 [ext_resource type="PackedScene" uid="uid://bltvkwsacjjm2" path="res://Enviroment/Objects/desk.tscn" id="6_f2n2i"]
 

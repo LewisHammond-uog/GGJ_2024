@@ -13,8 +13,8 @@ contact_monitor = true
 script = ExtResource("1_0efol")
 speed = 2.08165e-12
 knockBackForce = 8.0
-lifeTime = 0.1
+lifeTime = 0.3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, -0.711523)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, -1.10767)
 shape = ExtResource("3_ary28")

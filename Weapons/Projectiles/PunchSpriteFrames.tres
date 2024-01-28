@@ -1,3 +1,28 @@
-[gd_resource type="SpriteFrames" format=3 uid="uid://cv12r558eqngf"]
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://cv12r558eqngf"]
+
+[ext_resource type="Texture2D" uid="uid://f5xnrxyts25a" path="res://artAssets/combat/punchAnim1.png" id="1_pw7t0"]
+[ext_resource type="Texture2D" uid="uid://bcykvh0q3qh5a" path="res://artAssets/combat/punchAnim2.png" id="2_s0dhi"]
+[ext_resource type="Texture2D" uid="uid://cisl3ftv6k842" path="res://artAssets/combat/punchAnim3.png" id="3_w7bef"]
 
 [resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pw7t0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_s0dhi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_w7bef")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_s0dhi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_pw7t0")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
