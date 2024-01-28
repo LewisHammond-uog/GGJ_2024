@@ -34,10 +34,9 @@ mesh = SubResource("CapsuleMesh_mr3ly")
 script = ExtResource("3_snru0")
 inventory = NodePath("../PlayerInventory")
 
-[node name="PlayerInventory" type="Node" parent="." node_paths=PackedStringArray("Player", "Camera3D")]
+[node name="PlayerInventory" type="Node" parent="." node_paths=PackedStringArray("Player")]
 script = ExtResource("3_cm3au")
 Player = NodePath("..")
-Camera3D = NodePath("../Camera3D")
 
 [node name="PlayerHealth" type="Node" parent="."]
 script = ExtResource("5_8esql")

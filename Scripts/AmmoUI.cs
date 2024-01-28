@@ -18,7 +18,15 @@ public partial class AmmoUI : RichTextLabel
 		int maxAmmo = playerInventory.CurrentWeapon.Resource.MaximumAmmo;
 		int currentAmmo = playerInventory.CurrentWeapon.CurrentAmmo;
 
-		string text = $"[center]{currentAmmo}/\n{maxAmmo}[/center]";
+		string text;
+		if (currentAmmo == -1)
+		{
+			 text = $"[center]{currentAmmo}/\n{maxAmmo}[/center]";
+		}
+		else
+		{
+			text = "PUNCH";
+		}
 		Text = text;
 	}
 }
