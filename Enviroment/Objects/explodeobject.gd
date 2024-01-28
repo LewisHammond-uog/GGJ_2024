@@ -21,7 +21,7 @@ func explode():
 	var player = Globals.Player
 	parentNode.queue_free()
 	
-	for child in parentNode.$fractured.get_children():
+	for child in %fractured.get_children():
 		if child is MeshInstance3D:
 			var frag:Fragment = preload("res://Scenes/fragment.tscn").instantiate()
 			frag.init_from_mesh(child)
