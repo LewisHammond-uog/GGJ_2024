@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://evfncmdni4qm"]
+[gd_scene load_steps=8 format=3 uid="uid://evfncmdni4qm"]
 
 [ext_resource type="Material" uid="uid://cvt0u4sl0lv3h" path="res://Enviroment/Objects/Materials/strips/strip_red.tres" id="1_6l6nc"]
 [ext_resource type="Texture2D" uid="uid://djtg6m6upwif4" path="res://artAssets/UI/clownIcon.png" id="1_m0pjj"]
+[ext_resource type="FontFile" uid="uid://bi0py6h3kkpo7" path="res://Fonts/Daydream.ttf" id="3_5fir5"]
 [ext_resource type="Script" path="res://Scripts/helpme.gd" id="3_qvne4"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_um381"]
@@ -51,6 +52,7 @@ texture = ExtResource("1_m0pjj")
 transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0.132096, 0.513545, 0)
 billboard = 1
 text = "Daddy! Daddy!"
+font = ExtResource("3_5fir5")
 script = ExtResource("3_qvne4")
 dialogue = Array[String](["Daddy! Daddy!", "Help me!", "Save me Daddy!"])
 

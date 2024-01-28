@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dalu0kwjmeer5"]
+[gd_scene load_steps=6 format=3 uid="uid://dalu0kwjmeer5"]
 
 [ext_resource type="Script" path="res://Scripts/Main Menu.gd" id="1_yoydy"]
 [ext_resource type="Texture2D" uid="uid://h6us8ninro85" path="res://artAssets/Menu/UI_BG.png" id="2_vy40s"]
+[ext_resource type="FontFile" uid="uid://bi0py6h3kkpo7" path="res://Fonts/Daydream.ttf" id="3_qkx2v"]
 [ext_resource type="AudioStream" uid="uid://dmowew36hg14u" path="res://Audio/Music/upbeat_silly.mp3" id="3_qsxke"]
+[ext_resource type="Texture2D" uid="uid://bawmp3denw8cw" path="res://artAssets/Menu/clown-full_happy.png" id="5_tdhns"]
 
 [node name="Main Menu" type="Control"]
 process_mode = 3
@@ -38,6 +40,10 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_vy40s")
 
+[node name="Clown-fullHappy" type="Sprite2D" parent="Panel"]
+position = Vector2(1700, 711)
+texture = ExtResource("5_tdhns")
+
 [node name="MarginContainer" type="MarginContainer" parent="Panel"]
 layout_mode = 1
 anchors_preset = 15
@@ -55,10 +61,15 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_qkx2v")
 theme_override_font_sizes/font_size = 101
-text = "Clown Doom"
+text = "Clown   Doom"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 100)
+layout_mode = 2
 
 [node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -68,17 +79,20 @@ theme_override_constants/v_separation = 16
 
 [node name="Play" type="Button" parent="Panel/MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_qkx2v")
 theme_override_font_sizes/font_size = 86
 text = "Play"
 
 [node name="Fullscreen" type="Button" parent="Panel/MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_qkx2v")
 theme_override_font_sizes/font_size = 86
 toggle_mode = true
 text = "Toggle Fullscreen"
 
 [node name="Quit" type="Button" parent="Panel/MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_qkx2v")
 theme_override_font_sizes/font_size = 86
 text = "Quit"
 
