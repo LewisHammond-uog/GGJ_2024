@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfxv5b8f47gt1"
-path.s3tc="res://.godot/imported/keycard_Yellow.png-24966b8785964657c630557369d7d16f.s3tc.ctex"
+uid="uid://ecdsi4v7cem5"
+path.s3tc="res://.godot/imported/keycard_Purple.png-74b83a76ec9f02e934b5e5b7d63add8e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://artAssets/Keys/keycard_Yellow.png"
-dest_files=["res://.godot/imported/keycard_Yellow.png-24966b8785964657c630557369d7d16f.s3tc.ctex"]
+source_file="res://artAssets/Keys/keycard_Purple.png"
+dest_files=["res://.godot/imported/keycard_Purple.png-74b83a76ec9f02e934b5e5b7d63add8e.s3tc.ctex"]
 
 [params]
 
