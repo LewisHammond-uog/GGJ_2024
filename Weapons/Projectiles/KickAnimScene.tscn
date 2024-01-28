@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bi0xe7dkq7yvo"]
+
+[ext_resource type="SpriteFrames" uid="uid://bj7pqwvrhjkye" path="res://Weapons/Projectiles/KickSpriteFrames.tres" id="1_iphwu"]
+
+[node name="KickAnimScene" type="Node3D"]
+transform = Transform3D(0.2, -6.97574e-17, 6.97574e-17, 6.97574e-17, 0.2, -6.97574e-17, -6.97574e-17, 6.97574e-17, 0.2, -0.33, -0.2, -1)
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+sorting_offset = 1e+15
+sorting_use_aabb_center = false
+no_depth_test = true
+sprite_frames = ExtResource("1_iphwu")
+autoplay = "default"
+frame = 4
+frame_progress = 1.0

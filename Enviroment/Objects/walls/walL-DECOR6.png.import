@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmh6kthepit3m"
-path.s3tc="res://.godot/imported/kick1.png-967cadb44da9373ca851a415a4844b74.s3tc.ctex"
+uid="uid://bkhhws5tacfaw"
+path.s3tc="res://.godot/imported/walL-DECOR6.png-ab91cc7fa0b3cac41d34493a540cd6ff.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://artAssets/combat/kick1.png"
-dest_files=["res://.godot/imported/kick1.png-967cadb44da9373ca851a415a4844b74.s3tc.ctex"]
+source_file="res://Enviroment/Objects/walls/walL-DECOR6.png"
+dest_files=["res://.godot/imported/walL-DECOR6.png-ab91cc7fa0b3cac41d34493a540cd6ff.s3tc.ctex"]
 
 [params]
 

@@ -1,11 +1,22 @@
-[gd_scene load_steps=11 format=3 uid="uid://b88ql72qniih1"]
+[gd_scene load_steps=22 format=3 uid="uid://b88ql72qniih1"]
 
 [ext_resource type="MeshLibrary" uid="uid://bxbexws8yi6yw" path="res://Enviroment/Libraries/BuildingBlocks.tres" id="1_7tfpk"]
-[ext_resource type="PackedScene" path="res://Enviroment/Objects/crate.tscn" id="1_8vm27"]
+[ext_resource type="PackedScene" uid="uid://dpj1w370ht7lc" path="res://Enviroment/Objects/crate.tscn" id="1_8vm27"]
 [ext_resource type="PackedScene" uid="uid://dt67wbh0cngq0" path="res://Enviroment/Objects/better_door.tscn" id="3_m4x5h"]
-[ext_resource type="PackedScene" uid="uid://b1o5ag11kdgs2" path="res://Enviroment/Objects/keycard.tscn" id="4_pfof2"]
-[ext_resource type="PackedScene" path="res://Enviroment/Objects/table.tscn" id="6_c11qr"]
-[ext_resource type="PackedScene" path="res://Enviroment/Objects/desk.tscn" id="6_f2n2i"]
+[ext_resource type="PackedScene" path="res://Enviroment/Objects/keycard.tscn" id="4_pfof2"]
+[ext_resource type="PackedScene" uid="uid://drcn30tyc3iet" path="res://Enviroment/Objects/table.tscn" id="6_c11qr"]
+[ext_resource type="PackedScene" uid="uid://bltvkwsacjjm2" path="res://Enviroment/Objects/desk.tscn" id="6_f2n2i"]
+[ext_resource type="PackedScene" uid="uid://evfncmdni4qm" path="res://Enviroment/Objects/the_kids.tscn" id="7_7yac3"]
+[ext_resource type="Texture2D" uid="uid://bwadhig3uthsk" path="res://Enviroment/Objects/walls/walL-DECOR5.png" id="8_y4oad"]
+[ext_resource type="Texture2D" uid="uid://doqg6x7nr68l1" path="res://Enviroment/Objects/walls/walL-DECOR4.png" id="9_5r018"]
+[ext_resource type="Texture2D" uid="uid://bkhhws5tacfaw" path="res://Enviroment/Objects/walls/walL-DECOR6.png" id="9_v2to1"]
+[ext_resource type="Texture2D" uid="uid://bnxepyd86hqoo" path="res://Enviroment/Objects/walls/walL-DECOR1.png" id="9_v8om3"]
+[ext_resource type="Texture2D" uid="uid://b08vnvjfgbqmq" path="res://Enviroment/Objects/walls/walL-DECOR7.png" id="10_5nj1h"]
+[ext_resource type="Texture2D" uid="uid://b88h7n4odsjsc" path="res://Enviroment/Objects/walls/walL-DECOR8.png" id="10_7d601"]
+[ext_resource type="Texture2D" uid="uid://bma0ob0mn4khd" path="res://Enviroment/Objects/walls/walL-DECOR3.png" id="10_d6gdn"]
+[ext_resource type="Texture2D" uid="uid://dqdsw6nbugdmn" path="res://Enviroment/Objects/walls/walL-DECOR10.png" id="10_sw1gk"]
+[ext_resource type="Texture2D" uid="uid://d22mrs34q1804" path="res://Enviroment/Objects/walls/walL-DECOR2.png" id="11_evdtx"]
+[ext_resource type="Texture2D" uid="uid://dxpe6mofcrpcg" path="res://Enviroment/Objects/walls/walL-DECOR9.png" id="11_wxaxb"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_m0wop"]
 vertices = PackedVector3Array(-53.5, 2, 3.25, -48.5, 2, 3.25, -48.25, 2, 1, -53.5, 2, -22, -48.25, 2, 1, -36.5, 2, 1, -36.25, 2, -0.5, -34.25, 2, -22, -53.5, 2, -22, -36.25, 2, -0.5, -34.25, 2, -0.5, -34.25, 2, -22, -34.25, 2, -0.5, -30, 2, -0.5, -30, 2, -22, -34.25, 2, -22, -14, 2, -9.25, -11.75, 2, -9.5, -11.75, 2, -22, -28, 2, -0.5, -27.75, 2, 1, -14, 2, 1, -14, 2, -9.25, -30, 2, -0.5, -28, 2, -0.5, -14, 2, -9.25, -11.75, 2, -22, -30, 2, -22, 6.5, 2, -9.5, 6.75, 2, -7.75, 11.5, 2, -8, 11.5, 2, -22, 6.5, 2, -9.5, 11.5, 2, -22, -11.75, 2, -22, -11.75, 2, -9.5, -56.5, 8, -17.5, -56.5, 8, 59.5, 10, 8, 59.5, 10, 8, -17.5, 8, 2, 2.5, 8.25, 2, 3.75, 11.5, 2, 3.75, 11.5, 2, -8, 6.75, 2, -7.75, 6.75, 2, -7.75, 6.75, 2, 2.5, 8, 2, 2.5, -10, 2, 0.5, -11.25, 2, 1, -9.5, 2, 1, -7, 2, -2, -6.75, 2, -1.5, -6.25, 2, -2, -5, 2, -6.75, -10, 2, -0.5, -10, 2, 0.5, -9.5, 2, 1, -9.25, 2, -2, -11.25, 2, -6.75, -9.25, 2, -2, -7, 2, -2, -5, 2, -6.75, -11.25, 2, -0.75, -10, 2, -0.5, -9.25, 2, -2, -11.25, 2, -6.75, -6.25, 2, -2, -5, 2, -2, -5, 2, -6.75, 0.5, 2, -2, 0.75, 2, -1.5, 1.25, 2, -2, -2.25, 2, -6.75, -2.25, 2, -2, 0.5, 2, -2, 1.25, 2, -2, 4, 2, -2, 4, 2, -6.75, -2.25, 2, -6.75, 0.5, 2, -2, 1.25, 2, -2, 4, 2, -6.75, 1.25, 2, 0.75, 1, 2, 0, 0.25, 2, 0.75, -5.75, 2, 1.75, -5.5, 2, 0.75, -6.25, 2, 0.75, -6.5, 2, 2, -5.75, 2, 1.75, -6.25, 2, 0.75, -6.75, 2, 0, -5.5, 2, 3.75, -5.75, 2, 3, -6.5, 2, 2.75, -6.75, 2, 3.25, -7.5, 2, 3.75, 4, 2, 4, -5.5, 2, 3.75, -6.5, 2, 2, -6.75, 2, 0, -6.75, 2, 3.25, -6.5, 2, 2.75, 1.25, 2, 0.75, 0.25, 2, 0.75, -2.5, 2, 3.75, 4, 2, 4, 4, 2, 4, -2.5, 2, 3.75, -5.5, 2, 3.75, -5.5, 2, 3.75, -6.75, 2, 3.25, -7.5, 2, 3.75, 0.25, 2, 0.75, -2.5, 2, 0.75, -2.5, 2, 3.75, 4, 2, 4, 4, 2, 0.75, 1.25, 2, 0.75, -35.5, 3.5, 0.5, -35.5, 3.5, 1, -33.5, 3.5, 1, -33.5, 3.5, 0.5, -30.75, 3.5, 0.5, -30.75, 3.5, 1, -29, 3.5, 1, -29, 3.5, 0.5, -53.5, 2, 46.5, -48.5, 2, 46.5, -48.5, 2, 3.25, -53.5, 2, 3.25, -39.5, 2, 7.25, -39, 2, 7, -39.5, 2, 6.5, -45.75, 2, 3.75, -45.75, 2, 10, -45.75, 2, 10, -39.5, 2, 10, -39.5, 2, 7.25, -39.5, 2, 6.5, -39.5, 2, 3.75, -45.75, 2, 3.75, -25, 2, 13, -24.75, 2, 13.5, -24.25, 2, 13, -21.5, 2, 7.25, -21.5, 2, 5, -36.75, 2, 6.25, -37.5, 2, 6.75, -36.75, 2, 7.25, -21.5, 2, 7.25, -20, 2, 7, -20.25, 2, 5.25, -21.5, 2, 5, -36.75, 2, 6.25, -36.75, 2, 7.25, -31.75, 2, 13, -36.75, 2, 14.5, -32, 2, 14.75, -31.75, 2, 13, -36.75, 2, 7.25, -24.25, 2, 13, -21.5, 2, 13, -21.5, 2, 7.25, -25, 2, 13, -21.5, 2, 5, -21.5, 2, 3.75, -36.75, 2, 3.75, -36.75, 2, 6.25, -31.75, 2, 13, -14.5, 2, 13, -14.25, 2, 13.5, -13.75, 2, 13, -19.25, 2, 5.25, -20.25, 2, 5.25, -20, 2, 7, -18.75, 2, 7.25, -9.5, 2, 4.25, -9, 2, 3.75, -18.75, 2, 3.75, -18.75, 2, 3.75, -19.25, 2, 5.25, -18.75, 2, 7.25, -8, 2, 13, -7.75, 2, 6.75, -9.5, 2, 6.5, -13.75, 2, 13, -18.75, 2, 7.25, -18.75, 2, 13, -14.5, 2, 13, -18.75, 2, 7.25, -14.5, 2, 13, -13.75, 2, 13, -9.5, 2, 6.5, -9.5, 2, 4.25, -18.75, 2, 3.75, 11.5, 2, 3.75, 8.25, 2, 3.75, 7.75, 2, 5.25, 6.75, 2, 46.75, 11.5, 2, 47, 7.75, 2, 5.25, 6.75, 2, 5.25, 6.75, 2, 46.75, -2.5, 2, 13, -2.25, 2, 14.75, 4, 2, 14.5, -7.75, 2, 6.75, -8, 2, 13, -2.5, 2, 13, -2.5, 2, 13, 4, 2, 14.5, 4, 2, 6.75, -7.75, 2, 6.75, -39.5, 2, 16.25, -39, 2, 16, -39.5, 2, 15.5, -45.75, 2, 12.75, -45.75, 2, 19, -45.75, 2, 19, -39.5, 2, 19, -39.5, 2, 16.25, -39.5, 2, 15.5, -39.5, 2, 12.75, -45.75, 2, 12.75, -36.75, 2, 15.25, -37.5, 2, 15.75, -36.75, 2, 16.25, -32, 2, 14.75, -32, 2, 14.75, -36.75, 2, 14.5, -36.75, 2, 15.25, -32, 2, 21.5, -32, 2, 14.75, -36.75, 2, 16.25, -36.75, 2, 21.75, -2.25, 2, 14.75, -2.25, 2, 24.25, 4, 2, 24.5, 4, 2, 14.5, -24.25, 2, 15.75, -24.5, 2, 15, -25.25, 2, 15.75, -27.75, 2, 22.25, -27.75, 2, 22.25, -27.75, 2, 25.75, -23, 2, 26, -23, 2, 15.75, -24.25, 2, 15.75, -29.25, 2, 15.75, -29.25, 2, 22, -27.75, 2, 22.25, -25.25, 2, 15.75, -13.75, 2, 15.75, -14.25, 2, 15, -14.75, 2, 15.75, -19.25, 2, 23.5, -20.25, 2, 15.75, -20.25, 2, 22.5, -19.5, 2, 22.5, -20.25, 2, 15.75, -19.5, 2, 22.5, -19.25, 2, 23.5, -14.75, 2, 15.75, -5, 2, 23.5, -5, 2, 15.75, -13.75, 2, 15.75, -19.25, 2, 23.5, -36.75, 2, 24.25, -37.5, 2, 24.75, -36.75, 2, 25.25, -32, 2, 26.75, -30.5, 2, 26.5, -30.5, 2, 23.25, -32, 2, 23, -36.75, 2, 24.25, -36.75, 2, 25.25, -32, 2, 23, -32, 2, 21.5, -36.75, 2, 21.75, -36.75, 2, 24.25, -36.75, 2, 28, -32, 2, 28.25, -32, 2, 26.75, -36.75, 2, 25.25, -39.5, 2, 25.25, -39, 2, 25, -39.5, 2, 24.5, -39.5, 2, 24.5, -39.5, 2, 22.25, -40.25, 2, 21.75, -39.5, 2, 25.25, -39.5, 2, 24.5, -40.25, 2, 21.75, -39.5, 2, 28, -39.5, 2, 25.25, -40.25, 2, 21.75, -45.75, 2, 21.75, -45.75, 2, 28, -20.75, 2, 36.75, -22.5, 2, 36.75, -22.25, 2, 38.5, -20.25, 2, 38.75, 4, 2, 46, 4, 2, 24.5, -2.75, 2, 26.25, -20.25, 2, 38.75, -20.25, 2, 46, -20.25, 2, 36.25, -20.75, 2, 36.75, -20.25, 2, 38.75, -2.75, 2, 26.25, 4, 2, 24.5, -2.25, 2, 24.25, -2.25, 2, 25.75, 4, 2, 24.5, -2.25, 2, 25.75, -2.75, 2, 26.25, -2.75, 2, 26.25, -20.25, 2, 26.25, -20.25, 2, 36.25, -25, 2, 34, -24.75, 2, 34.5, -24.25, 2, 34, -23, 2, 26, -27.75, 2, 25.75, -27.75, 2, 27.25, -23, 2, 26, -27.75, 2, 27.25, -29.25, 2, 27.75, -24.25, 2, 34, -23, 2, 34, -29.25, 2, 27.75, -29.25, 2, 34, -25, 2, 34, -29.25, 2, 27.75, -25, 2, 34, -24.25, 2, 34, -41.5, 2, 38.5, -41.25, 2, 39, -40.75, 2, 38.5, -28, 2, 38.5, -27.75, 2, 39, -27.25, 2, 38.5, -24.25, 2, 36.75, -24.75, 2, 36, -25.25, 2, 36.75, -43.75, 2, 36.75, -44.25, 2, 36, -44.75, 2, 36.75, -44.75, 2, 36.75, -45.75, 2, 36.75, -45.75, 2, 38.5, -22.25, 2, 38.5, -22.5, 2, 36.75, -24.25, 2, 36.75, -43.75, 2, 36.75, -44.75, 2, 36.75, -45.75, 2, 38.5, -41.5, 2, 38.5, -40.75, 2, 38.5, -28, 2, 38.5, -31.75, 2, 36.75, -37.25, 2, 36.75, -22.25, 2, 38.5, -24.25, 2, 36.75, -25.25, 2, 36.75, -27.25, 2, 38.5, -36.75, 2, 36.25, -37.25, 2, 36.75, -31.75, 2, 36.75, -28, 2, 38.5, -27.25, 2, 38.5, -25.25, 2, 36.75, -31.75, 2, 36.75, -43.75, 2, 36.75, -41.5, 2, 38.5, -40.75, 2, 38.5, -37.25, 2, 36.75, -32, 2, 28.25, -36.75, 2, 28, -36.75, 2, 36.25, -31.75, 2, 36.75, -44.5, 2, 34, -44.25, 2, 34.5, -43.75, 2, 34, -45.75, 2, 30.75, -45.75, 2, 30.75, -45.75, 2, 34, -44.5, 2, 34, -43.75, 2, 34, -39.5, 2, 34, -39.5, 2, 30.75, -45.75, 2, 30.75, -40.75, 2, 41.25, -41.25, 2, 40.5, -41.75, 2, 41.25, -41.75, 2, 41.25, -45.75, 2, 41.25, -45.75, 2, 46, -40.75, 2, 41.25, -41.75, 2, 41.25, -45.75, 2, 46, -32, 2, 46, -32, 2, 41.25, -40.75, 2, 41.25, -45.75, 2, 46, -27.25, 2, 41.25, -27.5, 2, 40.5, -28.25, 2, 41.25, -23.75, 2, 41.75, -24, 2, 41.25, -27.25, 2, 41.25, -23, 2, 46, -23, 2, 41.75, -23.75, 2, 41.75, -23.75, 2, 41.75, -27.25, 2, 41.25, -28.25, 2, 41.25, -28.25, 2, 41.25, -29.25, 2, 41.25, -29.25, 2, 46, -23, 2, 46, -23.75, 2, 41.75, 11.5, 2, 47, 6.75, 2, 46.75, 6.75, 2, 48.25, 11.5, 2, 47, 6.75, 2, 48.25, 6.25, 2, 48.75, 11.5, 2, 56.5, -48.25, 2, 48.75, -48.5, 2, 46.5, -53.5, 2, 46.5, -53.5, 2, 56.5, -53.5, 2, 56.5, 11.5, 2, 56.5, 6.25, 2, 48.75, -48.25, 2, 48.75, 2, -16, 48.5, 2, -16, 49, 2.5, -16, 49, 2.5, -16, 48.5)
@@ -46,7 +57,6 @@ data = {
 metadata/_editor_floor_ = Vector3(3, 1, 31)
 
 [node name="GridMap2" type="GridMap" parent="NavigationRegion3D"]
-visible = false
 mesh_library = ExtResource("1_7tfpk")
 cell_size = Vector3(1.5, 1.5, 1.5)
 cell_octant_size = 16
@@ -416,7 +426,7 @@ transform = Transform3D(-1.96752, 0, 0.327062, 0, 1.99452, 0, -0.327062, 0, -1.9
 transform = Transform3D(1.98513, 0, 0.193314, 0, 1.99452, 0, -0.193314, 0, 1.98513, -19.7168, 1.75468, 21.259)
 
 [node name="crate5" parent="NavigationRegion3D" instance=ExtResource("1_8vm27")]
-transform = Transform3D(1.65594, 0, 1.11174, 0, 1.99452, 0, -1.11174, 0, 1.65594, -17.0759, 1.75468, 22.3226)
+transform = Transform3D(1.65594, 0, 1.11174, 0, 1.99452, 0, -1.11174, 0, 1.65594, -18.1247, 1.75468, 22.7786)
 
 [node name="crate8" parent="NavigationRegion3D" instance=ExtResource("1_8vm27")]
 transform = Transform3D(1.6025, 0, -1.18748, 0, 1.99452, 0, 1.18748, 0, 1.6025, -36.4931, 1.75468, 37.3907)
@@ -447,6 +457,193 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -44.90
 
 [node name="table7" parent="." instance=ExtResource("6_c11qr")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -44.9033, 1.62645, 6.75456)
+
+[node name="The Kids" parent="." instance=ExtResource("7_7yac3")]
+transform = Transform3D(0.60528, 0, -0.796013, 0, 1, 0, 0.796013, 0, 0.60528, -40.3106, 2.12923, 31.4719)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.438275, 0, 0, 0, 0.438275, 0, 0, 0, 0.438275, -10.3807, 3.68787, 25.5221)
+texture_filter = 0
+texture = ExtResource("8_y4oad")
+
+[node name="Sprite3D12" type="Sprite3D" parent="."]
+transform = Transform3D(-1.91576e-08, 0, -0.438275, 0, 0.438275, 0, 0.438275, 0, -1.91576e-08, 4.49007, 3.68787, 11.4351)
+texture_filter = 0
+texture = ExtResource("8_y4oad")
+
+[node name="Sprite3D14" type="Sprite3D" parent="."]
+transform = Transform3D(-1.91576e-08, 0, -0.438275, 0, 0.438275, 0, 0.438275, 0, -1.91576e-08, 4.49007, 3.68787, 20.4351)
+texture_filter = 0
+texture = ExtResource("8_y4oad")
+
+[node name="Sprite3D16" type="Sprite3D" parent="."]
+transform = Transform3D(-1.91576e-08, 0, -0.438275, 0, 0.438275, 0, 0.438275, 0, -1.91576e-08, 4.49007, 3.68787, 30.4351)
+texture_filter = 0
+texture = ExtResource("8_y4oad")
+
+[node name="Sprite3D26" type="Sprite3D" parent="."]
+transform = Transform3D(-1.91576e-08, 0, 0.438275, 0, 0.438275, 0, -0.438275, 0, -1.91576e-08, -28.4972, 3.70303, 24.6833)
+texture_filter = 0
+texture = ExtResource("8_y4oad")
+
+[node name="Sprite3D32" type="Sprite3D" parent="."]
+transform = Transform3D(-1.50747e-08, 0, 0.344869, 0, 0.344869, 0, -0.344869, 0, -1.50747e-08, -37.3756, 3.70303, 20.8791)
+texture_filter = 0
+texture = ExtResource("9_5r018")
+
+[node name="Sprite3D33" type="Sprite3D" parent="."]
+transform = Transform3D(0.344869, 0, 2.23517e-08, 0, 0.344869, 0, -2.23517e-08, 0, 0.344869, -40.8419, 3.70303, 12.1226)
+texture_filter = 0
+texture = ExtResource("9_5r018")
+
+[node name="Sprite3D29" type="Sprite3D" parent="."]
+transform = Transform3D(-3.47697e-08, 0, 0.795438, 0, 0.795438, 0, -0.795438, 0, -3.47697e-08, -30.0589, 3.70303, 24.8491)
+texture_filter = 0
+texture = ExtResource("10_sw1gk")
+
+[node name="Sprite3D30" type="Sprite3D" parent="."]
+transform = Transform3D(-0.795438, 0, -6.95394e-08, 0, 0.795438, 0, 6.95394e-08, 0, -0.795438, -37.4309, 3.70303, 46.4746)
+texture_filter = 0
+texture = ExtResource("10_d6gdn")
+
+[node name="Sprite3D31" type="Sprite3D" parent="."]
+transform = Transform3D(-0.497532, 0, -4.34956e-08, 0, 0.497532, 0, 4.34956e-08, 0, -0.497532, -38.8213, 3.29729, 46.4785)
+sorting_offset = 0.355
+texture_filter = 0
+texture = ExtResource("10_d6gdn")
+
+[node name="Sprite3D27" type="Sprite3D" parent="."]
+transform = Transform3D(-1.91576e-08, 0, 0.438275, 0, 0.438275, 0, -0.438275, 0, -1.91576e-08, -29.9836, 3.70303, 30.2862)
+texture_filter = 0
+texture = ExtResource("9_v2to1")
+
+[node name="Sprite3D28" type="Sprite3D" parent="."]
+transform = Transform3D(-1.91576e-08, 0, 0.438275, 0, 0.438275, 0, -0.438275, 0, -1.91576e-08, -29.9836, 3.70303, 18.162)
+texture_filter = 0
+texture = ExtResource("9_v2to1")
+
+[node name="Sprite3D18" type="Sprite3D" parent="."]
+transform = Transform3D(-1.91576e-08, 0, -0.438275, 0, 0.438275, 0, 0.438275, 0, -1.91576e-08, 4.49007, 3.68787, 40.4351)
+texture_filter = 0
+texture = ExtResource("8_y4oad")
+
+[node name="Sprite3D20" type="Sprite3D" parent="."]
+transform = Transform3D(-0.721501, 0, 6.30756e-08, 0, 0.721501, 0, -6.30756e-08, 0, -0.721501, -4.13028, 3.18044, 46.4838)
+texture_filter = 0
+texture = ExtResource("9_v8om3")
+
+[node name="Sprite3D24" type="Sprite3D" parent="."]
+transform = Transform3D(-0.721501, 0, 6.30756e-08, 0, 0.721501, 0, -6.30756e-08, 0, -0.721501, -7.34025, 3.18044, 23.9565)
+texture_filter = 0
+texture = ExtResource("10_7d601")
+
+[node name="Sprite3D25" type="Sprite3D" parent="."]
+transform = Transform3D(-0.721501, 0, 6.30756e-08, 0, 0.721501, 0, -6.30756e-08, 0, -0.721501, -9.98914, 4.03707, 23.9565)
+texture_filter = 0
+texture = ExtResource("10_5nj1h")
+
+[node name="Sprite3D22" type="Sprite3D" parent="."]
+transform = Transform3D(-0.721501, 0, 6.30756e-08, 0, 0.721501, 0, -6.30756e-08, 0, -0.721501, -9.06831, 4.02544, 46.4838)
+texture_filter = 0
+texture = ExtResource("10_5nj1h")
+
+[node name="Sprite3D23" type="Sprite3D" parent="."]
+transform = Transform3D(-0.376797, 0, 3.29407e-08, 0, 0.376797, 0, -3.29407e-08, 0, -0.376797, -20.3846, 4.87901, 46.4875)
+texture_filter = 0
+texture = ExtResource("11_evdtx")
+
+[node name="Sprite3D34" type="Sprite3D" parent="."]
+transform = Transform3D(-0.376797, 0, 3.29407e-08, 0, 0.376797, 0, -3.29407e-08, 0, -0.376797, -29.3756, 4.87901, 46.4875)
+texture_filter = 0
+texture = ExtResource("11_evdtx")
+
+[node name="Sprite3D35" type="Sprite3D" parent="."]
+transform = Transform3D(-0.376797, 0, 3.29407e-08, 0, 0.376797, 0, -3.29407e-08, 0, -0.376797, -45.6504, 4.87901, 46.4875)
+texture_filter = 0
+texture = ExtResource("11_evdtx")
+
+[node name="Sprite3D36" type="Sprite3D" parent="."]
+transform = Transform3D(-0.376797, 0, 3.29407e-08, 0, 0.376797, 0, -3.29407e-08, 0, -0.376797, -23.2409, 4.87901, 34.4687)
+texture_filter = 0
+texture = ExtResource("11_evdtx")
+
+[node name="Sprite3D37" type="Sprite3D" parent="."]
+transform = Transform3D(-0.376797, 0, 3.29407e-08, 0, 0.376797, 0, -3.29407e-08, 0, -0.376797, -40.1453, 4.87901, 28.4598)
+texture_filter = 0
+texture = ExtResource("11_evdtx")
+
+[node name="Sprite3D38" type="Sprite3D" parent="."]
+transform = Transform3D(-0.376797, 0, 3.29407e-08, 0, 0.376797, 0, -3.29407e-08, 0, -0.376797, -40.1453, 4.87901, 10.4951)
+texture_filter = 0
+texture = ExtResource("11_evdtx")
+
+[node name="Sprite3D39" type="Sprite3D" parent="."]
+transform = Transform3D(-0.376797, 0, 3.29407e-08, 0, 0.376797, 0, -3.29407e-08, 0, -0.376797, -40.1453, 4.87901, 19.4892)
+texture_filter = 0
+texture = ExtResource("11_evdtx")
+
+[node name="Sprite3D21" type="Sprite3D" parent="."]
+transform = Transform3D(-0.721501, 0, 6.30756e-08, 0, 0.721501, 0, -6.30756e-08, 0, -0.721501, -13.5852, 3.18044, 46.4838)
+texture_filter = 0
+texture = ExtResource("9_v8om3")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(-1.55166e-08, 0, 0.354979, 0, 0.354979, 0, -0.354979, 0, -1.55166e-08, -20.9935, 3.81565, 30.2616)
+texture_filter = 0
+texture = ExtResource("9_5r018")
+
+[node name="Sprite3D6" type="Sprite3D" parent="."]
+transform = Transform3D(0.354979, 0, -1.77636e-15, 0, 0.354979, 0, 1.77636e-15, 0, 0.354979, -11.8479, 3.81565, 25.5317)
+sorting_offset = 0.925
+texture_filter = 0
+texture = ExtResource("9_5r018")
+
+[node name="Sprite3D7" type="Sprite3D" parent="."]
+transform = Transform3D(0.354979, 0, -1.77636e-15, 0, 0.354979, 0, 1.77636e-15, 0, 0.354979, -9.77047, 4.25106, 25.5317)
+sorting_offset = 0.925
+texture_filter = 0
+texture = ExtResource("9_5r018")
+
+[node name="Sprite3D8" type="Sprite3D" parent="."]
+transform = Transform3D(0.354979, 0, -1.77636e-15, 0, 0.354979, 0, 1.77636e-15, 0, 0.354979, -9.77047, 2.52328, 25.5317)
+sorting_offset = 0.925
+texture_filter = 0
+texture = ExtResource("9_5r018")
+
+[node name="Sprite3D9" type="Sprite3D" parent="."]
+transform = Transform3D(0.354979, 0, -1.77636e-15, 0, 0.354979, 0, 1.77636e-15, 0, 0.354979, -10.8464, 3.29627, 25.5317)
+sorting_offset = 0.925
+texture_filter = 0
+texture = ExtResource("9_5r018")
+
+[node name="Sprite3D10" type="Sprite3D" parent="."]
+transform = Transform3D(0.354979, 0, -1.77636e-15, 0, 0.354979, 0, 1.77636e-15, 0, 0.354979, -10.8464, 4.77889, 25.5317)
+sorting_offset = 0.925
+texture_filter = 0
+texture = ExtResource("9_5r018")
+
+[node name="Sprite3D11" type="Sprite3D" parent="."]
+transform = Transform3D(0.354979, 0, -1.77636e-15, 0, 0.354979, 0, 1.77636e-15, 0, 0.354979, -11.3602, 1.91659, 25.5317)
+sorting_offset = 0.925
+texture_filter = 0
+texture = ExtResource("9_5r018")
+
+[node name="Sprite3D5" type="Sprite3D" parent="."]
+transform = Transform3D(-3.31847e-08, 0, 0.759178, 0, 0.796325, 0, -0.759178, 0, -3.31847e-08, -20.9935, 3.73574, 27.6894)
+texture_filter = 0
+texture = ExtResource("10_sw1gk")
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(-1.55166e-08, 0, 0.354979, 0, 0.354979, 0, -0.354979, 0, -1.55166e-08, -20.9935, 3.20104, 31.9068)
+texture_filter = 0
+texture = ExtResource("11_wxaxb")
+
+[node name="Sprite3D4" type="Sprite3D" parent="."]
+transform = Transform3D(-1.55166e-08, 0, 0.354979, 0, 0.354979, 0, -0.354979, 0, -1.55166e-08, -20.9935, 3.71306, 33.029)
+flip_h = true
+modulate = Color(0.662745, 0.6, 0.556863, 1)
+texture_filter = 0
+texture = ExtResource("11_wxaxb")
 
 [editable path="NavigationRegion3D/Desk"]
 [editable path="NavigationRegion3D/Desk/desk"]
