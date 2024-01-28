@@ -9,6 +9,9 @@ enum SecurityLevel {
 	Gold
 }
 
-var PlayerLevel : SecurityLevel = 0
+var PlayerLevel : SecurityLevel = 0:
+	set(value):
+		PlayerLevel = value
+		EventBus.security_change.emit(PlayerLevel)
 
 var Player:Node3D

@@ -1,6 +1,6 @@
 extends Node3D
-@export_flags_3d_physics var fragment_collision_layer:int = 1
-@export_flags_3d_physics var fragment_collision_mask:int = 1
+@export_flags_3d_physics var fragment_collision_layer:int = 3
+@export_flags_3d_physics var fragment_collision_mask:int = 3
 @export var explosion_speed:float = 0.4
 @export var min_flag_lifetime:float = 0.8
 @export var max_flag_lifetime:float = 1.8
@@ -12,8 +12,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("movement_jump"):
-		explode()
+	pass
+	#if Input.is_action_just_pressed("movement_jump"):
+	#	explode()
 
 func explode():
 	var parent = get_parent()
