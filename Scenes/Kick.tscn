@@ -4,6 +4,8 @@
 [ext_resource type="Shape3D" uid="uid://qv3ec83widsw" path="res://Weapons/Projectiles/PunchColl.tres" id="1_p4owq"]
 
 [node name="RigidBody3D" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 5
 max_contacts_reported = 5
 contact_monitor = true
 script = ExtResource("1_naf8l")
