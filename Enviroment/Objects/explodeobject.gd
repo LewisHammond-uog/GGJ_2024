@@ -19,6 +19,9 @@ func _process(delta):
 
 func explode():
 	var player = Globals.Player
+	if parentNode == null:
+		return
+	   
 	parentNode.queue_free()
 	
 	for child in %fractured.get_children():
