@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://blokpilyg2o4g"]
+[gd_scene load_steps=5 format=3 uid="uid://blokpilyg2o4g"]
 
 [ext_resource type="Script" path="res://Scripts/Projectiles/Bullet.cs" id="1_6r7nn"]
+[ext_resource type="Texture2D" uid="uid://bsvin4mb5t01h" path="res://artAssets/enemybullet.png" id="2_pnpme"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_ymk4e"]
 
@@ -20,7 +21,13 @@ lifeTime = 30.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+visible = false
 mesh = SubResource("SphereMesh_ymk4e")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_eaftb")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 0, 0, 0)
+billboard = 2
+texture = ExtResource("2_pnpme")
