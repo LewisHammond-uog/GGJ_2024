@@ -1,14 +1,20 @@
-[gd_scene load_steps=10 format=3 uid="uid://dcpdw1n2l1ge0"]
+[gd_scene load_steps=16 format=3 uid="uid://dcpdw1n2l1ge0"]
 
 [ext_resource type="Texture2D" uid="uid://b67k6c2dx66a" path="res://artAssets/UI/ui-toolbar.png" id="1_t7rhx"]
-[ext_resource type="Texture2D" uid="uid://glykv8ygra6v" path="res://artAssets/clownIconBIG.png" id="2_230t2"]
+[ext_resource type="Texture2D" uid="uid://br4ygi3f8ls6q" path="res://artAssets/clownIconBIG.png" id="2_230t2"]
 [ext_resource type="FontFile" uid="uid://bi0py6h3kkpo7" path="res://Fonts/Daydream.ttf" id="3_mk67c"]
 [ext_resource type="Texture2D" uid="uid://b48m752xxx777" path="res://artAssets/UI/heartIcon.png" id="3_qm4wi"]
 [ext_resource type="Script" path="res://Scripts/Projectiles/ArmorDisplay.cs" id="3_v6gag"]
 [ext_resource type="Texture2D" uid="uid://dnhat3y8fttg4" path="res://artAssets/UI/clownyArmourIcon.png" id="4_ydjtk"]
 [ext_resource type="Script" path="res://Scripts/HealthDisplay.cs" id="5_m28g7"]
-[ext_resource type="Texture2D" uid="uid://84ef6dcku62f" path="res://artAssets/UI/kick_UI.png" id="9_15qsx"]
+[ext_resource type="Texture2D" uid="uid://qg7xowmhoaak" path="res://artAssets/UI/kick_UI.png" id="9_15qsx"]
 [ext_resource type="Texture2D" uid="uid://b44d0htdugjlm" path="res://artAssets/UI/punch_UI.png" id="9_x60a4"]
+[ext_resource type="Texture2D" uid="uid://c6v5qru0bgpdc" path="res://artAssets/Keys/keycard_Green.png" id="10_73ocn"]
+[ext_resource type="Script" path="res://Scripts/KeycardUI.gd" id="10_i3nyd"]
+[ext_resource type="Texture2D" uid="uid://bq8j4ai5smf2u" path="res://artAssets/Keys/keycard_Red.png" id="11_1sla3"]
+[ext_resource type="Texture2D" uid="uid://c0rcwp782dsar" path="res://artAssets/Keys/keycard_Blue.png" id="12_21w5t"]
+[ext_resource type="Texture2D" uid="uid://ecdsi4v7cem5" path="res://artAssets/Keys/keycard_Purple.png" id="13_g61xx"]
+[ext_resource type="Texture2D" uid="uid://dfxv5b8f47gt1" path="res://artAssets/Keys/keycard_Yellow.png" id="14_fvbqr"]
 
 [node name="GameUI" type="Control"]
 layout_mode = 3
@@ -151,3 +157,49 @@ offset_top = 182.0
 offset_right = 1531.0
 offset_bottom = 319.0
 texture = ExtResource("9_15qsx")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -366.0
+offset_bottom = 88.0
+grow_horizontal = 0
+columns = 5
+script = ExtResource("10_i3nyd")
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("10_73ocn")
+
+[node name="TextureRect2" type="TextureRect" parent="GridContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("11_1sla3")
+
+[node name="TextureRect3" type="TextureRect" parent="GridContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("12_21w5t")
+
+[node name="TextureRect4" type="TextureRect" parent="GridContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("13_g61xx")
+
+[node name="TextureRect5" type="TextureRect" parent="GridContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("14_fvbqr")
