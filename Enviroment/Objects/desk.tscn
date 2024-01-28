@@ -9,6 +9,8 @@ data = PackedVector3Array(-1.2, 0.72, -0.8, 1.2, 0.72, 0.8, 1.2, 0.72, -0.8, -1.
 
 [node name="desk" type="Node3D"]
 script = ExtResource("1_d1h41")
+fragment_collision_layer = 512
+fragment_collision_mask = 512
 
 [node name="desk" parent="." instance=ExtResource("1_lknth")]
 
@@ -18,7 +20,30 @@ script = ExtResource("1_d1h41")
 shape = SubResource("ConcavePolygonShape3D_8d47l")
 
 [node name="fractured" parent="." instance=ExtResource("2_fow83")]
-visible = false
+
+[node name="deskcol_cell" parent="fractured" index="0"]
+layers = 512
+
+[node name="deskcol_cell_001" parent="fractured" index="1"]
+layers = 512
+
+[node name="deskcol_cell_002" parent="fractured" index="2"]
+layers = 512
+
+[node name="deskcol_cell_003" parent="fractured" index="3"]
+layers = 512
+
+[node name="deskcol_cell_004" parent="fractured" index="4"]
+layers = 512
+
+[node name="deskcol_cell_005" parent="fractured" index="5"]
+layers = 512
+
+[node name="deskcol_cell_006" parent="fractured" index="6"]
+layers = 512
+
+[node name="deskcol_cell_007" parent="fractured" index="7"]
+layers = 512
 
 [node name="ExplodeOrigin" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.431583, 0)
