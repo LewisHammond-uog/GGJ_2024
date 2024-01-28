@@ -13,7 +13,7 @@ public partial class ItemUI : Panel
 		SetEnabled(false);
 	}
 
-	private void SetWeapon(Weapon wep)
+	public void SetWeapon(Weapon wep)
 	{
 		textRect.Texture = wep.Resource.WeaponSprite as Texture2D;
 	}

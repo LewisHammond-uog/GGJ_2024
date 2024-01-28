@@ -8,6 +8,7 @@ public partial class Inventory : Node
 	public List<Weapon> Weapons = new List<Weapon>();
 
 	public Weapon CurrentWeapon;
+	public EventHandler<InventoryItemArgs> ItemAddedEvent;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -32,6 +33,10 @@ public partial class Inventory : Node
 		weaponToAdd.Player = Player;
 		Reparent(weaponToAdd);
 		Weapons.Add(weaponToAdd);
+		ItemAddedEvent?.Invoke(this, new InventoryItemArgs()
+		{
+			item = weaponToAdd
+		});
 	}
 
 	public void AddAmmo(Weapon weapon)
@@ -44,4 +49,9 @@ public partial class Inventory : Node
 	{
 		
 	}
+}
+
+public class InventoryItemArgs : EventArgs
+{
+	public Weapon item;
 }

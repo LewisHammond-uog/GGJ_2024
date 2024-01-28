@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bioj4qejlbb7d"]
+
+[ext_resource type="Script" path="res://Scripts/ItemUI.cs" id="1_pglfm"]
+[ext_resource type="StyleBox" uid="uid://1feirhvrp8ly" path="res://ThemeOverrides/ActiveBoxtres.tres" id="2_mi0k4"]
+[ext_resource type="StyleBox" uid="uid://bfp5fs3cketdj" path="res://ThemeOverrides/DeActiveBoxtres.tres" id="3_ljfdo"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_jgt07"]
+
+[node name="ItemUI" type="Panel" node_paths=PackedStringArray("textRect")]
+custom_minimum_size = Vector2(60, 60)
+theme_override_styles/panel = SubResource("StyleBoxLine_jgt07")
+script = ExtResource("1_pglfm")
+textRect = NodePath("TextureRect")
+enabledStyle = ExtResource("2_mi0k4")
+disabledStyle = ExtResource("3_ljfdo")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5

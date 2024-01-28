@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dcpdw1n2l1ge0"]
+[gd_scene load_steps=10 format=3 uid="uid://dcpdw1n2l1ge0"]
 
 [ext_resource type="Texture2D" uid="uid://b67k6c2dx66a" path="res://artAssets/UI/ui-toolbar.png" id="1_t7rhx"]
 [ext_resource type="Texture2D" uid="uid://glykv8ygra6v" path="res://artAssets/clownIconBIG.png" id="2_230t2"]
@@ -7,13 +7,10 @@
 [ext_resource type="Script" path="res://Scripts/Projectiles/ArmorDisplay.cs" id="3_v6gag"]
 [ext_resource type="Texture2D" uid="uid://dnhat3y8fttg4" path="res://artAssets/UI/clownyArmourIcon.png" id="4_ydjtk"]
 [ext_resource type="Script" path="res://Scripts/HealthDisplay.cs" id="5_m28g7"]
-[ext_resource type="Script" path="res://Scenes/ItemUI.cs" id="8_2m3tu"]
-[ext_resource type="Texture2D" uid="uid://bqjsq4pwhd2kj" path="res://artAssets/combat/punch.png" id="8_406c7"]
-[ext_resource type="StyleBox" uid="uid://1feirhvrp8ly" path="res://ThemeOverrides/ActiveBoxtres.tres" id="8_wrsgs"]
+[ext_resource type="Script" path="res://Scripts/InventoryUIContainer.cs" id="8_cgulo"]
+[ext_resource type="PackedScene" uid="uid://bioj4qejlbb7d" path="res://Scenes/UI/item_ui.tscn" id="9_qnups"]
 
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_jgt07"]
-
-[node name="Control" type="Control"]
+[node name="GameUI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -131,36 +128,16 @@ grow_horizontal = 2
 texture = ExtResource("3_qm4wi")
 stretch_mode = 5
 
-[node name="GridContainer" type="GridContainer" parent="TextureRect"]
+[node name="GridContainer" type="GridContainer" parent="TextureRect" node_paths=PackedStringArray("uiParent")]
 layout_mode = 0
 offset_left = 1099.0
 offset_top = 176.0
-offset_right = 1483.0
+offset_right = 1391.0
 offset_bottom = 342.0
 theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 20
 columns = 3
-
-[node name="UIPanel" type="Panel" parent="TextureRect/GridContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxLine_jgt07")
-script = ExtResource("8_2m3tu")
-enabledStyle = ExtResource("8_wrsgs")
-
-[node name="TextureRect" type="TextureRect" parent="TextureRect/GridContainer/UIPanel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("8_406c7")
-expand_mode = 1
-stretch_mode = 5
+script = ExtResource("8_cgulo")
+uiElement = ExtResource("9_qnups")
+uiParent = NodePath(".")
+neededSlots = 5
