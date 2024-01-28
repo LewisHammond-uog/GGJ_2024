@@ -4,7 +4,7 @@ func _ready():
 	get_tree().paused = false
 
 func _on_play_pressed():
-	EventBus.go_level.emit()
+	%Expo.show()
 
 func _on_fullscreen_toggled(button_pressed):
 	if button_pressed:
@@ -14,3 +14,8 @@ func _on_fullscreen_toggled(button_pressed):
 
 func _on_quit_pressed():
 	get_tree().quit()
+
+
+func _on_continue_pressed():
+	EventBus.go_level.emit()
+	pass # Replace with function body.
