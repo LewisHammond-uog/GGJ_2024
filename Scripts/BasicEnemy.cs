@@ -37,11 +37,14 @@ public partial class BasicEnemy : CharacterBody3D
 	public void StartKnockback(Vector3 knockbackForce)
 	{
 		state = State.Stunned;
+		Vector3 MakeSurePos = Position;
+		MakeSurePos.Y = player.Position.Y;
+		Position = MakeSurePos;
 		Velocity = knockbackForce;
+		MoveAndSlide();
 		anim.Animation = "GetHit";
 		anim.Play();
 		anim.AnimationFinished += RevertToIdle;
-		MoveAndSlide();
 	}
 
 	private void RevertToIdle()
