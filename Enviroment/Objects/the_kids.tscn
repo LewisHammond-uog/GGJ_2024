@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0xkfipa3tbys"]
+
+[ext_resource type="Material" uid="uid://cvt0u4sl0lv3h" path="res://Enviroment/Objects/Materials/strips/strip_red.tres" id="1_6l6nc"]
+[ext_resource type="Texture2D" uid="uid://djtg6m6upwif4" path="res://artAssets/UI/clownIcon.png" id="1_m0pjj"]
+[ext_resource type="Script" path="res://Scripts/helpme.gd" id="3_qvne4"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_um381"]
+material = ExtResource("1_6l6nc")
+
+[sub_resource type="SphereMesh" id="SphereMesh_qn078"]
+
+[node name="The Kids" type="Node3D"]
+
+[node name="Timmy" type="Node3D" parent="."]
+transform = Transform3D(0.675, 0, 0, 0, 0.675, 0, 0, 0, 0.675, 0, 0.43, 0)
+
+[node name="Body" type="MeshInstance3D" parent="Timmy"]
+transform = Transform3D(0.71, 0, 0, 0, 0.535, 0, 0, 0, 0.71, 0, -0.166226, 0)
+mesh = SubResource("CylinderMesh_um381")
+skeleton = NodePath("../..")
+
+[node name="Arm" type="MeshInstance3D" parent="Timmy"]
+transform = Transform3D(0.0838754, -0.317584, 0, 0.273848, 0.0972709, 0, 0, 0, 0.305877, 0.571523, 0.0763985, 0)
+mesh = SubResource("CylinderMesh_um381")
+skeleton = NodePath("../..")
+
+[node name="Hand" type="MeshInstance3D" parent="Timmy"]
+transform = Transform3D(0.0838754, -0.317584, 0, 0.273848, 0.0972709, 0, 0, 0, 0.305876, 0.938477, -0.0462396, 0)
+mesh = SubResource("SphereMesh_qn078")
+skeleton = NodePath("../..")
+
+[node name="Hand2" type="MeshInstance3D" parent="Timmy"]
+transform = Transform3D(0.0838753, -0.317583, 0, 0.273848, 0.0972707, 0, 0, 0, 0.305876, -0.875734, -0.0739945, 0.302933)
+mesh = SubResource("SphereMesh_qn078")
+skeleton = NodePath("../..")
+
+[node name="Arm2" type="MeshInstance3D" parent="Timmy"]
+transform = Transform3D(-0.0903814, -0.294715, 0.102868, 0.269847, -0.111299, 0, 0.0322758, 0.105245, 0.28806, -0.513399, 0.0763985, 0.176521)
+mesh = SubResource("CylinderMesh_um381")
+skeleton = NodePath("../..")
+
+[node name="Head" type="Sprite3D" parent="Timmy"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.614845, -0.0268735)
+billboard = 1
+texture_filter = 0
+texture = ExtResource("1_m0pjj")
+
+[node name="Label3D" type="Label3D" parent="Timmy/Head"]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0.132096, 0.513545, 0)
+billboard = 1
+text = "Daddy! Daddy!"
+script = ExtResource("3_qvne4")
+dialogue = Array[String](["Daddy! Daddy!", "Help me!", "Save me Daddy!"])
+
+[node name="Timer" type="Timer" parent="Timmy/Head/Label3D"]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timmy/Head/Label3D/Timer" to="Timmy/Head/Label3D" method="_on_timer_timeout"]
