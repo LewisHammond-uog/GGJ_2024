@@ -1,4 +1,5 @@
 extends Node3D
+@export var parentNode:Node3D = null
 @export_flags_3d_physics var fragment_collision_layer:int = 3
 @export_flags_3d_physics var fragment_collision_mask:int = 3
 @export var explosion_speed:float = 0.4
@@ -17,17 +18,16 @@ func _process(delta):
 	#	explode()
 
 func explode():
-	var parent = get_parent()
 	var player = Globals.Player
-	queue_free()
+	parentNode.queue_free()
 	
-	for child in $fractured.get_children():
+	for child in parentNode.$fractured.get_children():
 		if child is MeshInstance3D:
 			var frag:Fragment = preload("res://Scenes/fragment.tscn").instantiate()
 			frag.init_from_mesh(child)
 			frag.collision_layer = fragment_collision_layer
 			frag.collision_mask = fragment_collision_mask
-			parent.add_child(frag)
+			get_tree().root.add_child(frag)
 			
 			# to future person, need to make it fly away from the player.....
 			var vel:Vector3 = (frag.global_transform.origin - player.global_transform.origin) * explosion_speed
