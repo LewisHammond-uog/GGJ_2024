@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://cnoq2a2k8uoqq" path="res://Audio/Music/slapstick.mp3" id="6_s4164"]
 
 [node name="Main" type="Node3D"]
+process_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.916543, 0)
 
 [node name="Alex\'s level design" parent="." instance=ExtResource("1_7d67p")]
@@ -25,7 +26,8 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.6153
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6194, 1.63321, 9.61386)
 axis_lock_angular_y = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("6_s4164")
 volume_db = -20.0
 autoplay = true
