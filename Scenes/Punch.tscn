@@ -13,6 +13,7 @@ contact_monitor = true
 script = ExtResource("1_0efol")
 speed = 2.08165e-12
 knockBackForce = 8.0
+damage = 35.0
 lifeTime = 0.3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

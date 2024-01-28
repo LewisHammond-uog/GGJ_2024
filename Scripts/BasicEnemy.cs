@@ -53,7 +53,7 @@ public partial class BasicEnemy : CharacterBody3D
 	public override void _Process(double delta)
 	{
 		//If dead then destroy, in future wait for an animation to finish
-		if (state == State.Dead)
+		if (state == State.Dead && anim.Animation != "TakeDamage")
 		{
 			anim.Animation = "TakeDamage";
 			anim.Play();

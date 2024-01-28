@@ -32,7 +32,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("6_y4e6k")
 }],
-"loop": true,
+"loop": false,
 "name": &"GetHit",
 "speed": 5.0
 }, {
@@ -84,12 +84,12 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("20_i25rp")
 }],
-"loop": true,
+"loop": false,
 "name": &"TakeDamage",
 "speed": 5.0
 }]
 
-[node name="Enemy" type="CharacterBody3D" node_paths=PackedStringArray("agent", "shootComp")]
+[node name="Enemy" type="CharacterBody3D" node_paths=PackedStringArray("agent", "shootComp", "anim")]
 collision_mask = 7
 script = ExtResource("1_uo2fx")
 agent = NodePath("NavigationAgent3D")
@@ -97,6 +97,7 @@ shootComp = NodePath("Shooter")
 idealDistanceToPlayer = 5.0
 standStillDistance = 6.0
 moveSpeed = 5.0
+anim = NodePath("AnimatedSprite3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -128,7 +129,7 @@ script = ExtResource("5_64nib")
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1.00921, 0)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_eir4a")
-animation = &"TakeDamage"
+animation = &"GetHit"
 autoplay = "Idle"
 
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="AgentVelocityComputed"]
