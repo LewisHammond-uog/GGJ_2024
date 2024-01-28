@@ -1,13 +1,15 @@
 using Godot;
 using System;
+using GGJ24;
 
 public partial class Weapon : Node
 {
 	public PlayerController Player;
+	public Camera3D Camera3D;
 	
 	public WeaponResource Resource;
 	public Timer FireTimer;
-	public Node AnimationNode;
+	public Node3D AnimationNode;
 
 	public Weapon(WeaponResource resource)
 	{
@@ -24,8 +26,9 @@ public partial class Weapon : Node
 	{
 		if (Resource.Animation != null)
 		{
-			AnimationNode = Resource.Animation.Instantiate();
-			AddChild(AnimationNode);
+			AnimationNode = Resource.Animation.Instantiate<Node3D>();
+			AnimationNode.TryFindNodeOfTypeInChildren<AnimatedSprite3D>().AnimationFinished += () => AnimationNode.QueueFree();
+			Camera3D.AddChild(AnimationNode);
 		}
 		if(Resource.WindUp > 0f)
 			FireTimer.Start(Resource.WindUp);

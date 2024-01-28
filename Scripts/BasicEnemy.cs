@@ -158,13 +158,14 @@ public partial class BasicEnemy : CharacterBody3D
 	private Vector2 GetPlayerRadiusInterceptXZ()
 	{
 		Vector2 playerCenter = new Vector2(player.Position.X, player.Position.Z);
-		Vector2 myCenter = new Vector2(Position.X, Position.Y);
+		Vector2 myCenter = new Vector2(Position.X, Position.Z);
 		Vector2 intercept = playerCenter + (myCenter - playerCenter).Normalized() * idealDistanceToPlayer;
 		return intercept;
 	}
 	
 	private void AgentVelocityComputed(Vector3 safe_velocity)
 	{
+		safe_velocity.Y = player.Position.Y - Position.Y;
 		Velocity = Velocity.MoveToward(safe_velocity, 0.25f);
 		Vector3 lookAt = player.Position;
 		lookAt.Y = Position.Y;
@@ -174,18 +175,13 @@ public partial class BasicEnemy : CharacterBody3D
 
 	private void ApplyKnockback()
 	{
-		Vector3 velocity = Velocity;
-		velocity.X = Mathf.MoveToward(Velocity.X, 0, 0.1f);
-		velocity.Y = Mathf.MoveToward(Velocity.Y, 0, 0.1f);
-		velocity.Z = Mathf.MoveToward(Velocity.Z, 0, 0.1f);
-		
-		Velocity = velocity;
+		Velocity.MoveToward(Vector3.Zero, 0.2f);
 		Vector3 lookAt = player.Position;
 		lookAt.Y = Position.Y;
 		LookAt(lookAt);
 		MoveAndSlide();
 
-		if (velocity.Length() < 0.1f)
+		if (Velocity.Length() < 0.2f)
 		{
 			state = State.MoveToPlayer;
 		}

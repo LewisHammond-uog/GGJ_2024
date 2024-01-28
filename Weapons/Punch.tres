@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="WeaponResource" load_steps=4 format=3 uid="uid://pcr6xi1u1l3l"]
 
 [ext_resource type="Script" path="res://Scripts/WeaponResource.cs" id="1_8ffvt"]
+[ext_resource type="PackedScene" uid="uid://c5bemgqd0ut8t" path="res://Weapons/Projectiles/PumchAnimScene.tscn" id="1_aq4s3"]
 [ext_resource type="PackedScene" uid="uid://ditnpfrmr3wrj" path="res://Scenes/Punch.tscn" id="1_msiec"]
 [ext_resource type="Texture2D" uid="uid://bqjsq4pwhd2kj" path="res://artAssets/combat/punch.png" id="2_4akoo"]
 
@@ -15,3 +16,4 @@ WindUp = 0.0
 Cooldown = 0.0
 WeaponSprite = ExtResource("2_4akoo")
 Bullet = ExtResource("1_msiec")
+Animation = ExtResource("1_aq4s3")
