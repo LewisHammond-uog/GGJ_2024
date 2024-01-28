@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sbib4h8rm0ap"
-path.s3tc="res://.godot/imported/ball1.png-7f607b3e5fc96961832eeca820bca06a.s3tc.ctex"
+uid="uid://bcykvh0q3qh5a"
+path.s3tc="res://.godot/imported/punchAnim2.png-df620e144ea708720da11471c2409b3c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://artAssets/projectiles_weapons/ball1.png"
-dest_files=["res://.godot/imported/ball1.png-7f607b3e5fc96961832eeca820bca06a.s3tc.ctex"]
+source_file="res://artAssets/combat/punchAnim2.png"
+dest_files=["res://.godot/imported/punchAnim2.png-df620e144ea708720da11471c2409b3c.s3tc.ctex"]
 
 [params]
 

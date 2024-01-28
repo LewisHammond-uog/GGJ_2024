@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public partial class Inventory : Node
 {
 	[Export] private PlayerController Player;
+	[Export] private Camera3D Camera3D;
 	public List<Weapon> Weapons = new List<Weapon>();
 
 	public Weapon CurrentWeapon;
@@ -15,6 +16,7 @@ public partial class Inventory : Node
 	{
 		Weapon fists = new Weapon(GD.Load<WeaponResource>("res://Weapons/Punch.tres"));
 		fists.Player = Player;
+		fists.Camera3D = Camera3D;
 		AddChild(fists);
 		Weapons.Add(fists);
 		CurrentWeapon = Weapons[0];
@@ -31,6 +33,7 @@ public partial class Inventory : Node
 	public void AddWeaponToInventory(Weapon weaponToAdd)
 	{
 		weaponToAdd.Player = Player;
+		weaponToAdd.Camera3D = Camera3D;
 		Reparent(weaponToAdd);
 		Weapons.Add(weaponToAdd);
 		ItemAddedEvent?.Invoke(this, new InventoryItemArgs()
