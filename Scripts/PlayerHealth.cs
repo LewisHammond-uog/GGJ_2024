@@ -29,8 +29,11 @@ public sealed partial class PlayerHealth : Health, IHealable, IArmorRepairable
         damage -= armorRemval;
         Armor -= armorRemval;
         base.TakeDamage(damage);
-        
-        GD.Print($"{Armor} :: {CurrentHealth}");
+
+        if (CurrentHealth == 0)
+        {
+            GetTree().ChangeSceneToFile("res://scenes/main_menu.tscn");
+        }
     }
 
     public void Heal(float heal)
