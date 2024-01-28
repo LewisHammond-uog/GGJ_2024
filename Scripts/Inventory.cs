@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 public partial class Inventory : Node
 {
-	[Export] private PlayerController Player;
-	[Export] private Camera3D Camera3D;
+	[Export] public PlayerController Player;
+	[Export] public Camera3D Camera3D;
 	public List<Weapon> Weapons = new List<Weapon>();
 
 	public Weapon CurrentWeapon;

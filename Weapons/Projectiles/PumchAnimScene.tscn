@@ -3,9 +3,12 @@
 [ext_resource type="SpriteFrames" uid="uid://cv12r558eqngf" path="res://Weapons/Projectiles/PunchSpriteFrames.tres" id="1_6fqby"]
 
 [node name="Node3D" type="Node3D"]
-transform = Transform3D(0.144189, 0.0413456, 4.74162e-17, -0.0374718, 0.13068, 0.0633927, 0.0174734, -0.060937, 0.135946, 0.2, -0.25, -1)
+transform = Transform3D(0.191261, 0.0584743, 6.32217e-17, -0.0529957, 0.173341, 0.0845237, 0.0247123, -0.0808304, 0.181262, 0.28, -0.24, -1)
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+sorting_offset = 1e+15
+sorting_use_aabb_center = false
+no_depth_test = true
 sprite_frames = ExtResource("1_6fqby")
 autoplay = "default"
 frame = 4

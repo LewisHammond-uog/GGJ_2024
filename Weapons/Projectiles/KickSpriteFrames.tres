@@ -1,0 +1,28 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://bj7pqwvrhjkye"]
+
+[ext_resource type="Texture2D" uid="uid://cmh6kthepit3m" path="res://artAssets/combat/kick1.png" id="1_oukum"]
+[ext_resource type="Texture2D" uid="uid://ci8ntan6th2d6" path="res://artAssets/combat/kick2.png" id="2_yy6ii"]
+[ext_resource type="Texture2D" uid="uid://ddmkoeiwknkly" path="res://artAssets/combat/kick3.png" id="3_41ex8"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_oukum")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_yy6ii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_41ex8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_yy6ii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_oukum")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
