@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/Projectiles/ArmorDisplay.cs" id="3_v6gag"]
 [ext_resource type="Texture2D" uid="uid://dnhat3y8fttg4" path="res://artAssets/UI/clownyArmourIcon.png" id="4_ydjtk"]
 [ext_resource type="Script" path="res://Scripts/HealthDisplay.cs" id="5_m28g7"]
-[ext_resource type="Texture2D" uid="uid://bqjsq4pwhd2kj" path="res://artAssets/combat/punch.png" id="8_j6w8x"]
+[ext_resource type="Texture2D" uid="uid://b44d0htdugjlm" path="res://artAssets/UI/punch_UI.png" id="9_x60a4"]
 [ext_resource type="Script" path="res://Scripts/AmmoUI.cs" id="10_cfoou"]
 
 [node name="GameUI" type="Control"]
@@ -156,5 +156,5 @@ offset_left = 1114.0
 offset_top = 182.0
 offset_right = 1251.0
 offset_bottom = 319.0
-texture = ExtResource("8_j6w8x")
+texture = ExtResource("9_x60a4")
 stretch_mode = 5
