@@ -30,3 +30,36 @@ stream = ExtResource("6_s4164")
 volume_db = -20.0
 autoplay = true
 bus = &"Music"
+
+[node name="Enemy2" parent="." instance=ExtResource("5_ixyhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.110353, 1.5, 8.59742)
+
+[node name="Enemy3" parent="." instance=ExtResource("5_ixyhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.57867, 1.5, 30.8325)
+
+[node name="Enemy4" parent="." instance=ExtResource("5_ixyhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.9969, 1.5, 29.9762)
+
+[node name="Enemy5" parent="." instance=ExtResource("5_ixyhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.27641, 1.5, 22.0152)
+
+[node name="Enemy6" parent="." instance=ExtResource("5_ixyhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.7789, 1.5, 31.0474)
+
+[node name="Enemy7" parent="." instance=ExtResource("5_ixyhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.2175, 1.5, 24.8908)
+
+[node name="Enemy8" parent="." instance=ExtResource("5_ixyhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.0054, 1.5, 15.3305)
+
+[node name="Enemy9" parent="." instance=ExtResource("5_ixyhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.1784, 1.5, 9.35032)
+
+[node name="Enemy10" parent="." instance=ExtResource("5_ixyhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.8118, 1.5, 34.4274)
+
+[node name="Enemy11" parent="." instance=ExtResource("5_ixyhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4797, 1.5, 45.441)
+
+[node name="Enemy12" parent="." instance=ExtResource("5_ixyhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.268774, 1.5, 44.4509)
