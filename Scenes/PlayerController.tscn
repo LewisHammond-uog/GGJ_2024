@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dqgasnwcclrpb"]
+[gd_scene load_steps=16 format=3 uid="uid://dqgasnwcclrpb"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerController.cs" id="1_3s0c1"]
 [ext_resource type="Script" path="res://Scripts/Camera3D.cs" id="2_euouj"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://Scripts/Punches.gd" id="10_3vel6"]
 [ext_resource type="AudioStream" uid="uid://dtkrvyjkafsq6" path="res://Audio/SFX/kick.wav" id="11_o4g4u"]
 [ext_resource type="Script" path="res://Scripts/Kick.gd" id="12_5v50k"]
+[ext_resource type="AudioStream" uid="uid://bij3j1ebqlekl" path="res://Audio/SFX/smash.wav" id="13_0vvta"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vd5mg"]
 
@@ -22,6 +23,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.0
 collision_layer = 2
 script = ExtResource("1_3s0c1")
 camera = NodePath("Camera3D")
+
+[node name="Smsah" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.69115)
+stream = ExtResource("13_0vvta")
+volume_db = -20.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, 2.08165e-12)
