@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqgasnwcclrpb"]
+[gd_scene load_steps=15 format=3 uid="uid://dqgasnwcclrpb"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerController.cs" id="1_3s0c1"]
 [ext_resource type="Script" path="res://Scripts/Camera3D.cs" id="2_euouj"]
@@ -6,6 +6,12 @@
 [ext_resource type="Script" path="res://Scripts/PlayerShooting.cs" id="3_snru0"]
 [ext_resource type="Script" path="res://Scripts/PlayerHealth.cs" id="5_8esql"]
 [ext_resource type="Script" path="res://Scripts/getplayer.gd" id="6_62npb"]
+[ext_resource type="AudioStream" uid="uid://cgwfis4tukevp" path="res://Audio/SFX/shoes.mp3" id="7_xsp1v"]
+[ext_resource type="Script" path="res://Scripts/clown_shoes.gd" id="8_jci6l"]
+[ext_resource type="AudioStream" uid="uid://cx3incym0ye8r" path="res://Audio/SFX/boing.wav" id="9_yh6ir"]
+[ext_resource type="Script" path="res://Scripts/Punches.gd" id="10_3vel6"]
+[ext_resource type="AudioStream" uid="uid://dtkrvyjkafsq6" path="res://Audio/SFX/kick.wav" id="11_o4g4u"]
+[ext_resource type="Script" path="res://Scripts/Kick.gd" id="12_5v50k"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vd5mg"]
 
@@ -45,3 +51,19 @@ script = ExtResource("5_8esql")
 [node name="Node3D" type="Node3D" parent="." node_paths=PackedStringArray("playerref")]
 script = ExtResource("6_62npb")
 playerref = NodePath("..")
+
+[node name="ShoesAudio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("7_xsp1v")
+volume_db = -20.0
+unit_size = 2.0
+script = ExtResource("8_jci6l")
+
+[node name="Punches" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_yh6ir")
+volume_db = -20.0
+script = ExtResource("10_3vel6")
+
+[node name="Kick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_o4g4u")
+volume_db = -20.0
+script = ExtResource("12_5v50k")
