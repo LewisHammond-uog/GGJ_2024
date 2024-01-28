@@ -19,6 +19,10 @@ public partial class BasicEnemy : CharacterBody3D
 	private Vector3? playerLastPos;
 	private Vector3 movePos;
 	private State state;
+
+	//See https://github.com/godotengine/godot/issues/76349 - issue where gridmaps cannot be raycasted on frame 1
+	private bool isFirstFrame = true;
+	
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -47,9 +51,16 @@ public partial class BasicEnemy : CharacterBody3D
 
 	public override void _PhysicsProcess(double delta)
 	{
+		
 		base._PhysicsProcess(delta);
 		UpdateState();
-		canSeePlayer = CanSeePlayer();
+
+		if (!isFirstFrame)
+		{
+			canSeePlayer = CanSeePlayer();
+		}
+		isFirstFrame = false;
+
 		if (state is State.Dead or State.Stunned)
 		{
 			return;
@@ -73,8 +84,8 @@ public partial class BasicEnemy : CharacterBody3D
 		}
 		
 		var spaceState = GetWorld3D().DirectSpaceState;
-		var query = PhysicsRayQueryParameters3D.Create(Position, player.Position);
-		query.CollideWithAreas = true;
+		var query = PhysicsRayQueryParameters3D.Create(Position + new Vector3(0,1,0), player.Position + new Vector3(0,1,0));
+		query.CollideWithAreas = false;
 		query.Exclude = new Array<Rid>(new Rid[] { GetRid(), player.GetRid() });
 		var result = spaceState.IntersectRay(query);
 
@@ -105,7 +116,10 @@ public partial class BasicEnemy : CharacterBody3D
 			case State.MoveToPlayer:
 			{
 				//If we are close enough to shoot and can shoot the player
-				if (shootComp is { CanShoot: true } && Position.DistanceTo(player.Position) < shootComp.MaxShootDist)
+				if (!canSeePlayer)
+				{
+					state = State.Idle;
+				} else if (shootComp is { CanShoot: true } && Position.DistanceTo(player.Position) < shootComp.MaxShootDist)
 				{
 					state = State.MoveAndShoot;
 				}
@@ -116,7 +130,10 @@ public partial class BasicEnemy : CharacterBody3D
 				break;
 			case State.MoveAndShoot:
 			{
-				if (shootComp is { CanShoot: false } || Position.DistanceTo(player.Position) > shootComp.MaxShootDist)
+				if (!canSeePlayer)
+				{
+					state = State.Idle;
+				} else if (shootComp is { CanShoot: false } || Position.DistanceTo(player.Position) > shootComp.MaxShootDist)
 				{
 					state = State.MoveToPlayer;
 					break;
@@ -136,6 +153,11 @@ public partial class BasicEnemy : CharacterBody3D
 			}
 			case State.StandAndShoot:
 			{
+				if (!canSeePlayer)
+				{
+					state = State.Idle;
+				}
+				
 				Vector2 intercept = GetPlayerRadiusInterceptXZ();
 				Vector3 interceptPos = new Vector3(intercept.X, player.Position.Y, intercept.Y);
 				if (Position.DistanceTo(interceptPos) > standStillDistance)

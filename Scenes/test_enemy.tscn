@@ -25,7 +25,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = ExtResource("1_0v4aw")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-path_height_offset = 0.5
+path_height_offset = 0.6
 avoidance_enabled = true
 radius = 1.0
 keep_y_velocity = false

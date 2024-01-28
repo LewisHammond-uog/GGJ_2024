@@ -8,6 +8,7 @@ public partial class Weapon : Node
 	public WeaponResource Resource;
 	public Timer FireTimer;
 	public Node AnimationNode;
+	public int CurrentAmmo = 0;
 
 	public Weapon(WeaponResource resource)
 	{
