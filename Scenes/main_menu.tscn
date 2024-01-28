@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cmmatg3eretu2"]
+[gd_scene load_steps=8 format=3 uid="uid://dalu0kwjmeer5"]
 
 [ext_resource type="Script" path="res://Scripts/Main Menu.gd" id="1_yoydy"]
 [ext_resource type="Texture2D" uid="uid://ddh5n4rshavw4" path="res://artAssets/Menu/menu_bg.png" id="2_vjoof"]
@@ -147,6 +147,7 @@ grow_vertical = 2
 texture = ExtResource("6_ec3m2")
 
 [node name="Label2" type="Label" parent="Expo/TextureRect2"]
+layout_mode = 0
 offset_left = 655.0
 offset_top = 122.0
 offset_right = 2481.82
