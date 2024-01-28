@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b3qyw35n727t5"]
+[gd_scene load_steps=11 format=3 uid="uid://b3qyw35n727t5"]
 
 [ext_resource type="Script" path="res://Scripts/keycard.gd" id="1_7tt25"]
 [ext_resource type="Texture2D" uid="uid://c6v5qru0bgpdc" path="res://artAssets/Keys/keycard_Green.png" id="2_bs3xa"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c0rcwp782dsar" path="res://artAssets/Keys/keycard_Blue.png" id="4_mbslo"]
 [ext_resource type="Texture2D" uid="uid://ecdsi4v7cem5" path="res://artAssets/Keys/keycard_Purple.png" id="5_rsdov"]
 [ext_resource type="Texture2D" uid="uid://dfxv5b8f47gt1" path="res://artAssets/Keys/keycard_Yellow.png" id="6_r8m86"]
+[ext_resource type="AudioStream" uid="uid://deuleqyeagba2" path="res://Audio/SFX/pickup.mp3" id="7_yuepi"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_t76oc"]
 
@@ -96,5 +97,8 @@ shape = SubResource("SphereShape3D_t76oc")
 libraries = {
 "": SubResource("AnimationLibrary_b78sf")
 }
+
+[node name="Pickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_yuepi")
 
 [connection signal="body_entered" from="MeshInstance3D/Area3D" to="." method="_on_area_3d_body_entered"]

@@ -29,6 +29,7 @@ func _assign_strip_colour():
 	$MeshInstance3D.set_surface_override_material(0, chosen_mat)
 
 func _on_area_3d_body_entered(body):
+	$Pickup.play()
 	if security_level > Globals.PlayerLevel:
 		Globals.PlayerLevel = security_level 
 	queue_free()
