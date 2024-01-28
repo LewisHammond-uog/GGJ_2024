@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dalu0kwjmeer5"]
+[gd_scene load_steps=7 format=3 uid="uid://cmmatg3eretu2"]
 
 [ext_resource type="Script" path="res://Scripts/Main Menu.gd" id="1_yoydy"]
 [ext_resource type="Texture2D" uid="uid://h6us8ninro85" path="res://artAssets/Menu/UI_BG.png" id="2_vy40s"]
 [ext_resource type="FontFile" uid="uid://bi0py6h3kkpo7" path="res://Fonts/Daydream.ttf" id="3_qkx2v"]
 [ext_resource type="AudioStream" uid="uid://dmowew36hg14u" path="res://Audio/Music/upbeat_silly.mp3" id="3_qsxke"]
 [ext_resource type="Texture2D" uid="uid://bawmp3denw8cw" path="res://artAssets/Menu/clown-full_happy.png" id="5_tdhns"]
+[ext_resource type="Texture2D" uid="uid://dqlie5j5jrk1q" path="res://artAssets/Menu/clown_intro.png" id="6_ec3m2"]
 
 [node name="Main Menu" type="Control"]
 process_mode = 3
@@ -41,7 +42,8 @@ grow_vertical = 2
 texture = ExtResource("2_vy40s")
 
 [node name="Clown-fullHappy" type="Sprite2D" parent="Panel"]
-position = Vector2(1700, 711)
+position = Vector2(1700, 841)
+scale = Vector2(0.652468, 0.652468)
 texture = ExtResource("5_tdhns")
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel"]
@@ -102,6 +104,73 @@ volume_db = -20.0
 autoplay = true
 bus = &"Music"
 
+[node name="Expo" type="Panel" parent="."]
+unique_name_in_owner = true
+self_modulate = Color(1, 0.388235, 0.196078, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Expo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1000.0
+offset_top = -620.0
+offset_right = 1000.0
+offset_bottom = 620.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_vy40s")
+
+[node name="TextureRect2" type="TextureRect" parent="Expo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1000.0
+offset_top = -620.0
+offset_right = 1000.0
+offset_bottom = 620.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_ec3m2")
+
+[node name="Label2" type="Label" parent="Expo/TextureRect2"]
+offset_left = 655.0
+offset_top = 122.0
+offset_right = 2481.82
+offset_bottom = 1078.0
+scale = Vector2(0.66, 0.66)
+theme_override_colors/font_color = Color(0.694118, 0.152941, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("3_qkx2v")
+theme_override_font_sizes/font_size = 101
+text = "oh no! ai has taken over my job and the wife left me.
+help me find the kids and kill that useless ai..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Continue" type="Button" parent="Expo"]
+layout_mode = 0
+offset_left = 1281.0
+offset_top = 798.0
+offset_right = 1717.0
+offset_bottom = 920.0
+theme_override_fonts/font = ExtResource("3_qkx2v")
+theme_override_font_sizes/font_size = 86
+text = "Cont."
+flat = true
+
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/GridContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="toggled" from="Panel/MarginContainer/VBoxContainer/GridContainer/Fullscreen" to="." method="_on_fullscreen_toggled"]
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/GridContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Expo/Continue" to="." method="_on_continue_pressed"]
